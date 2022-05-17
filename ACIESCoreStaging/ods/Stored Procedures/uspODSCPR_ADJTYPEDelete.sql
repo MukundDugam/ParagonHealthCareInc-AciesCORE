@@ -17,4 +17,5 @@ BEGIN
             ON [t].[CPK_ADJTYPE] = [s].[CPK_ADJTYPE]
     WHERE [s].[DELFLAG] = 1;
 
+
 END;
