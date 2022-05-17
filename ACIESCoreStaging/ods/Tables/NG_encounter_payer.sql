@@ -1,0 +1,63 @@
+﻿CREATE TABLE [ods].[NG_encounter_payer]
+(
+	[RecordID]	[INT] IDENTITY(1, 1) NOT NULL,
+	[enterprise_id] [char](5) NOT NULL,
+	[practice_id] [char](4) NOT NULL,
+	[person_id] [uniqueidentifier] NOT NULL,
+	[enc_id] [uniqueidentifier] NOT NULL,
+	[cob] [int] NOT NULL,
+	[payer_id] [uniqueidentifier] NOT NULL,
+	[person_payer_id] [uniqueidentifier] NOT NULL,
+	[insured_person_id] [uniqueidentifier] NULL,
+	[encounter_copay_amt] [numeric](19, 2) NULL,
+	[ins_type] [char](2) NULL,
+	[claim_type] [char](2) NULL,
+	[notify_user_id] [varchar](20) NULL,
+	[verify_date] [varchar](8) NULL,
+	[precert_nbr] [varchar](50) NULL,
+	[assign_benefits_code] [char](1) NOT NULL,
+	[release_of_info] [char](2) NULL,
+	[pro_date] [varchar](8) NULL,
+	[pro_procedure] [varchar](10) NULL,
+	[pro_state] [varchar](10) NULL,
+	[opt_claim_value_1] [varchar](20) NULL,
+	[notify_date] [varchar](8) NULL,
+	[verify_user_id] [varchar](20) NULL,
+	[gabetterhealth_nbr] [varchar](30) NULL,
+	[use_rem_enc_auth_ind] [char](1) NOT NULL,
+	[auth_code_id] [uniqueidentifier] NULL,
+	[created_by] [int] NOT NULL,
+	[modified_by] [int] NOT NULL,
+	[create_timestamp] [datetime] NOT NULL,
+	[modify_timestamp] [datetime] NOT NULL,
+	[row_timestamp] [varchar](50) NOT NULL,
+	[copay_exempt_ind] [char](1) NOT NULL,
+	[referral_nbr] [varchar](50) NULL,
+	[referral_id] [uniqueidentifier] NULL,
+	[use_rem_enc_ref_ind] [char](1) NOT NULL,
+	[pm_ind] [char](1) NOT NULL,
+	[property_casualty_nbr] [varchar](50) NULL,
+	[Appl_placed_date] [varchar](8) NULL,
+	[Appl_rmved_date] [varchar](8) NULL,
+    [EffectiveDate] [DATETIME] NULL,
+    [ExpirationDate] [DATETIME] NULL,    
+    [CurrentRowFlag] [BIT] NOT NULL,
+    [DeleteRowFlag] [BIT] NOT NULL,
+    [InsertDate] [DATETIME] NULL,
+    [UpdateDate] [DATETIME] NULL,
+    CONSTRAINT [PKods.NG_encounter_payer.RecordID]
+        PRIMARY KEY CLUSTERED ([RecordID] ASC)
+) ON [PRIMARY]
+GO
+ALTER TABLE [ods].[NG_encounter_payer]
+ADD CONSTRAINT [ods.NG_encounter_payerEffectiveDate]
+    DEFAULT (GETDATE()) FOR [EffectiveDate]
+GO
+ALTER TABLE [ods].[NG_encounter_payer]
+ADD CONSTRAINT [ods.NG_encounter_payerDeleteRowFlag]
+    DEFAULT ((0)) FOR [DeleteRowFlag]
+GO
+ALTER TABLE [ods].[NG_encounter_payer]
+ADD CONSTRAINT [ods.NG_encounter_payerInsertDate]
+    DEFAULT (GETDATE()) FOR [InsertDate]
+GO

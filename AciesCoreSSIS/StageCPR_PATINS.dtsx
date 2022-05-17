@@ -1,0 +1,1661 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2022 10:12:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SVRDEVOPS01"
+  DTS:CreatorName="PHI\smannam"
+  DTS:DTSID="{5F7E196D-ACD0-4B0D-8C3D-439923066467}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageCPR_PATINS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{A091CC63-066D-48F2-A979-54BB5C6354AC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1A15300C-16CB-4F5C-B863-B4200D9AED28}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Continue">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AF20A544-F5C6-407D-A16C-F2D39FCE9A9E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxDate">
+      <DTS:VariableValue
+        DTS:DataType="7">3/25/2022 4:40:21 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF Get CPR_PATINS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4713378F-DC78-4B41-8174-8D4F59F6E302}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Get CPR_PATINS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF Get CPR_PATINS\CPR_PATINS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="CPR_PATINS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM PATINS
+WHERE TOUCHDATE &gt; ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{AF20A544-F5C6-407D-A16C-F2D39FCE9A9E};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get CPR_PATINS\CPR_PATINS.Connections[OleDbConnection]"
+                  connectionManagerID="{4199B01E-8FA0-4308-8134-03A01072A972}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CPR7]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[DELFLAG]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[DELFLAG]"
+                      name="DELFLAG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
+                      name="TOUCHDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
+                      name="CHGBYHOST"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CREATEDON]"
+                      name="CREATEDON"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
+                      name="CREATEDBY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CPK_PATINS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[CPK_PATINS]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CPK_PATINS]"
+                      name="CPK_PATINS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[MRN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[MRN]"
+                      length="6"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[MRN]"
+                      name="MRN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[INSNO]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSNO]"
+                      name="INSNO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[RANK]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[RANK]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[RANK]"
+                      name="RANK"
+                      precision="8"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[STATUS]"
+                      length="10"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[STATUS]"
+                      name="STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSURANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[INSURANCE]"
+                      length="35"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSURANCE]"
+                      name="INSURANCE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PAYOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[PAYOR]"
+                      length="15"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PAYOR]"
+                      name="PAYOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[START]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[START]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[START]"
+                      name="START"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[STOP]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[STOP]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[STOP]"
+                      name="STOP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[SHOWST]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[SHOWST]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[SHOWST]"
+                      name="SHOWST"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[POLICY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[POLICY]"
+                      length="28"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[POLICY]"
+                      name="POLICY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[GROUP_NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[GROUP_NUM]"
+                      length="25"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[GROUP_NUM]"
+                      name="GROUP_NUM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[POLICY_OW]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[POLICY_OW]"
+                      length="52"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[POLICY_OW]"
+                      name="POLICY_OW"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSCONTAC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[INSCONTAC]"
+                      length="20"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSCONTAC]"
+                      name="INSCONTAC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSCPHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[INSCPHONE]"
+                      length="12"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSCPHONE]"
+                      name="INSCPHONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[EMPLOYER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[EMPLOYER]"
+                      length="27"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[EMPLOYER]"
+                      name="EMPLOYER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[OTHERINS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[OTHERINS]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[OTHERINS]"
+                      name="OTHERINS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PLANID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[PLANID]"
+                      length="30"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PLANID]"
+                      name="PLANID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CFK_INSCOMP_NEXT]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[CFK_INSCOMP_NEXT]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CFK_INSCOMP_NEXT]"
+                      name="CFK_INSCOMP_NEXT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CFK_PATINS_NEXT]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[CFK_PATINS_NEXT]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CFK_PATINS_NEXT]"
+                      name="CFK_PATINS_NEXT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[PCODE]"
+                      length="3"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PCODE]"
+                      name="PCODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[DOIDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[DOIDATE]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[DOIDATE]"
+                      name="DOIDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[ONSETDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[ONSETDATE]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[ONSETDATE]"
+                      name="ONSETDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PARTDFACILITY]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[PARTDFACILITY]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PARTDFACILITY]"
+                      name="PARTDFACILITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[POLICY_FLAG]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[POLICY_FLAG]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[POLICY_FLAG]"
+                      name="POLICY_FLAG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PATIENTCONVKEY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[PATIENTCONVKEY]"
+                      length="40"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PATIENTCONVKEY]"
+                      name="PATIENTCONVKEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSCOMPCONVKEY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[INSCOMPCONVKEY]"
+                      length="40"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSCOMPCONVKEY]"
+                      name="INSCOMPCONVKEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[BILLASDENIAL]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[BILLASDENIAL]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[BILLASDENIAL]"
+                      name="BILLASDENIAL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[MSPTYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[MSPTYPE]"
+                      length="2"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[MSPTYPE]"
+                      name="MSPTYPE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[POLICYOWNERMIDDLENAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[POLICYOWNERMIDDLENAME]"
+                      length="25"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[POLICYOWNERMIDDLENAME]"
+                      name="POLICYOWNERMIDDLENAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[COUPONINFOREQUIRED]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[COUPONINFOREQUIRED]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[COUPONINFOREQUIRED]"
+                      name="COUPONINFOREQUIRED"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
+                      dataType="i4"
+                      name="DELFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      name="TOUCHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CHGBYHOST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      name="CREATEDON" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CREATEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[CPK_PATINS]"
+                      dataType="i4"
+                      name="CPK_PATINS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[MRN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="MRN" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[INSNO]"
+                      dataType="i4"
+                      name="INSNO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[RANK]"
+                      dataType="numeric"
+                      name="RANK"
+                      precision="8"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[INSURANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="INSURANCE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[PAYOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PAYOR" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[START]"
+                      dataType="dbTimeStamp"
+                      name="START" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[STOP]"
+                      dataType="dbTimeStamp"
+                      name="STOP" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[SHOWST]"
+                      dataType="dbTimeStamp"
+                      name="SHOWST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[POLICY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="28"
+                      name="POLICY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[GROUP_NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="GROUP_NUM" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[POLICY_OW]"
+                      codePage="1252"
+                      dataType="str"
+                      length="52"
+                      name="POLICY_OW" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[INSCONTAC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="INSCONTAC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[INSCPHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="INSCPHONE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[EMPLOYER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="27"
+                      name="EMPLOYER" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[OTHERINS]"
+                      dataType="i4"
+                      name="OTHERINS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[PLANID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="PLANID" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[CFK_INSCOMP_NEXT]"
+                      dataType="i4"
+                      name="CFK_INSCOMP_NEXT" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[CFK_PATINS_NEXT]"
+                      dataType="i4"
+                      name="CFK_PATINS_NEXT" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[PCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="PCODE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[DOIDATE]"
+                      dataType="dbTimeStamp"
+                      name="DOIDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[ONSETDATE]"
+                      dataType="dbTimeStamp"
+                      name="ONSETDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[PARTDFACILITY]"
+                      dataType="bool"
+                      name="PARTDFACILITY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[POLICY_FLAG]"
+                      dataType="bool"
+                      name="POLICY_FLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[PATIENTCONVKEY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="PATIENTCONVKEY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[INSCOMPCONVKEY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="INSCOMPCONVKEY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[BILLASDENIAL]"
+                      dataType="bool"
+                      name="BILLASDENIAL" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[MSPTYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="MSPTYPE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[POLICYOWNERMIDDLENAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="POLICYOWNERMIDDLENAME" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].ExternalColumns[COUPONINFOREQUIRED]"
+                      dataType="bool"
+                      name="COUPONINFOREQUIRED" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[CPK_PATINS]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[CPK_PATINS]"
+                      name="CPK_PATINS" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[MRN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[MRN]"
+                      name="MRN" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[INSNO]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[INSNO]"
+                      name="INSNO" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[RANK]"
+                      dataType="numeric"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[RANK]"
+                      name="RANK"
+                      precision="8"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[STATUS]"
+                      name="STATUS" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[INSURANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[INSURANCE]"
+                      name="INSURANCE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[PAYOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[PAYOR]"
+                      name="PAYOR" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[START]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[START]"
+                      name="START" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[STOP]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[STOP]"
+                      name="STOP" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[SHOWST]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[SHOWST]"
+                      name="SHOWST" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[POLICY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="28"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[POLICY]"
+                      name="POLICY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[GROUP_NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[GROUP_NUM]"
+                      name="GROUP_NUM" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[POLICY_OW]"
+                      codePage="1252"
+                      dataType="str"
+                      length="52"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[POLICY_OW]"
+                      name="POLICY_OW" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[INSCONTAC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[INSCONTAC]"
+                      name="INSCONTAC" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[INSCPHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[INSCPHONE]"
+                      name="INSCPHONE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[EMPLOYER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="27"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[EMPLOYER]"
+                      name="EMPLOYER" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[OTHERINS]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[OTHERINS]"
+                      name="OTHERINS" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[DELFLAG]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[DELFLAG]"
+                      name="DELFLAG" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[TOUCHDATE]"
+                      name="TOUCHDATE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[CHGBYHOST]"
+                      name="CHGBYHOST" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[CREATEDON]"
+                      name="CREATEDON" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[CREATEDBY]"
+                      name="CREATEDBY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[PLANID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[PLANID]"
+                      name="PLANID" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[CFK_INSCOMP_NEXT]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[CFK_INSCOMP_NEXT]"
+                      name="CFK_INSCOMP_NEXT" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[CFK_PATINS_NEXT]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[CFK_PATINS_NEXT]"
+                      name="CFK_PATINS_NEXT" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[PCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[PCODE]"
+                      name="PCODE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[DOIDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[DOIDATE]"
+                      name="DOIDATE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[ONSETDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[ONSETDATE]"
+                      name="ONSETDATE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[PARTDFACILITY]"
+                      dataType="bool"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[PARTDFACILITY]"
+                      name="PARTDFACILITY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[POLICY_FLAG]"
+                      dataType="bool"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[POLICY_FLAG]"
+                      name="POLICY_FLAG" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[PATIENTCONVKEY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[PATIENTCONVKEY]"
+                      name="PATIENTCONVKEY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[INSCOMPCONVKEY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[INSCOMPCONVKEY]"
+                      name="INSCOMPCONVKEY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[BILLASDENIAL]"
+                      dataType="bool"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[BILLASDENIAL]"
+                      name="BILLASDENIAL" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[MSPTYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[MSPTYPE]"
+                      name="MSPTYPE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[POLICYOWNERMIDDLENAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[POLICYOWNERMIDDLENAME]"
+                      name="POLICYOWNERMIDDLENAME" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[COUPONINFOREQUIRED]"
+                      dataType="bool"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[COUPONINFOREQUIRED]"
+                      name="COUPONINFOREQUIRED" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ODD CPR_PATINS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[CPR_PATINS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Connections[OleDbConnection]"
+                  connectionManagerID="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ACIESCoreStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[DELFLAG]"
+                      cachedDataType="i4"
+                      cachedName="DELFLAG"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[DELFLAG]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[TOUCHDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TOUCHDATE"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[TOUCHDATE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[CHGBYHOST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CHGBYHOST"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CHGBYHOST]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[CREATEDON]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CREATEDON"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CREATEDON]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[CREATEDBY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CREATEDBY"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CREATEDBY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[CPK_PATINS]"
+                      cachedDataType="i4"
+                      cachedName="CPK_PATINS"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[CPK_PATINS]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CPK_PATINS]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[MRN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="MRN"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[MRN]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[MRN]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[INSNO]"
+                      cachedDataType="i4"
+                      cachedName="INSNO"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[INSNO]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSNO]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[RANK]"
+                      cachedDataType="numeric"
+                      cachedName="RANK"
+                      cachedPrecision="8"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[RANK]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[RANK]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="STATUS"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[STATUS]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[INSURANCE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="INSURANCE"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[INSURANCE]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSURANCE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[PAYOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="PAYOR"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[PAYOR]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PAYOR]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[START]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="START"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[START]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[START]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[STOP]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="STOP"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[STOP]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[STOP]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[SHOWST]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SHOWST"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[SHOWST]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[SHOWST]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[POLICY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="28"
+                      cachedName="POLICY"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[POLICY]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[POLICY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[GROUP_NUM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="GROUP_NUM"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[GROUP_NUM]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[GROUP_NUM]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[POLICY_OW]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="52"
+                      cachedName="POLICY_OW"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[POLICY_OW]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[POLICY_OW]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[INSCONTAC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="INSCONTAC"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[INSCONTAC]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSCONTAC]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[INSCPHONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="INSCPHONE"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[INSCPHONE]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSCPHONE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[EMPLOYER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="27"
+                      cachedName="EMPLOYER"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYER]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[EMPLOYER]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[OTHERINS]"
+                      cachedDataType="i4"
+                      cachedName="OTHERINS"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[OTHERINS]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[OTHERINS]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[PLANID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="PLANID"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[PLANID]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PLANID]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[CFK_INSCOMP_NEXT]"
+                      cachedDataType="i4"
+                      cachedName="CFK_INSCOMP_NEXT"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[CFK_INSCOMP_NEXT]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CFK_INSCOMP_NEXT]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[CFK_PATINS_NEXT]"
+                      cachedDataType="i4"
+                      cachedName="CFK_PATINS_NEXT"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[CFK_PATINS_NEXT]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[CFK_PATINS_NEXT]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[PCODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="PCODE"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[PCODE]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PCODE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[DOIDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DOIDATE"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[DOIDATE]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[DOIDATE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[ONSETDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ONSETDATE"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[ONSETDATE]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[ONSETDATE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[PARTDFACILITY]"
+                      cachedDataType="bool"
+                      cachedName="PARTDFACILITY"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[PARTDFACILITY]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PARTDFACILITY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[POLICY_FLAG]"
+                      cachedDataType="bool"
+                      cachedName="POLICY_FLAG"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[POLICY_FLAG]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[POLICY_FLAG]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[PATIENTCONVKEY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="PATIENTCONVKEY"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[PATIENTCONVKEY]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[PATIENTCONVKEY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[INSCOMPCONVKEY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="INSCOMPCONVKEY"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[INSCOMPCONVKEY]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[INSCOMPCONVKEY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[BILLASDENIAL]"
+                      cachedDataType="bool"
+                      cachedName="BILLASDENIAL"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[BILLASDENIAL]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[BILLASDENIAL]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[MSPTYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="MSPTYPE"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[MSPTYPE]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[MSPTYPE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[POLICYOWNERMIDDLENAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="POLICYOWNERMIDDLENAME"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[POLICYOWNERMIDDLENAME]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[POLICYOWNERMIDDLENAME]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].Columns[COUPONINFOREQUIRED]"
+                      cachedDataType="bool"
+                      cachedName="COUPONINFOREQUIRED"
+                      externalMetadataColumnId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[COUPONINFOREQUIRED]"
+                      lineageId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output].Columns[COUPONINFOREQUIRED]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
+                      dataType="i4"
+                      name="DELFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      name="TOUCHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CHGBYHOST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      name="CREATEDON" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CREATEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      dataType="dbTimeStamp"
+                      name="InsertDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[CPK_PATINS]"
+                      dataType="i4"
+                      name="CPK_PATINS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[MRN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="MRN" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[INSNO]"
+                      dataType="i4"
+                      name="INSNO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[RANK]"
+                      dataType="numeric"
+                      name="RANK"
+                      precision="8"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[INSURANCE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="INSURANCE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[PAYOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PAYOR" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[START]"
+                      dataType="dbTimeStamp"
+                      name="START" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[STOP]"
+                      dataType="dbTimeStamp"
+                      name="STOP" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[SHOWST]"
+                      dataType="dbTimeStamp"
+                      name="SHOWST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[POLICY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="28"
+                      name="POLICY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[GROUP_NUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="GROUP_NUM" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[POLICY_OW]"
+                      codePage="1252"
+                      dataType="str"
+                      length="52"
+                      name="POLICY_OW" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[INSCONTAC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="INSCONTAC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[INSCPHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="INSCPHONE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="27"
+                      name="EMPLOYER" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[OTHERINS]"
+                      dataType="i4"
+                      name="OTHERINS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[PLANID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="PLANID" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[CFK_INSCOMP_NEXT]"
+                      dataType="i4"
+                      name="CFK_INSCOMP_NEXT" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[CFK_PATINS_NEXT]"
+                      dataType="i4"
+                      name="CFK_PATINS_NEXT" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[PCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="PCODE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[DOIDATE]"
+                      dataType="dbTimeStamp"
+                      name="DOIDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[ONSETDATE]"
+                      dataType="dbTimeStamp"
+                      name="ONSETDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[PARTDFACILITY]"
+                      dataType="bool"
+                      name="PARTDFACILITY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[POLICY_FLAG]"
+                      dataType="bool"
+                      name="POLICY_FLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[PATIENTCONVKEY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="PATIENTCONVKEY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[INSCOMPCONVKEY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="INSCOMPCONVKEY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[BILLASDENIAL]"
+                      dataType="bool"
+                      name="BILLASDENIAL" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[MSPTYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="MSPTYPE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[POLICYOWNERMIDDLENAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="POLICYOWNERMIDDLENAME" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input].ExternalColumns[COUPONINFOREQUIRED]"
+                      dataType="bool"
+                      name="COUPONINFOREQUIRED" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF Get CPR_PATINS.Paths[OLE DB Source Output]"
+              endId="Package\DF Get CPR_PATINS\ODD CPR_PATINS.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF Get CPR_PATINS\CPR_PATINS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Check Staging table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C5EDB6FD-A931-4E13-B8D2-EC571C7F05E9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Check Staging table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [stage].[uspStagingTableCheck] 'CPR_PATINS', ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Continue"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Get ODS TimeStamp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2DF95BFB-71A0-4195-9023-F1F689B5E3FF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Get ODS TimeStamp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSCPR_PATINSMaxDateSelect] ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::MaxDate"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="133"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3F1EA9AA-A225-4282-A1FA-4889D529886F}"
+      DTS:From="Package\EXECSQL Get ODS TimeStamp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF Get CPR_PATINS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{70D55A17-4A7A-42FD-86AB-EE5DC51EDB49}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::Continue] == &quot;Y&quot;"
+      DTS:From="Package\EXECSQL Check Staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\EXECSQL Get ODS TimeStamp" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\DF Get CPR_PATINS"
+          TopLeft="40.9999992052714,210.366666673554" />
+        <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\EXECSQL Check Staging table"
+          TopLeft="8.50000000000001,8.5" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\EXECSQL Get ODS TimeStamp"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="127.849999602636,149.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.266666673554"
+              Start="0,0"
+              End="0,53.766666673554">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.766666673554" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="122.4,50.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.4"
+              Start="0,0"
+              End="0,49.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,16.95,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF Get CPR_PATINS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\DF Get CPR_PATINS\ODD CPR_PATINS"
+          TopLeft="23.8333326048322,106.633333326446" />
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\DF Get CPR_PATINS\CPR_PATINS"
+          TopLeft="31.833332306809,8.10000002066294" />
+        <EdgeLayout
+          Id="Package\DF Get CPR_PATINS.Paths[OLE DB Source Output]"
+          TopLeft="106.233332455821,49.7000000206629">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.9333333057831"
+              Start="0,0"
+              End="0,49.4333333057831">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.4333333057831" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get CPR_PATINS\CPR_PATINS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get CPR_PATINS\ODD CPR_PATINS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

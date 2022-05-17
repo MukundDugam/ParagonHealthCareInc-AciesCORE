@@ -1,0 +1,1432 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2022 10:12:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SVRDEVOPS01"
+  DTS:CreatorName="PHI\smannam"
+  DTS:DTSID="{903B1964-5931-4976-8DFC-3C729A136550}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageNG_MLTS_MedInfoXP_"
+  DTS:PackageType="5"
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{137546A9-0983-4C02-95BE-8CB4945818CF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A468975A-4703-4BFF-A100-705056B0AF52}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Continue">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{848F7221-600C-453D-B433-CCD28AB902D6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxDate">
+      <DTS:VariableValue
+        DTS:DataType="7">3/25/2022 4:40:21 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF Get NG_MLTS_MedInfoXP_"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1A86229C-0FE0-4A09-9A14-4E68CC10DD15}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Get NG_MLTS_MedInfoXP_"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="NG_MLTS_MedInfoXP_"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[person]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM [MLTS_MedInfoXP_]
+WHERE modify_timestamp &gt; ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{848F7221-600C-453D-B433-CCD28AB902D6};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Connections[OleDbConnection]"
+                  connectionManagerID="{2734AE80-A2D0-48F8-A9D1-F4FC70704200}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[NextGen]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[created_by]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[created_by]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[created_by]"
+                      name="created_by"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[modified_by]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[modified_by]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[modified_by]"
+                      name="modified_by"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[create_timestamp]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[create_timestamp]"
+                      name="create_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[modify_timestamp]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[modify_timestamp]"
+                      name="modify_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[row_timestamp]"
+                      dataType="bytes"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[row_timestamp]"
+                      length="8"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[row_timestamp]"
+                      name="row_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[practice_id]"
+                      length="4"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[practice_id]"
+                      name="practice_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[seq_no]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[seq_no]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[seq_no]"
+                      name="seq_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[create_timestamp_tz]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[create_timestamp_tz]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[create_timestamp_tz]"
+                      name="create_timestamp_tz"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[modify_timestamp_tz]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[modify_timestamp_tz]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[modify_timestamp_tz]"
+                      name="modify_timestamp_tz"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[ActiveInd]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[ActiveInd]"
+                      length="1"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[ActiveInd]"
+                      name="ActiveInd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[DrugName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[DrugName]"
+                      length="100"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[DrugName]"
+                      name="DrugName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Jcode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Jcode]"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Jcode]"
+                      name="Jcode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Manufacturer]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Manufacturer]"
+                      length="50"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Manufacturer]"
+                      name="Manufacturer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[NDC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[NDC]"
+                      length="15"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[NDC]"
+                      name="NDC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[SimDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[SimDescription]"
+                      length="80"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[SimDescription]"
+                      name="SimDescription"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[UnitType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[UnitType]"
+                      length="10"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[UnitType]"
+                      name="UnitType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      length="100"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[sim_descripton]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[sim_descripton]"
+                      length="100"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[sim_descripton]"
+                      name="sim_descripton"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_InitialHr]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_InitialHr]"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_InitialHr]"
+                      name="Admin_InitialHr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_AddlHr]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_AddlHr]"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_AddlHr]"
+                      name="Admin_AddlHr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_Seq]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_Seq]"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_Seq]"
+                      name="Admin_Seq"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_Concurrent]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_Concurrent]"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_Concurrent]"
+                      name="Admin_Concurrent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_IVPInitial]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_IVPInitial]"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_IVPInitial]"
+                      name="Admin_IVPInitial"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_IVPSeq]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_IVPSeq]"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_IVPSeq]"
+                      name="Admin_IVPSeq"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_Inj]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_Inj]"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_Inj]"
+                      name="Admin_Inj"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[SalesLevel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[SalesLevel]"
+                      length="100"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[SalesLevel]"
+                      name="SalesLevel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[ChronicAcute]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[ChronicAcute]"
+                      length="10"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[ChronicAcute]"
+                      name="ChronicAcute"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[created_by]"
+                      dataType="i4"
+                      name="created_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[modified_by]"
+                      dataType="i4"
+                      name="modified_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="create_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="modify_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[row_timestamp]"
+                      dataType="bytes"
+                      length="8"
+                      name="row_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="practice_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[seq_no]"
+                      dataType="guid"
+                      name="seq_no" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[create_timestamp_tz]"
+                      dataType="i2"
+                      name="create_timestamp_tz" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[modify_timestamp_tz]"
+                      dataType="i2"
+                      name="modify_timestamp_tz" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[ActiveInd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ActiveInd" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[DrugName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="DrugName" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Jcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Jcode" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Manufacturer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Manufacturer" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[NDC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="NDC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[SimDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="SimDescription" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[UnitType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="UnitType" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[sim_descripton]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="sim_descripton" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_InitialHr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_InitialHr" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_AddlHr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_AddlHr" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_Seq]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_Seq" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_Concurrent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_Concurrent" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_IVPInitial]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_IVPInitial" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_IVPSeq]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_IVPSeq" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_Inj]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_Inj" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[SalesLevel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="SalesLevel" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].ExternalColumns[ChronicAcute]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ChronicAcute" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[seq_no]"
+                      dataType="guid"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[seq_no]"
+                      name="seq_no" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[practice_id]"
+                      name="practice_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[created_by]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[created_by]"
+                      name="created_by" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[modified_by]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[modified_by]"
+                      name="modified_by" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[create_timestamp]"
+                      name="create_timestamp" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[modify_timestamp]"
+                      name="modify_timestamp" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[create_timestamp_tz]"
+                      dataType="i2"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[create_timestamp_tz]"
+                      name="create_timestamp_tz" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[modify_timestamp_tz]"
+                      dataType="i2"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[modify_timestamp_tz]"
+                      name="modify_timestamp_tz" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[row_timestamp]"
+                      dataType="bytes"
+                      length="8"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[row_timestamp]"
+                      name="row_timestamp" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[ActiveInd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[ActiveInd]"
+                      name="ActiveInd" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[DrugName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[DrugName]"
+                      name="DrugName" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Jcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Jcode]"
+                      name="Jcode" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Manufacturer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Manufacturer]"
+                      name="Manufacturer" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[NDC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[NDC]"
+                      name="NDC" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[SimDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[SimDescription]"
+                      name="SimDescription" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[UnitType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[UnitType]"
+                      name="UnitType" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      name="Category" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[sim_descripton]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[sim_descripton]"
+                      name="sim_descripton" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_InitialHr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_InitialHr]"
+                      name="Admin_InitialHr" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_AddlHr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_AddlHr]"
+                      name="Admin_AddlHr" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_Seq]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_Seq]"
+                      name="Admin_Seq" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_Concurrent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_Concurrent]"
+                      name="Admin_Concurrent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_IVPInitial]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_IVPInitial]"
+                      name="Admin_IVPInitial" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_IVPSeq]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_IVPSeq]"
+                      name="Admin_IVPSeq" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_Inj]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[Admin_Inj]"
+                      name="Admin_Inj" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[SalesLevel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[SalesLevel]"
+                      name="SalesLevel" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[ChronicAcute]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[ChronicAcute]"
+                      name="ChronicAcute" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Stage NG_MLTS_MedInfoXP_"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[NG_MLTS_MedInfoXP_]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Connections[OleDbConnection]"
+                  connectionManagerID="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ACIESCoreStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[created_by]"
+                      cachedDataType="i4"
+                      cachedName="created_by"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[created_by]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[created_by]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[modified_by]"
+                      cachedDataType="i4"
+                      cachedName="modified_by"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[modified_by]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[modified_by]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[create_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="create_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[create_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[modify_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="modify_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[modify_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[row_timestamp]"
+                      cachedDataType="bytes"
+                      cachedLength="8"
+                      cachedName="row_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[row_timestamp]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[row_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[practice_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="practice_id"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[practice_id]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[practice_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[seq_no]"
+                      cachedDataType="guid"
+                      cachedName="seq_no"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[seq_no]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[seq_no]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[create_timestamp_tz]"
+                      cachedDataType="i2"
+                      cachedName="create_timestamp_tz"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp_tz]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[create_timestamp_tz]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[modify_timestamp_tz]"
+                      cachedDataType="i2"
+                      cachedName="modify_timestamp_tz"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp_tz]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[modify_timestamp_tz]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[ActiveInd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="ActiveInd"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[ActiveInd]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[ActiveInd]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[DrugName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="DrugName"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[DrugName]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[DrugName]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[Jcode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Jcode"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Jcode]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Jcode]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[Manufacturer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Manufacturer"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Manufacturer]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Manufacturer]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[NDC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="NDC"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[NDC]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[NDC]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[SimDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="SimDescription"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[SimDescription]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[SimDescription]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[UnitType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="UnitType"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[UnitType]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[UnitType]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Category"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Category]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[sim_descripton]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="sim_descripton"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[sim_descripton]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[sim_descripton]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[Admin_InitialHr]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Admin_InitialHr"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_InitialHr]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_InitialHr]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[Admin_AddlHr]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Admin_AddlHr"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_AddlHr]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_AddlHr]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[Admin_Seq]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Admin_Seq"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_Seq]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_Seq]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[Admin_Concurrent]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Admin_Concurrent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_Concurrent]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_Concurrent]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[Admin_IVPInitial]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Admin_IVPInitial"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_IVPInitial]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_IVPInitial]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[Admin_IVPSeq]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Admin_IVPSeq"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_IVPSeq]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_IVPSeq]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[Admin_Inj]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Admin_Inj"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_Inj]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[Admin_Inj]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[SalesLevel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="SalesLevel"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[SalesLevel]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[SalesLevel]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].Columns[ChronicAcute]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ChronicAcute"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[ChronicAcute]"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output].Columns[ChronicAcute]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[seq_no]"
+                      dataType="guid"
+                      name="seq_no" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="practice_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[created_by]"
+                      dataType="i4"
+                      name="created_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="create_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[modified_by]"
+                      dataType="i4"
+                      name="modified_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="modify_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp_tz]"
+                      dataType="i2"
+                      name="create_timestamp_tz" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp_tz]"
+                      dataType="i2"
+                      name="modify_timestamp_tz" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[row_timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="row_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[ActiveInd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ActiveInd" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[DrugName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="DrugName" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Jcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Jcode" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Manufacturer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Manufacturer" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[NDC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="NDC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[SimDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="SimDescription" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[UnitType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="UnitType" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[sim_descripton]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="sim_descripton" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_InitialHr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_InitialHr" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_AddlHr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_AddlHr" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_Seq]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_Seq" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_Concurrent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_Concurrent" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_IVPInitial]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_IVPInitial" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_IVPSeq]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_IVPSeq" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[Admin_Inj]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Admin_Inj" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[SalesLevel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="SalesLevel" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[ChronicAcute]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ChronicAcute" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      dataType="dbTimeStamp"
+                      name="InsertDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF Get NG_MLTS_MedInfoXP_.Paths[OLE DB Source Output]"
+              endId="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Check Staging table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{49C2D0AC-899D-46FC-B8E0-A5F84E95AEF8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Check Staging table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [stage].[uspStagingTableCheck] 'NG_MLTS_MedInfoXP_', ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Continue"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Get ODS TimeStamp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{79ABEBCB-8990-4C99-A049-18C0B17B3BD0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Get ODS TimeStamp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_MLTS_MedInfoXP_MaxDateSelect] ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::MaxDate"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="133"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FBAA4F82-C50A-45F6-AB00-1CD13CB03FCD}"
+      DTS:From="Package\EXECSQL Get ODS TimeStamp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF Get NG_MLTS_MedInfoXP_" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{841CD6B8-D730-4609-9BAE-51C6740469B9}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::Continue] == &quot;Y&quot;"
+      DTS:From="Package\EXECSQL Check Staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\EXECSQL Get ODS TimeStamp" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="226.4,41.6"
+          Id="Package\DF Get NG_MLTS_MedInfoXP_"
+          TopLeft="37.6666660043929,212.233333347109" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\EXECSQL Check Staging table"
+          TopLeft="8.50000000000001,8.5" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\EXECSQL Get ODS TimeStamp"
+          TopLeft="5.50000000000003,108.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="124.7,150.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.1666660043929,62.133333347109"
+              Start="0,0"
+              End="26.1666660043929,54.633333347109">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.0666666735545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.0666666735545"
+                    Point2="0,31.0666666735545"
+                    Point3="4,31.0666666735545" />
+                  <mssgle:LineSegment
+                    End="22.1666660043929,31.0666666735545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.1666660043929,31.0666666735545"
+                    Point2="26.1666660043929,31.0666666735545"
+                    Point3="26.1666660043929,35.0666666735545" />
+                  <mssgle:LineSegment
+                    End="26.1666660043929,54.633333347109" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="124.5,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,17.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF Get NG_MLTS_MedInfoXP_">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_"
+          TopLeft="33.8333322074679,9.5" />
+        <NodeLayout
+          Size="220,41.6"
+          Id="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_"
+          TopLeft="13.3333328035143,178.533334752189" />
+        <EdgeLayout
+          Id="Package\DF Get NG_MLTS_MedInfoXP_.Paths[OLE DB Source Output]"
+          TopLeft="126.183332505491,51.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,127.433334752189"
+              Start="0,0"
+              End="0,119.933334752189">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,119.933334752189" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get NG_MLTS_MedInfoXP_\NG_MLTS_MedInfoXP_">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get NG_MLTS_MedInfoXP_\Stage NG_MLTS_MedInfoXP_">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,21 @@
+﻿CREATE TABLE [stage].[CPR_ADJTYPE](
+	[CPK_ADJTYPE] [int] NOT NULL,
+	[TEXT_] [varchar](20) NULL,
+	[CODE] [varchar](5) NULL,
+	[GLACCT] [varchar](20) NULL,
+	[GLDEPT] [varchar](10) NULL,
+	[DELFLAG] [int] NOT NULL,
+	[TOUCHDATE] [datetime] NULL,
+	[CHGBYHOST] [varchar](100) NULL,
+	[CREATEDON] [datetime] NULL,
+	[CREATEDBY] [varchar](100) NULL,
+	[InsertDate] DATETIME,
+ CONSTRAINT [CN__ADJTYPE_CPK_ADJTYPE] PRIMARY KEY CLUSTERED 
+(
+	[CPK_ADJTYPE] ASC
+)
+)
+GO
+ALTER TABLE [stage].[CPR_ADJTYPE]
+ADD CONSTRAINT [stage.CPR_ADJTYPEInsertDate]
+    DEFAULT (GETDATE()) FOR [InsertDate]

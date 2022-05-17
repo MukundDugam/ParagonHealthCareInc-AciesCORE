@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CPR7"
+  DTS:DTSID="{4199B01E-8FA0-4308-8134-03A01072A972}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=SVRCPRDB03\CPR;User ID=portaluser;Initial Catalog=CPR7;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjZfa0ePsZEy2UUY1H2rrGQAAAAACAAAAAAADZgAAwAAAABAAAAAm+CI8VhBfT6/48l+QnIzhAAAAAASAAACgAAAAEAAAAJvOB9AMaQCqn6fSscO/wwl4AAAA8wYPWglaUd3r7TWkTg4Y0gABXKdngN+cA/LItqK+2F/5/rp851IurhPJivDAo5NK+7IuN7lXAZuHWFwZTEceLfkfBl2hMugnQDSRxh1eYSr8ieXlbdbhQzywReHYFZxb7Q31XnZb7LdPgNniJ6xRjlSPj6JIHNzYFAAAAL7wv/0z7nR66+aNmQfjMUJTHlRf</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

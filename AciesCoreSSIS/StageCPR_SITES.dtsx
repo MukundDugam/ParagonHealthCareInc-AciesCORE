@@ -1,0 +1,1427 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2022 10:12:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SVRDEVOPS01"
+  DTS:CreatorName="PHI\smannam"
+  DTS:DTSID="{FE4F0CDE-28E6-4192-B2CE-F5C146E7BAD8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageCPR_SITES"
+  DTS:PackageType="5"
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{9728687D-7636-4B3A-903D-7C4A8648C6BE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4F52FA56-DE79-4737-A491-4677F75251FB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Continue">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{269CCA02-8C11-483F-8CD5-02038C5E3323}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxDate">
+      <DTS:VariableValue
+        DTS:DataType="7">3/25/2022 4:40:21 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF Get CPR_SITES"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C6A68322-ADE5-4166-AD28-01E81869B155}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Get CPR_SITES"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF Get CPR_SITES\CPR_SITES"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="CPR_SITES"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM SITES
+WHERE TOUCHDATE &gt; ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{269CCA02-8C11-483F-8CD5-02038C5E3323};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get CPR_SITES\CPR_SITES.Connections[OleDbConnection]"
+                  connectionManagerID="{4199B01E-8FA0-4308-8134-03A01072A972}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CPR7]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SITENO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[SITENO]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SITENO]"
+                      name="SITENO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[DELFLAG]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[DELFLAG]"
+                      name="DELFLAG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
+                      name="TOUCHDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
+                      name="CHGBYHOST"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[CREATEDON]"
+                      name="CREATEDON"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
+                      name="CREATEDBY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SITENAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[SITENAME]"
+                      length="30"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SITENAME]"
+                      name="SITENAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SEL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[SEL]"
+                      length="1"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SEL]"
+                      name="SEL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SPWENC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[SPWENC]"
+                      length="10"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SPWENC]"
+                      name="SPWENC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[MAXRXNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[MAXRXNO]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[MAXRXNO]"
+                      name="MAXRXNO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[ORIGRXNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[ORIGRXNO]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[ORIGRXNO]"
+                      name="ORIGRXNO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[CPMAXRXNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[CPMAXRXNO]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[CPMAXRXNO]"
+                      name="CPMAXRXNO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[FAXPATH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[FAXPATH]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[FAXPATH]"
+                      name="FAXPATH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HMEFAXPATH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[HMEFAXPATH]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HMEFAXPATH]"
+                      name="HMEFAXPATH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SHP_PROVIDERID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[SHP_PROVIDERID]"
+                      length="10"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SHP_PROVIDERID]"
+                      name="SHP_PROVIDERID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SCANPATH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[SCANPATH]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SCANPATH]"
+                      name="SCANPATH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HHLAUSER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[HHLAUSER]"
+                      length="10"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HHLAUSER]"
+                      name="HHLAUSER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HHLAPASS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[HHLAPASS]"
+                      length="10"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HHLAPASS]"
+                      name="HHLAPASS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HHLALOC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[HHLALOC]"
+                      length="4"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HHLALOC]"
+                      name="HHLALOC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HHLADATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[HHLADATE]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HHLADATE]"
+                      name="HHLADATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[sprxfaxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[sprxfaxpath]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[sprxfaxpath]"
+                      name="sprxfaxpath"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[cfk_logins_msd]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[cfk_logins_msd]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[cfk_logins_msd]"
+                      name="cfk_logins_msd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[surescriptsid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[surescriptsid]"
+                      length="50"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[surescriptsid]"
+                      name="surescriptsid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[unc_faxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[unc_faxpath]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[unc_faxpath]"
+                      name="unc_faxpath"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[unc_hmefaxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[unc_hmefaxpath]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[unc_hmefaxpath]"
+                      name="unc_hmefaxpath"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[unc_sprxfaxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[unc_sprxfaxpath]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[unc_sprxfaxpath]"
+                      name="unc_sprxfaxpath"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[unc_scanpath]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[unc_scanpath]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[unc_scanpath]"
+                      name="unc_scanpath"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[cfk_logins_payware]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[cfk_logins_payware]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[cfk_logins_payware]"
+                      name="cfk_logins_payware"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[SITENO]"
+                      dataType="i4"
+                      name="SITENO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
+                      dataType="i4"
+                      name="DELFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      name="TOUCHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CHGBYHOST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      name="CREATEDON" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CREATEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[SITENAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="SITENAME" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[SEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="SEL" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[SPWENC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SPWENC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[MAXRXNO]"
+                      dataType="i4"
+                      name="MAXRXNO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[ORIGRXNO]"
+                      dataType="i4"
+                      name="ORIGRXNO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[CPMAXRXNO]"
+                      dataType="i4"
+                      name="CPMAXRXNO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[FAXPATH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="FAXPATH" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[HMEFAXPATH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="HMEFAXPATH" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[SHP_PROVIDERID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SHP_PROVIDERID" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[SCANPATH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="SCANPATH" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[HHLAUSER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="HHLAUSER" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[HHLAPASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="HHLAPASS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[HHLALOC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="HHLALOC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[HHLADATE]"
+                      dataType="dbTimeStamp"
+                      name="HHLADATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[sprxfaxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="sprxfaxpath" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[cfk_logins_msd]"
+                      dataType="i4"
+                      name="cfk_logins_msd" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[surescriptsid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="surescriptsid" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[unc_faxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="unc_faxpath" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[unc_hmefaxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="unc_hmefaxpath" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[unc_sprxfaxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="unc_sprxfaxpath" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[unc_scanpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="unc_scanpath" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].ExternalColumns[cfk_logins_payware]"
+                      dataType="i4"
+                      name="cfk_logins_payware" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[SITENO]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[SITENO]"
+                      name="SITENO" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[SITENAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[SITENAME]"
+                      name="SITENAME" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[SEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[SEL]"
+                      name="SEL" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[SPWENC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[SPWENC]"
+                      name="SPWENC" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[MAXRXNO]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[MAXRXNO]"
+                      name="MAXRXNO" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[ORIGRXNO]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[ORIGRXNO]"
+                      name="ORIGRXNO" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[CPMAXRXNO]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[CPMAXRXNO]"
+                      name="CPMAXRXNO" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[DELFLAG]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[DELFLAG]"
+                      name="DELFLAG" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[TOUCHDATE]"
+                      name="TOUCHDATE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[CHGBYHOST]"
+                      name="CHGBYHOST" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[CREATEDON]"
+                      name="CREATEDON" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[CREATEDBY]"
+                      name="CREATEDBY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[FAXPATH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[FAXPATH]"
+                      name="FAXPATH" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[HMEFAXPATH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[HMEFAXPATH]"
+                      name="HMEFAXPATH" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[SHP_PROVIDERID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[SHP_PROVIDERID]"
+                      name="SHP_PROVIDERID" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[SCANPATH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[SCANPATH]"
+                      name="SCANPATH" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[HHLAUSER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[HHLAUSER]"
+                      name="HHLAUSER" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[HHLAPASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[HHLAPASS]"
+                      name="HHLAPASS" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[HHLALOC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[HHLALOC]"
+                      name="HHLALOC" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[HHLADATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[HHLADATE]"
+                      name="HHLADATE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[sprxfaxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[sprxfaxpath]"
+                      name="sprxfaxpath" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[cfk_logins_msd]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[cfk_logins_msd]"
+                      name="cfk_logins_msd" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[surescriptsid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[surescriptsid]"
+                      name="surescriptsid" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[unc_faxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[unc_faxpath]"
+                      name="unc_faxpath" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[unc_hmefaxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[unc_hmefaxpath]"
+                      name="unc_hmefaxpath" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[unc_sprxfaxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[unc_sprxfaxpath]"
+                      name="unc_sprxfaxpath" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[unc_scanpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[unc_scanpath]"
+                      name="unc_scanpath" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[cfk_logins_payware]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[cfk_logins_payware]"
+                      name="cfk_logins_payware" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Get CPR_SITES\ODD CPR_SITES"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ODD CPR_SITES"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[CPR_SITES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Connections[OleDbConnection]"
+                  connectionManagerID="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ACIESCoreStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[SITENO]"
+                      cachedDataType="i4"
+                      cachedName="SITENO"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[SITENO]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SITENO]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[DELFLAG]"
+                      cachedDataType="i4"
+                      cachedName="DELFLAG"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[DELFLAG]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[TOUCHDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TOUCHDATE"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[TOUCHDATE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[CHGBYHOST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CHGBYHOST"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[CHGBYHOST]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[CREATEDON]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CREATEDON"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[CREATEDON]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[CREATEDBY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CREATEDBY"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[CREATEDBY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[SITENAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="SITENAME"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[SITENAME]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SITENAME]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[SEL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="SEL"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[SEL]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SEL]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[SPWENC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SPWENC"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[SPWENC]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SPWENC]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[MAXRXNO]"
+                      cachedDataType="i4"
+                      cachedName="MAXRXNO"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[MAXRXNO]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[MAXRXNO]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[ORIGRXNO]"
+                      cachedDataType="i4"
+                      cachedName="ORIGRXNO"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[ORIGRXNO]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[ORIGRXNO]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[CPMAXRXNO]"
+                      cachedDataType="i4"
+                      cachedName="CPMAXRXNO"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[CPMAXRXNO]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[CPMAXRXNO]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[FAXPATH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="FAXPATH"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[FAXPATH]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[FAXPATH]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[HMEFAXPATH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="HMEFAXPATH"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[HMEFAXPATH]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HMEFAXPATH]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[SHP_PROVIDERID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SHP_PROVIDERID"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[SHP_PROVIDERID]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SHP_PROVIDERID]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[SCANPATH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="SCANPATH"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[SCANPATH]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[SCANPATH]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[HHLAUSER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="HHLAUSER"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[HHLAUSER]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HHLAUSER]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[HHLAPASS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="HHLAPASS"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[HHLAPASS]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HHLAPASS]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[HHLALOC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="HHLALOC"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[HHLALOC]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HHLALOC]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[HHLADATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="HHLADATE"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[HHLADATE]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[HHLADATE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[sprxfaxpath]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="sprxfaxpath"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[sprxfaxpath]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[sprxfaxpath]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[cfk_logins_msd]"
+                      cachedDataType="i4"
+                      cachedName="cfk_logins_msd"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[cfk_logins_msd]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[cfk_logins_msd]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[surescriptsid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="surescriptsid"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[surescriptsid]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[surescriptsid]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[unc_faxpath]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="unc_faxpath"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[unc_faxpath]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[unc_faxpath]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[unc_hmefaxpath]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="unc_hmefaxpath"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[unc_hmefaxpath]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[unc_hmefaxpath]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[unc_sprxfaxpath]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="unc_sprxfaxpath"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[unc_sprxfaxpath]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[unc_sprxfaxpath]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[unc_scanpath]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="unc_scanpath"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[unc_scanpath]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[unc_scanpath]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].Columns[cfk_logins_payware]"
+                      cachedDataType="i4"
+                      cachedName="cfk_logins_payware"
+                      externalMetadataColumnId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[cfk_logins_payware]"
+                      lineageId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output].Columns[cfk_logins_payware]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[SITENO]"
+                      dataType="i4"
+                      name="SITENO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
+                      dataType="i4"
+                      name="DELFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      name="TOUCHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CHGBYHOST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      name="CREATEDON" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CREATEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      dataType="dbTimeStamp"
+                      name="InsertDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[SITENAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="SITENAME" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[SEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="SEL" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[SPWENC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SPWENC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[MAXRXNO]"
+                      dataType="i4"
+                      name="MAXRXNO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[ORIGRXNO]"
+                      dataType="i4"
+                      name="ORIGRXNO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[CPMAXRXNO]"
+                      dataType="i4"
+                      name="CPMAXRXNO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[FAXPATH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="FAXPATH" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[HMEFAXPATH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="HMEFAXPATH" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[SHP_PROVIDERID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SHP_PROVIDERID" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[SCANPATH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="SCANPATH" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[HHLAUSER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="HHLAUSER" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[HHLAPASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="HHLAPASS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[HHLALOC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="HHLALOC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[HHLADATE]"
+                      dataType="dbTimeStamp"
+                      name="HHLADATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[sprxfaxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="sprxfaxpath" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[cfk_logins_msd]"
+                      dataType="i4"
+                      name="cfk_logins_msd" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[surescriptsid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="surescriptsid" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[unc_faxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="unc_faxpath" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[unc_hmefaxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="unc_hmefaxpath" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[unc_sprxfaxpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="unc_sprxfaxpath" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[unc_scanpath]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="unc_scanpath" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input].ExternalColumns[cfk_logins_payware]"
+                      dataType="i4"
+                      name="cfk_logins_payware" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_SITES\ODD CPR_SITES.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_SITES\ODD CPR_SITES.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_SITES\ODD CPR_SITES.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF Get CPR_SITES.Paths[OLE DB Source Output]"
+              endId="Package\DF Get CPR_SITES\ODD CPR_SITES.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF Get CPR_SITES\CPR_SITES.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Check Staging table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{265F8D9F-5DD7-4FD9-A9DC-1051891E0025}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Check Staging table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [stage].[uspStagingTableCheck] 'CPR_SITES', ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Continue"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Get ODS TimeStamp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{38CCB3EF-7E87-4B94-A444-41C1B8214B25}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Get ODS TimeStamp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSCPR_SITESMaxDateSelect] ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::MaxDate"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="133"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{049953A0-9EDE-4147-AE4E-A5B54C0267E0}"
+      DTS:From="Package\EXECSQL Get ODS TimeStamp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF Get CPR_SITES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A06955FB-9736-4150-AB6D-BE6582479279}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::Continue] == &quot;Y&quot;"
+      DTS:From="Package\EXECSQL Check Staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\EXECSQL Get ODS TimeStamp" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\DF Get CPR_SITES"
+          TopLeft="40.9999992052714,210.366666673554" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\EXECSQL Check Staging table"
+          TopLeft="8.50000000000001,8.5" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\EXECSQL Get ODS TimeStamp"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="125.849999602636,149.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.266666673554"
+              Start="0,0"
+              End="0,53.766666673554">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.766666673554" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="124.5,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,16.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF Get CPR_SITES">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\DF Get CPR_SITES\ODD CPR_SITES"
+          TopLeft="23.8333326048322,106.633333326446" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\DF Get CPR_SITES\CPR_SITES"
+          TopLeft="31.833332306809,8.10000002066294" />
+        <EdgeLayout
+          Id="Package\DF Get CPR_SITES.Paths[OLE DB Source Output]"
+          TopLeft="102.433332455821,49.7000000206629">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.9333333057831"
+              Start="0,0"
+              End="0,49.4333333057831">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.4333333057831" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get CPR_SITES\CPR_SITES">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get CPR_SITES\ODD CPR_SITES">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ACIESCoreStaging"
+  DTS:DTSID="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DWDBHA;User ID=portaluser;Initial Catalog=ACIESCoreStaging;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjZfa0ePsZEy2UUY1H2rrGQAAAAACAAAAAAADZgAAwAAAABAAAABVwIkUXpl1VaUzdKI3GNfGAAAAAASAAACgAAAAEAAAAM46oFNuNgtKSimBRYDdtk14AAAAmJvlJmEJSweb8hV+ssCXVoXEzGkRmX5SIEYpIBaF8ceBhkOAXAlWY+uE/NNgmy9MCTf1r+b0QSR3yhG/3Ws8spe+TR+Y94bOamyKhpZbxojopckJXZaO3s78S5QbfXGy2QgtXOW7+DyoEdRZYmJ1wExvsescBtslFAAAAM4Vf+yirPGtxfnl+qBppef0nmEe</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>ACIESCoreStaging</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{8f1fe5cd-c012-4004-93bf-f6913c7d3ce9}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath />
+    <RootNamespace>ACIESCoreStaging</RootNamespace>
+    <AssemblyName>ACIESCoreStaging</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Security" />
+    <Folder Include="stage" />
+    <Folder Include="stage\Stored Procedures" />
+    <Folder Include="ods" />
+    <Folder Include="ods\Tables" />
+    <Folder Include="ods\Stored Procedures" />
+    <Folder Include="logic" />
+    <Folder Include="logic\Stored Procedures" />
+    <Folder Include="logic\Tables" />
+    <Folder Include="core" />
+    <Folder Include="stage\Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Security\stage.sql" />
+    <Build Include="Security\ods.sql" />
+    <Build Include="Security\logic.sql" />
+    <Build Include="Security\core.sql" />
+    <Build Include="ods\Tables\NG_provider_mstr.sql" />
+    <Build Include="stage\Tables\NG_provider_mstr.sql" />
+    <Build Include="stage\Stored Procedures\uspStagingTableTruncate.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_provider_mstrMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_provider_mstrUpsert.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_provider_mstrDelete.sql" />
+    <Build Include="stage\Stored Procedures\uspStagingTableCheck.sql" />
+    <Build Include="stage\Tables\CPR_DOCTORS.sql" />
+    <Build Include="ods\Tables\CPR_DOCTORS.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_DOCTORSDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_DOCTORSUpsert.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_DOCTORSMaxDateSelect.sql" />
+    <Build Include="stage\Tables\NG_person.sql" />
+    <Build Include="ods\Tables\NG_person.sql" />
+    <Build Include="stage\Tables\CPR_HR.sql" />
+    <Build Include="ods\Tables\CPR_HR.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_HRDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_HRMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_HRUpsert.sql" />
+    <Build Include="stage\Tables\CPR_SITES.sql" />
+    <Build Include="ods\Tables\CPR_SITES.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_SITESDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_SITESMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_SITESUpsert.sql" />
+    <Build Include="stage\Tables\CPR_BILLED.sql" />
+    <Build Include="ods\Tables\CPR_BILLED.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_BILLEDDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_BILLEDMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_BILLEDUpsert.sql" />
+    <Build Include="stage\Tables\CPR_ADJTYPE.sql" />
+    <Build Include="ods\Tables\CPR_ADJTYPE.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_ADJTYPEDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_ADJTYPEMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_ADJTYPEUpsert.sql" />
+    <Build Include="stage\Tables\CPR_PTDAYS.sql" />
+    <Build Include="ods\Tables\CPR_PTDAYS.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_PTDAYSDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_PTDAYSMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_PTDAYSUpsert.sql" />
+    <Build Include="stage\Tables\CPR_PATINS.sql" />
+    <Build Include="ods\Tables\CPR_PATINS.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_PATINSDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_PATINSMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_PATINSUpsert.sql" />
+    <Build Include="stage\Tables\CPR_TICKCI.sql" />
+    <Build Include="ods\Tables\CPR_TICKCI.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_TICKCIDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_TICKCIMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_TICKCIUpsert.sql" />
+    <Build Include="stage\Tables\CPR_TICKC.sql" />
+    <Build Include="ods\Tables\CPR_TICKC.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_TICKCDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_TICKCMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_TICKCUpsert.sql" />
+    <Build Include="stage\Tables\CPR_OT.sql" />
+    <Build Include="ods\Tables\CPR_OT.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_OTDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_OTMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_OTUpsert.sql" />
+    <Build Include="stage\Tables\NG_patient_encounter.sql" />
+    <Build Include="ods\Tables\NG_patient_encounter.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_patient_encounterDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_patient_encoutnerMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_patient_encounterUpsert.sql" />
+    <Build Include="stage\Tables\NG_charges.sql" />
+    <Build Include="ods\Tables\NG_charges.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_chargesDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_chargesMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_chargesUpsert.sql" />
+    <Build Include="stage\Tables\CPR_INSCOMP.sql" />
+    <Build Include="ods\Tables\CPR_INSCOMP.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_INSCOMPDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_INSCOMPMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_INSCOMPUpsert.sql" />
+    <Build Include="stage\Tables\NG_mstr_lists.sql" />
+    <Build Include="ods\Tables\NG_mstr_lists.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_mstr_listsDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_mstr_listsMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_mstr_listsUpsert.sql" />
+    <Build Include="stage\Tables\NG_location_mstr.sql" />
+    <Build Include="ods\Tables\NG_location_mstr.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_location_mstrDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_location_mstrMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_location_mstrUpsert.sql" />
+    <Build Include="stage\Tables\NG_encounter_payer.sql" />
+    <Build Include="stage\Tables\NG_payer_mstr.sql" />
+    <Build Include="ods\Tables\NG_encounter_payer.sql" />
+    <Build Include="ods\Tables\NG_payer_mstr.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_payer_mstrDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_payer_mstrMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_payer_mstrUpsert.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_encounter_payerDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_encounter_payerUpsert.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_encounter_payerMaxDateSelect.sql" />
+    <Build Include="stage\Tables\NG_transactions.sql" />
+    <Build Include="ods\Tables\NG_transactions.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_transactionsDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_transactionsUpsert.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_transactionsMaxDateSelect.sql" />
+    <Build Include="stage\Tables\NG_tran_code_mstr.sql" />
+    <Build Include="ods\Tables\NG_tran_code_mstr.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_tran_code_mstrDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_tran_code_mstrMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_tran_code_mstrUpsert.sql" />
+    <Build Include="stage\Tables\NG_accouonts.sql" />
+    <Build Include="ods\Tables\NG_accounts.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_accountsDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_accountsMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_accountsUpsert.sql" />
+    <Build Include="stage\Tables\NG_PIVC_Infusion_.sql" />
+    <Build Include="ods\Tables\NG_PIVC_Infusion_.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_PIVC_Infusion_Upsert.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_PIVC_Infusion_MaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_PIVC_Infusion_Delete.sql" />
+    <Build Include="stage\Tables\NG_PIVC_Orders_.sql" />
+    <Build Include="ods\Tables\NG_PIVC_Orders_.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_PIVC_Orders_Delete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_PIVC_Orders_MaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_PIVC_Orders_Upsert.sql" />
+    <Build Include="stage\Tables\NG_MLTS_MedInfoXP_.sql" />
+    <Build Include="ods\Tables\NG_MLTS_MedInfoXP_.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_MLTS_MedInfoXP_Delete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_MLTS_MedInfoXP_MaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_MLTS_MedInfoXP_Upsert.sql" />
+    <Build Include="stage\Tables\NG_MLTS_CategoryXP_.sql" />
+    <Build Include="ods\Tables\NG_MLTS_CategoryXP_.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_MLTS_CategoryXP_Upsert.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_MLTS_CategoryXP_Delete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_MLTS_CategoryXP_MaxDateSelect.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="01.DEV.ACIESCoreStaging.publish.publish.xml" />
+  </ItemGroup>
+</Project>

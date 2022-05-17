@@ -1,0 +1,13 @@
+﻿CREATE PROCEDURE [stage].[usp_StagingTableTruncate]
+(@TableName AS VARCHAR(100))
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+
+    DECLARE @SQL VARCHAR(500) = '';
+
+    SET @SQL = 'TRUNCATE TABLE [stage].[' + @TableName + ']';
+    EXEC (@SQL);
+
+END;

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="NextGen"
+  DTS:DTSID="{2734AE80-A2D0-48F8-A9D1-F4FC70704200}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=SVRNGDB03\NGDBHA;User ID=portaluser;Initial Catalog=NGProd;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjZfa0ePsZEy2UUY1H2rrGQAAAAACAAAAAAADZgAAwAAAABAAAADca1pXxbp+U6CSAsj/GZvYAAAAAASAAACgAAAAEAAAAI5m/PF9UXNmdH0zT7BcLKF4AAAAhcQ7ojI9oe125XA4+zNWLdopID+u8LHbolljNZeZB+00riPu8rTcM7RVpPM/9aMJ6pKzSfJPOVFPM9gNyNPYcM51UYqrss/2BPu7w7bvXiVAeulMDrPPeE5yioN6fZr2W8WZk0yxO7s2eyuFoN9TcwrPgyUQb96XFAAAAFGYZTLtu9lFYCsXoH6E5jfeqRkY</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

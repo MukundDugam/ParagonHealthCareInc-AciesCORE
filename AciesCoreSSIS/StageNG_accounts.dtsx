@@ -1,0 +1,2209 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2022 10:12:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SVRDEVOPS01"
+  DTS:CreatorName="PHI\smannam"
+  DTS:DTSID="{704E516E-1FD5-42D5-B5CC-F88F51C06425}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageNG_accounts"
+  DTS:PackageType="5"
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{345A78C8-5F1A-4D55-B66E-0EAA077890E6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7AC27359-87CF-468A-B43A-CEFB70B2EF8D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Continue">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A6FB339F-FB32-4AC5-BA50-2A57E10FF55F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxDate">
+      <DTS:VariableValue
+        DTS:DataType="7">3/25/2022 4:40:21 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF Get NG_accounts"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{29BEDA15-A834-455A-BC57-0A0E311DE26F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Get NG_accounts"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF Get NG_accounts\NG_accounts"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="NG_accounts"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[person]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM [accounts]
+WHERE modify_timestamp &gt; ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{A6FB339F-FB32-4AC5-BA50-2A57E10FF55F};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get NG_accounts\NG_accounts.Connections[OleDbConnection]"
+                  connectionManagerID="{2734AE80-A2D0-48F8-A9D1-F4FC70704200}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[NextGen]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[created_by]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[created_by]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[created_by]"
+                      name="created_by"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[modified_by]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[modified_by]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[modified_by]"
+                      name="modified_by"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[create_timestamp]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[create_timestamp]"
+                      name="create_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[modify_timestamp]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[modify_timestamp]"
+                      name="modify_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[row_timestamp]"
+                      dataType="bytes"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[row_timestamp]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[row_timestamp]"
+                      name="row_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[enterprise_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[enterprise_id]"
+                      length="5"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[enterprise_id]"
+                      name="enterprise_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[practice_id]"
+                      length="4"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[practice_id]"
+                      name="practice_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[site_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[site_id]"
+                      length="3"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[site_id]"
+                      name="site_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[acct_id]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[acct_id]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[acct_id]"
+                      name="acct_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[acct_nbr]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[acct_nbr]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[acct_nbr]"
+                      name="acct_nbr"
+                      precision="12"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[guar_id]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[guar_id]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[guar_id]"
+                      name="guar_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[guar_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[guar_type]"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[guar_type]"
+                      name="guar_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[print_stmt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[print_stmt_ind]"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[print_stmt_ind]"
+                      name="print_stmt_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[print_invoice_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[print_invoice_ind]"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[print_invoice_ind]"
+                      name="print_invoice_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_stmt_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_stmt_date]"
+                      name="last_stmt_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_letter_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_letter_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_letter_date]"
+                      name="last_letter_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_budget_letter_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_budget_letter_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_budget_letter_date]"
+                      name="last_budget_letter_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_invoice_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_invoice_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_invoice_date]"
+                      name="last_invoice_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_enabled_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_enabled_ind]"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_enabled_ind]"
+                      name="budget_enabled_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_date]"
+                      name="budget_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_due_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_due_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_due_date]"
+                      name="budget_due_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_cycle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_cycle]"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_cycle]"
+                      name="budget_cycle"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_num_payments]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_num_payments]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_num_payments]"
+                      name="budget_num_payments"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_payment_amt]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_payment_amt]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_payment_amt]"
+                      name="budget_payment_amt"
+                      precision="19"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_total]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_total]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_total]"
+                      name="budget_total"
+                      precision="19"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_delinquent_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_delinquent_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_delinquent_date]"
+                      name="budget_delinquent_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_termination_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_termination_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_termination_date]"
+                      name="budget_termination_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[stmt_day_of_month]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[stmt_day_of_month]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[stmt_day_of_month]"
+                      name="stmt_day_of_month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_day_of_month]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_day_of_month]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_day_of_month]"
+                      name="budget_day_of_month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[invoice_day_of_month]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[invoice_day_of_month]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[invoice_day_of_month]"
+                      name="invoice_day_of_month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[next_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[next_stmt_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[next_stmt_date]"
+                      name="next_stmt_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[next_invoice_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[next_invoice_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[next_invoice_date]"
+                      name="next_invoice_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[force_stmt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[force_stmt_ind]"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[force_stmt_ind]"
+                      name="force_stmt_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[credit_rating]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[credit_rating]"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[credit_rating]"
+                      name="credit_rating"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_self_pay_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_self_pay_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_self_pay_date]"
+                      name="last_self_pay_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[suppress_dunning_msg_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[suppress_dunning_msg_ind]"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[suppress_dunning_msg_ind]"
+                      name="suppress_dunning_msg_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_print_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_print_stmt_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_print_stmt_date]"
+                      name="last_print_stmt_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[outsource_exempt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[outsource_exempt_ind]"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[outsource_exempt_ind]"
+                      name="outsource_exempt_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[statement_counter]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[statement_counter]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[statement_counter]"
+                      name="statement_counter"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[send_coll_letter_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[send_coll_letter_ind]"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[send_coll_letter_ind]"
+                      name="send_coll_letter_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[collection_letter_id]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[collection_letter_id]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[collection_letter_id]"
+                      name="collection_letter_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_nxmd_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_nxmd_stmt_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_nxmd_stmt_date]"
+                      name="last_nxmd_stmt_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_pat_pay_amt]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_pat_pay_amt]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_pat_pay_amt]"
+                      name="last_pat_pay_amt"
+                      precision="19"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_pat_pay_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_pat_pay_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_pat_pay_date]"
+                      name="last_pat_pay_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_bad_debt_pay_amt]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_bad_debt_pay_amt]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_bad_debt_pay_amt]"
+                      name="last_bad_debt_pay_amt"
+                      precision="19"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_bad_debt_pay_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_bad_debt_pay_date]"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_bad_debt_pay_date]"
+                      name="last_bad_debt_pay_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_consent_form_id]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_consent_form_id]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_consent_form_id]"
+                      name="last_consent_form_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_consent_print_by]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_consent_print_by]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_consent_print_by]"
+                      name="last_consent_print_by"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_consent_print_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_consent_print_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_consent_print_date]"
+                      name="last_consent_print_date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[created_by]"
+                      dataType="i4"
+                      name="created_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[modified_by]"
+                      dataType="i4"
+                      name="modified_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="create_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="modify_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[row_timestamp]"
+                      dataType="bytes"
+                      length="8"
+                      name="row_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[enterprise_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="enterprise_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="practice_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[site_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="site_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[acct_id]"
+                      dataType="guid"
+                      name="acct_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[acct_nbr]"
+                      dataType="numeric"
+                      name="acct_nbr"
+                      precision="12" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[guar_id]"
+                      dataType="guid"
+                      name="guar_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[guar_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="guar_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[print_stmt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="print_stmt_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[print_invoice_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="print_invoice_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_stmt_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_letter_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_letter_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_budget_letter_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_budget_letter_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_invoice_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_invoice_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_enabled_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="budget_enabled_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="budget_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_due_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="budget_due_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_cycle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="budget_cycle" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_num_payments]"
+                      dataType="i4"
+                      name="budget_num_payments" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_payment_amt]"
+                      dataType="numeric"
+                      name="budget_payment_amt"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_total]"
+                      dataType="numeric"
+                      name="budget_total"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_delinquent_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="budget_delinquent_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_termination_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="budget_termination_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[stmt_day_of_month]"
+                      dataType="i2"
+                      name="stmt_day_of_month" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[budget_day_of_month]"
+                      dataType="i2"
+                      name="budget_day_of_month" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[invoice_day_of_month]"
+                      dataType="i2"
+                      name="invoice_day_of_month" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[next_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="next_stmt_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[next_invoice_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="next_invoice_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[force_stmt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="force_stmt_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[credit_rating]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="credit_rating" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_self_pay_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_self_pay_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[suppress_dunning_msg_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="suppress_dunning_msg_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_print_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_print_stmt_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[outsource_exempt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="outsource_exempt_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[statement_counter]"
+                      dataType="i4"
+                      name="statement_counter" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[send_coll_letter_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="send_coll_letter_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[collection_letter_id]"
+                      dataType="guid"
+                      name="collection_letter_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_nxmd_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_nxmd_stmt_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_pat_pay_amt]"
+                      dataType="numeric"
+                      name="last_pat_pay_amt"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_pat_pay_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_pat_pay_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_bad_debt_pay_amt]"
+                      dataType="numeric"
+                      name="last_bad_debt_pay_amt"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_bad_debt_pay_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_bad_debt_pay_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_consent_form_id]"
+                      dataType="guid"
+                      name="last_consent_form_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_consent_print_by]"
+                      dataType="i4"
+                      name="last_consent_print_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].ExternalColumns[last_consent_print_date]"
+                      dataType="dbTimeStamp"
+                      name="last_consent_print_date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[enterprise_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[enterprise_id]"
+                      name="enterprise_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[practice_id]"
+                      name="practice_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[site_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[site_id]"
+                      name="site_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[acct_id]"
+                      dataType="guid"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[acct_id]"
+                      name="acct_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[acct_nbr]"
+                      dataType="numeric"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[acct_nbr]"
+                      name="acct_nbr"
+                      precision="12" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[guar_id]"
+                      dataType="guid"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[guar_id]"
+                      name="guar_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[guar_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[guar_type]"
+                      name="guar_type" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[print_stmt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[print_stmt_ind]"
+                      name="print_stmt_ind" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[print_invoice_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[print_invoice_ind]"
+                      name="print_invoice_ind" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_stmt_date]"
+                      name="last_stmt_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_letter_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_letter_date]"
+                      name="last_letter_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_budget_letter_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_budget_letter_date]"
+                      name="last_budget_letter_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_invoice_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_invoice_date]"
+                      name="last_invoice_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_enabled_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_enabled_ind]"
+                      name="budget_enabled_ind" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_date]"
+                      name="budget_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_due_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_due_date]"
+                      name="budget_due_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_cycle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_cycle]"
+                      name="budget_cycle" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_num_payments]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_num_payments]"
+                      name="budget_num_payments" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_payment_amt]"
+                      dataType="numeric"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_payment_amt]"
+                      name="budget_payment_amt"
+                      precision="19"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_total]"
+                      dataType="numeric"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_total]"
+                      name="budget_total"
+                      precision="19"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_delinquent_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_delinquent_date]"
+                      name="budget_delinquent_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_termination_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_termination_date]"
+                      name="budget_termination_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[stmt_day_of_month]"
+                      dataType="i2"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[stmt_day_of_month]"
+                      name="stmt_day_of_month" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_day_of_month]"
+                      dataType="i2"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[budget_day_of_month]"
+                      name="budget_day_of_month" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[invoice_day_of_month]"
+                      dataType="i2"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[invoice_day_of_month]"
+                      name="invoice_day_of_month" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[status]"
+                      name="status" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[next_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[next_stmt_date]"
+                      name="next_stmt_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[next_invoice_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[next_invoice_date]"
+                      name="next_invoice_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[force_stmt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[force_stmt_ind]"
+                      name="force_stmt_ind" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[credit_rating]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[credit_rating]"
+                      name="credit_rating" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_self_pay_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_self_pay_date]"
+                      name="last_self_pay_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[suppress_dunning_msg_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[suppress_dunning_msg_ind]"
+                      name="suppress_dunning_msg_ind" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_print_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_print_stmt_date]"
+                      name="last_print_stmt_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[created_by]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[created_by]"
+                      name="created_by" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[modified_by]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[modified_by]"
+                      name="modified_by" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[create_timestamp]"
+                      name="create_timestamp" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[modify_timestamp]"
+                      name="modify_timestamp" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[row_timestamp]"
+                      dataType="bytes"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[row_timestamp]"
+                      name="row_timestamp" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[outsource_exempt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[outsource_exempt_ind]"
+                      name="outsource_exempt_ind" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[statement_counter]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[statement_counter]"
+                      name="statement_counter" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[send_coll_letter_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[send_coll_letter_ind]"
+                      name="send_coll_letter_ind" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[collection_letter_id]"
+                      dataType="guid"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[collection_letter_id]"
+                      name="collection_letter_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_nxmd_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_nxmd_stmt_date]"
+                      name="last_nxmd_stmt_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_pat_pay_amt]"
+                      dataType="numeric"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_pat_pay_amt]"
+                      name="last_pat_pay_amt"
+                      precision="19"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_pat_pay_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_pat_pay_date]"
+                      name="last_pat_pay_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_bad_debt_pay_amt]"
+                      dataType="numeric"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_bad_debt_pay_amt]"
+                      name="last_bad_debt_pay_amt"
+                      precision="19"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_bad_debt_pay_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_bad_debt_pay_date]"
+                      name="last_bad_debt_pay_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_consent_form_id]"
+                      dataType="guid"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_consent_form_id]"
+                      name="last_consent_form_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_consent_print_by]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_consent_print_by]"
+                      name="last_consent_print_by" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_consent_print_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[last_consent_print_date]"
+                      name="last_consent_print_date" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Get NG_accounts\Stage NG_accounts"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Stage NG_accounts"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[NG_accounts]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get NG_accounts\Stage NG_accounts.Connections[OleDbConnection]"
+                  connectionManagerID="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ACIESCoreStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[created_by]"
+                      cachedDataType="i4"
+                      cachedName="created_by"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[created_by]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[created_by]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[modified_by]"
+                      cachedDataType="i4"
+                      cachedName="modified_by"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[modified_by]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[modified_by]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[create_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="create_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[create_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[modify_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="modify_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[modify_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[row_timestamp]"
+                      cachedDataType="bytes"
+                      cachedLength="8"
+                      cachedName="row_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[row_timestamp]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[row_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[enterprise_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="enterprise_id"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[enterprise_id]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[enterprise_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[practice_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="practice_id"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[practice_id]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[practice_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[site_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="site_id"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[site_id]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[site_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[acct_id]"
+                      cachedDataType="guid"
+                      cachedName="acct_id"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[acct_id]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[acct_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[acct_nbr]"
+                      cachedDataType="numeric"
+                      cachedName="acct_nbr"
+                      cachedPrecision="12"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[acct_nbr]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[acct_nbr]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[guar_id]"
+                      cachedDataType="guid"
+                      cachedName="guar_id"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[guar_id]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[guar_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[guar_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="guar_type"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[guar_type]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[guar_type]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[print_stmt_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="print_stmt_ind"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[print_stmt_ind]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[print_stmt_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[print_invoice_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="print_invoice_ind"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[print_invoice_ind]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[print_invoice_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_stmt_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="last_stmt_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_stmt_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_stmt_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_letter_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="last_letter_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_letter_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_letter_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_budget_letter_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="last_budget_letter_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_budget_letter_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_budget_letter_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_invoice_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="last_invoice_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_invoice_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_invoice_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[budget_enabled_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="budget_enabled_ind"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_enabled_ind]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_enabled_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[budget_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="budget_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[budget_due_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="budget_due_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_due_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_due_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[budget_cycle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="budget_cycle"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_cycle]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_cycle]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[budget_num_payments]"
+                      cachedDataType="i4"
+                      cachedName="budget_num_payments"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_num_payments]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_num_payments]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[budget_payment_amt]"
+                      cachedDataType="numeric"
+                      cachedName="budget_payment_amt"
+                      cachedPrecision="19"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_payment_amt]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_payment_amt]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[budget_total]"
+                      cachedDataType="numeric"
+                      cachedName="budget_total"
+                      cachedPrecision="19"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_total]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_total]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[budget_delinquent_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="budget_delinquent_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_delinquent_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_delinquent_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[budget_termination_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="budget_termination_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_termination_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_termination_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[stmt_day_of_month]"
+                      cachedDataType="i2"
+                      cachedName="stmt_day_of_month"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[stmt_day_of_month]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[stmt_day_of_month]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[budget_day_of_month]"
+                      cachedDataType="i2"
+                      cachedName="budget_day_of_month"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_day_of_month]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[budget_day_of_month]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[invoice_day_of_month]"
+                      cachedDataType="i2"
+                      cachedName="invoice_day_of_month"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[invoice_day_of_month]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[invoice_day_of_month]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[status]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[next_stmt_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="next_stmt_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[next_stmt_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[next_stmt_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[next_invoice_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="next_invoice_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[next_invoice_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[next_invoice_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[force_stmt_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="force_stmt_ind"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[force_stmt_ind]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[force_stmt_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[credit_rating]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="credit_rating"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[credit_rating]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[credit_rating]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_self_pay_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="last_self_pay_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_self_pay_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_self_pay_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[suppress_dunning_msg_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="suppress_dunning_msg_ind"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[suppress_dunning_msg_ind]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[suppress_dunning_msg_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_print_stmt_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="last_print_stmt_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_print_stmt_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_print_stmt_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[outsource_exempt_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="outsource_exempt_ind"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[outsource_exempt_ind]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[outsource_exempt_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[statement_counter]"
+                      cachedDataType="i4"
+                      cachedName="statement_counter"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[statement_counter]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[statement_counter]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[send_coll_letter_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="send_coll_letter_ind"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[send_coll_letter_ind]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[send_coll_letter_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[collection_letter_id]"
+                      cachedDataType="guid"
+                      cachedName="collection_letter_id"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[collection_letter_id]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[collection_letter_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_nxmd_stmt_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="last_nxmd_stmt_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_nxmd_stmt_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_nxmd_stmt_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_pat_pay_amt]"
+                      cachedDataType="numeric"
+                      cachedName="last_pat_pay_amt"
+                      cachedPrecision="19"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_pat_pay_amt]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_pat_pay_amt]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_pat_pay_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="last_pat_pay_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_pat_pay_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_pat_pay_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_bad_debt_pay_amt]"
+                      cachedDataType="numeric"
+                      cachedName="last_bad_debt_pay_amt"
+                      cachedPrecision="19"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_bad_debt_pay_amt]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_bad_debt_pay_amt]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_bad_debt_pay_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="last_bad_debt_pay_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_bad_debt_pay_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_bad_debt_pay_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_consent_form_id]"
+                      cachedDataType="guid"
+                      cachedName="last_consent_form_id"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_consent_form_id]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_consent_form_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_consent_print_by]"
+                      cachedDataType="i4"
+                      cachedName="last_consent_print_by"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_consent_print_by]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_consent_print_by]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].Columns[last_consent_print_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="last_consent_print_date"
+                      externalMetadataColumnId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_consent_print_date]"
+                      lineageId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output].Columns[last_consent_print_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[enterprise_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="enterprise_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="practice_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[site_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="site_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[acct_id]"
+                      dataType="guid"
+                      name="acct_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[acct_nbr]"
+                      dataType="numeric"
+                      name="acct_nbr"
+                      precision="12" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[guar_id]"
+                      dataType="guid"
+                      name="guar_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[guar_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="guar_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[print_stmt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="print_stmt_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[print_invoice_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="print_invoice_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_stmt_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_letter_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_letter_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_budget_letter_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_budget_letter_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_invoice_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_invoice_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_enabled_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="budget_enabled_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="budget_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_due_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="budget_due_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_cycle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="budget_cycle" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_num_payments]"
+                      dataType="i4"
+                      name="budget_num_payments" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_payment_amt]"
+                      dataType="numeric"
+                      name="budget_payment_amt"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_total]"
+                      dataType="numeric"
+                      name="budget_total"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_delinquent_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="budget_delinquent_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_termination_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="budget_termination_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[stmt_day_of_month]"
+                      dataType="i2"
+                      name="stmt_day_of_month" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[budget_day_of_month]"
+                      dataType="i2"
+                      name="budget_day_of_month" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[invoice_day_of_month]"
+                      dataType="i2"
+                      name="invoice_day_of_month" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[next_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="next_stmt_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[next_invoice_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="next_invoice_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[force_stmt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="force_stmt_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[credit_rating]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="credit_rating" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_self_pay_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_self_pay_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[suppress_dunning_msg_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="suppress_dunning_msg_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_print_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_print_stmt_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="create_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[created_by]"
+                      dataType="i4"
+                      name="created_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="modify_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[modified_by]"
+                      dataType="i4"
+                      name="modified_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[row_timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="row_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[outsource_exempt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="outsource_exempt_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[statement_counter]"
+                      dataType="i4"
+                      name="statement_counter" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[send_coll_letter_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="send_coll_letter_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[collection_letter_id]"
+                      dataType="guid"
+                      name="collection_letter_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_nxmd_stmt_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_nxmd_stmt_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_pat_pay_amt]"
+                      dataType="numeric"
+                      name="last_pat_pay_amt"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_pat_pay_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_pat_pay_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_bad_debt_pay_amt]"
+                      dataType="numeric"
+                      name="last_bad_debt_pay_amt"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_bad_debt_pay_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_bad_debt_pay_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_consent_form_id]"
+                      dataType="guid"
+                      name="last_consent_form_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_consent_print_by]"
+                      dataType="i4"
+                      name="last_consent_print_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[last_consent_print_date]"
+                      dataType="dbTimeStamp"
+                      name="last_consent_print_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      dataType="dbTimeStamp"
+                      name="InsertDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Get NG_accounts\Stage NG_accounts.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_accounts\Stage NG_accounts.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get NG_accounts\Stage NG_accounts.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_accounts\Stage NG_accounts.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF Get NG_accounts.Paths[OLE DB Source Output]"
+              endId="Package\DF Get NG_accounts\Stage NG_accounts.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF Get NG_accounts\NG_accounts.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Check Staging table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{159DEB6F-A264-49EF-A40C-11D18BC80E29}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Check Staging table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [stage].[uspStagingTableCheck] 'NG_accounts', ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Continue"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Get ODS TimeStamp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{42813587-24FB-4FB3-9C2C-4CB5E30B13CA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Get ODS TimeStamp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_accountsMaxDateSelect] ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::MaxDate"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="133"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F08CCEC9-90EC-499A-88AF-E04CFC8EE79D}"
+      DTS:From="Package\EXECSQL Get ODS TimeStamp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF Get NG_accounts" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{75E23794-2637-4891-88D9-D9EC08349BE1}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::Continue] == &quot;Y&quot;"
+      DTS:From="Package\EXECSQL Check Staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\EXECSQL Get ODS TimeStamp" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\DF Get NG_accounts"
+          TopLeft="37.6666660043929,212.233333347109" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\EXECSQL Check Staging table"
+          TopLeft="8.50000000000001,8.5" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\EXECSQL Get ODS TimeStamp"
+          TopLeft="5.50000000000003,108.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="125.583333002196,150.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.1333333471086"
+              Start="0,0"
+              End="0,54.6333333471086">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.6333333471086" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="124.5,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,17.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF Get NG_accounts">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\DF Get NG_accounts\Stage NG_accounts"
+          TopLeft="17.4999993046125,171.600001363754" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\DF Get NG_accounts\NG_accounts"
+          TopLeft="33.8333322074679,9.5" />
+        <EdgeLayout
+          Id="Package\DF Get NG_accounts.Paths[OLE DB Source Output]"
+          TopLeft="103.86666575604,51.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,120.500001363754"
+              Start="0,0"
+              End="0,113.000001363754">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,113.000001363754" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get NG_accounts\NG_accounts">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get NG_accounts\Stage NG_accounts">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

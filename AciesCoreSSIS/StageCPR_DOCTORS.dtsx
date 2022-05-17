@@ -1,0 +1,2474 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2022 10:12:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SVRDEVOPS01"
+  DTS:CreatorName="PHI\smannam"
+  DTS:DTSID="{7D249B13-2710-4B1E-8AAE-8175DBD5B137}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageCPR_DOCTORS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{E284702B-5315-43CF-9BCB-09BD462B6EB7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{62BF75B8-85FB-4B2F-8C45-9E1F46F4167A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Continue">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CA7655E0-E6DD-4BAB-92E5-1135B0FC12EA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxDate">
+      <DTS:VariableValue
+        DTS:DataType="7">3/25/2022 4:40:21 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF Get CPR_DOCTORS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BF61AE16-EDE4-488A-B277-42187F240439}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Get CPR_DOCTORS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ODD CPR_DOCTORS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[CPR_DOCTORS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Connections[OleDbConnection]"
+                  connectionManagerID="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ACIESCoreStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[NO]"
+                      cachedDataType="i4"
+                      cachedName="NO"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[NO]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[NO]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_LAST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PH_LAST"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_LAST]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_LAST]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_FIRST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PH_FIRST"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_FIRST]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_FIRST]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_SPEC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PH_SPEC"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_SPEC]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_SPEC]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_ORG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="PH_ORG"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_ORG]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_ORG]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_ADDRESS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="PH_ADDRESS"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_ADDRESS]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_ADDRESS]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_ADDR2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="PH_ADDR2"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_ADDR2]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_ADDR2]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PH_CITY"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_CITY]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_CITY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="PH_STATE"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_STATE]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_STATE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_ZIP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="PH_ZIP"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_ZIP]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_ZIP]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_PHONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="PH_PHONE"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_PHONE]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_PHONE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_PHONEXT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="PH_PHONEXT"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_PHONEXT]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_PHONEXT]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_FAX]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="PH_FAX"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_FAX]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_FAX]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_PAGER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="PH_PAGER"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_PAGER]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_PAGER]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_EMAIL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PH_EMAIL"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_EMAIL]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_EMAIL]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_UPIN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="PH_UPIN"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_UPIN]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_UPIN]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_MCD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="PH_MCD"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_MCD]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_MCD]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_DEA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="13"
+                      cachedName="PH_DEA"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_DEA]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_DEA]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_LIC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="PH_LIC"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_LIC]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_LIC]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_LASTLIC]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="PH_LASTLIC"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_LASTLIC]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_LASTLIC]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_NEXTLIC]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="PH_NEXTLIC"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_NEXTLIC]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_NEXTLIC]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_LASTINI]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="PH_LASTINI"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_LASTINI]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_LASTINI]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_NEXTINI]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="PH_NEXTINI"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_NEXTINI]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_NEXTINI]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_DPS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="PH_DPS"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_DPS]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_DPS]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_MCDKS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="PH_MCDKS"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_MCDKS]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_MCDKS]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_MCR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="PH_MCR"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_MCR]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_MCR]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[SITENO]"
+                      cachedDataType="i4"
+                      cachedName="SITENO"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[SITENO]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[SITENO]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_PRIV1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="PH_PRIV1"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_PRIV1]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_PRIV1]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_CONT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="PH_CONT"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_CONT]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_CONT]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[NOTES]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="NOTES"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[NOTES]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[NOTES]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[REFCLASS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="REFCLASS"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[REFCLASS]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[REFCLASS]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[GEOLOC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="GEOLOC"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[GEOLOC]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[GEOLOC]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[SREP_NO]"
+                      cachedDataType="i4"
+                      cachedName="SREP_NO"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[SREP_NO]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[SREP_NO]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[SREP_CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="SREP_CODE"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[SREP_CODE]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[SREP_CODE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_BCBS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="PH_BCBS"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_BCBS]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_BCBS]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[DELFLAG]"
+                      cachedDataType="i4"
+                      cachedName="DELFLAG"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[DELFLAG]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[TOUCHDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TOUCHDATE"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[TOUCHDATE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[CHGBYHOST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CHGBYHOST"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CHGBYHOST]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[CREATEDON]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CREATEDON"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CREATEDON]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[CREATEDBY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CREATEDBY"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CREATEDBY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_RRMCRID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="PH_RRMCRID"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_RRMCRID]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_RRMCRID]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[CONVKEY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="CONVKEY"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[CONVKEY]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CONVKEY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PROFDESIG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="PROFDESIG"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PROFDESIG]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PROFDESIG]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[PH_NPI]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="PH_NPI"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_NPI]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_NPI]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[TAXONOMY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="TAXONOMY"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[TAXONOMY]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[TAXONOMY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[WEBACCESS]"
+                      cachedDataType="bool"
+                      cachedName="WEBACCESS"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[WEBACCESS]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[WEBACCESS]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[INACTIVE]"
+                      cachedDataType="bool"
+                      cachedName="INACTIVE"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[INACTIVE]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[INACTIVE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[INSCRYBE]"
+                      cachedDataType="bool"
+                      cachedName="INSCRYBE"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[INSCRYBE]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[INSCRYBE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[CMNDELIVERY]"
+                      cachedDataType="i4"
+                      cachedName="CMNDELIVERY"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[CMNDELIVERY]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CMNDELIVERY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[ph_caracc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ph_caracc"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[ph_caracc]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[ph_caracc]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[pecos]"
+                      cachedDataType="bool"
+                      cachedName="pecos"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[pecos]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[pecos]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[pecosexclude]"
+                      cachedDataType="bool"
+                      cachedName="pecosexclude"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[pecosexclude]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[pecosexclude]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[hcid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="hcid"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[hcid]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[hcid]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[cfk_central_contact]"
+                      cachedDataType="i4"
+                      cachedName="cfk_central_contact"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[cfk_central_contact]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[cfk_central_contact]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[oralcode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="oralcode"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[oralcode]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[oralcode]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[caprelsaauth]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="caprelsaauth"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[caprelsaauth]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[caprelsaauth]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].Columns[ph_nadean]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="ph_nadean"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[ph_nadean]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[ph_nadean]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[NO]"
+                      dataType="i4"
+                      name="NO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_LAST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PH_LAST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_FIRST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PH_FIRST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_SPEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PH_SPEC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_ORG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="PH_ORG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_ADDRESS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="PH_ADDRESS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_ADDR2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="PH_ADDR2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PH_CITY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="PH_STATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_ZIP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="PH_ZIP" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="PH_PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_PHONEXT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="PH_PHONEXT" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_FAX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="PH_FAX" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_PAGER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="PH_PAGER" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PH_EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_UPIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_UPIN" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_MCD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_MCD" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_DEA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="PH_DEA" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_LIC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_LIC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_LASTLIC]"
+                      dataType="dbTimeStamp"
+                      name="PH_LASTLIC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_NEXTLIC]"
+                      dataType="dbTimeStamp"
+                      name="PH_NEXTLIC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_LASTINI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="PH_LASTINI" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_NEXTINI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="PH_NEXTINI" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_DPS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="PH_DPS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_MCDKS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_MCDKS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_MCR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_MCR" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[SITENO]"
+                      dataType="i4"
+                      name="SITENO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_PRIV1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_PRIV1" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_CONT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="PH_CONT" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[NOTES]"
+                      codePage="1252"
+                      dataType="text"
+                      name="NOTES" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[REFCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="REFCLASS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[GEOLOC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="GEOLOC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[SREP_NO]"
+                      dataType="i4"
+                      name="SREP_NO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[SREP_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="SREP_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_BCBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_BCBS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
+                      dataType="i4"
+                      name="DELFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      name="TOUCHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CHGBYHOST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      name="CREATEDON" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CREATEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_RRMCRID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="PH_RRMCRID" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[CONVKEY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="CONVKEY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PROFDESIG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="PROFDESIG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[PH_NPI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="PH_NPI" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[TAXONOMY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="TAXONOMY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[WEBACCESS]"
+                      dataType="bool"
+                      name="WEBACCESS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[INACTIVE]"
+                      dataType="bool"
+                      name="INACTIVE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[INSCRYBE]"
+                      dataType="bool"
+                      name="INSCRYBE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[CMNDELIVERY]"
+                      dataType="i4"
+                      name="CMNDELIVERY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[ph_caracc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ph_caracc" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[pecos]"
+                      dataType="bool"
+                      name="pecos" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[pecosexclude]"
+                      dataType="bool"
+                      name="pecosexclude" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[hcid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="hcid" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[cfk_central_contact]"
+                      dataType="i4"
+                      name="cfk_central_contact" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[oralcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="oralcode" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[caprelsaauth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="caprelsaauth" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[ph_nadean]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="ph_nadean" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      dataType="dbTimeStamp"
+                      name="InsertDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="ODS CPR_DOCTORS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM DOCTORS
+WHERE TOUCHDATE &gt; ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{CA7655E0-E6DD-4BAB-92E5-1135B0FC12EA};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Connections[OleDbConnection]"
+                  connectionManagerID="{4199B01E-8FA0-4308-8134-03A01072A972}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CPR7]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[NO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[NO]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[NO]"
+                      name="NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_LAST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_LAST]"
+                      length="20"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_LAST]"
+                      name="PH_LAST"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_FIRST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_FIRST]"
+                      length="20"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_FIRST]"
+                      name="PH_FIRST"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_SPEC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_SPEC]"
+                      length="20"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_SPEC]"
+                      name="PH_SPEC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_ORG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_ORG]"
+                      length="40"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_ORG]"
+                      name="PH_ORG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_ADDRESS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_ADDRESS]"
+                      length="40"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_ADDRESS]"
+                      name="PH_ADDRESS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_ADDR2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_ADDR2]"
+                      length="40"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_ADDR2]"
+                      name="PH_ADDR2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_CITY]"
+                      length="20"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_CITY]"
+                      name="PH_CITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_STATE]"
+                      length="2"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_STATE]"
+                      name="PH_STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_ZIP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_ZIP]"
+                      length="10"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_ZIP]"
+                      name="PH_ZIP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_PHONE]"
+                      length="12"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_PHONE]"
+                      name="PH_PHONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_PHONEXT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_PHONEXT]"
+                      length="5"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_PHONEXT]"
+                      name="PH_PHONEXT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_FAX]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_FAX]"
+                      length="12"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_FAX]"
+                      name="PH_FAX"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_PAGER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_PAGER]"
+                      length="12"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_PAGER]"
+                      name="PH_PAGER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_EMAIL]"
+                      length="50"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_EMAIL]"
+                      name="PH_EMAIL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_UPIN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_UPIN]"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_UPIN]"
+                      name="PH_UPIN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_MCD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_MCD]"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_MCD]"
+                      name="PH_MCD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_DEA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_DEA]"
+                      length="13"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_DEA]"
+                      name="PH_DEA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_LIC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_LIC]"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_LIC]"
+                      name="PH_LIC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_LASTLIC]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_LASTLIC]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_LASTLIC]"
+                      name="PH_LASTLIC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_NEXTLIC]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_NEXTLIC]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_NEXTLIC]"
+                      name="PH_NEXTLIC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_LASTINI]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_LASTINI]"
+                      length="3"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_LASTINI]"
+                      name="PH_LASTINI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_NEXTINI]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_NEXTINI]"
+                      length="3"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_NEXTINI]"
+                      name="PH_NEXTINI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_DPS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_DPS]"
+                      length="12"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_DPS]"
+                      name="PH_DPS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_MCDKS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_MCDKS]"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_MCDKS]"
+                      name="PH_MCDKS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_MCR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_MCR]"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_MCR]"
+                      name="PH_MCR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[SITENO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[SITENO]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[SITENO]"
+                      name="SITENO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_PRIV1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_PRIV1]"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_PRIV1]"
+                      name="PH_PRIV1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_CONT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_CONT]"
+                      length="40"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_CONT]"
+                      name="PH_CONT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[NOTES]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[NOTES]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[NOTES]"
+                      name="NOTES"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[REFCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[REFCLASS]"
+                      length="1"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[REFCLASS]"
+                      name="REFCLASS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[GEOLOC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[GEOLOC]"
+                      length="1"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[GEOLOC]"
+                      name="GEOLOC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[SREP_NO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[SREP_NO]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[SREP_NO]"
+                      name="SREP_NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[SREP_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[SREP_CODE]"
+                      length="3"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[SREP_CODE]"
+                      name="SREP_CODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_BCBS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_BCBS]"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_BCBS]"
+                      name="PH_BCBS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[DELFLAG]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[DELFLAG]"
+                      name="DELFLAG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
+                      name="TOUCHDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
+                      name="CHGBYHOST"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CREATEDON]"
+                      name="CREATEDON"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
+                      name="CREATEDBY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_RRMCRID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_RRMCRID]"
+                      length="30"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_RRMCRID]"
+                      name="PH_RRMCRID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CONVKEY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[CONVKEY]"
+                      length="40"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CONVKEY]"
+                      name="CONVKEY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PROFDESIG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PROFDESIG]"
+                      length="4"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PROFDESIG]"
+                      name="PROFDESIG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_NPI]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_NPI]"
+                      length="80"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[PH_NPI]"
+                      name="PH_NPI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[TAXONOMY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[TAXONOMY]"
+                      length="30"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[TAXONOMY]"
+                      name="TAXONOMY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[WEBACCESS]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[WEBACCESS]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[WEBACCESS]"
+                      name="WEBACCESS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[INACTIVE]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[INACTIVE]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[INACTIVE]"
+                      name="INACTIVE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[INSCRYBE]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[INSCRYBE]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[INSCRYBE]"
+                      name="INSCRYBE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CMNDELIVERY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[CMNDELIVERY]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[CMNDELIVERY]"
+                      name="CMNDELIVERY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[ph_caracc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[ph_caracc]"
+                      length="50"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[ph_caracc]"
+                      name="ph_caracc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[pecos]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[pecos]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[pecos]"
+                      name="pecos"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[pecosexclude]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[pecosexclude]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[pecosexclude]"
+                      name="pecosexclude"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[hcid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[hcid]"
+                      length="10"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[hcid]"
+                      name="hcid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[cfk_central_contact]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[cfk_central_contact]"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[cfk_central_contact]"
+                      name="cfk_central_contact"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[oralcode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[oralcode]"
+                      length="10"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[oralcode]"
+                      name="oralcode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[caprelsaauth]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[caprelsaauth]"
+                      length="10"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[caprelsaauth]"
+                      name="caprelsaauth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[ph_nadean]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[ph_nadean]"
+                      length="9"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].Columns[ph_nadean]"
+                      name="ph_nadean"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[NO]"
+                      dataType="i4"
+                      name="NO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_LAST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PH_LAST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_FIRST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PH_FIRST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_SPEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PH_SPEC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_ORG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="PH_ORG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_ADDRESS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="PH_ADDRESS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_ADDR2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="PH_ADDR2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PH_CITY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="PH_STATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_ZIP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="PH_ZIP" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="PH_PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_PHONEXT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="PH_PHONEXT" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_FAX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="PH_FAX" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_PAGER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="PH_PAGER" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PH_EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_UPIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_UPIN" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_MCD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_MCD" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_DEA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="PH_DEA" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_LIC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_LIC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_LASTLIC]"
+                      dataType="dbTimeStamp"
+                      name="PH_LASTLIC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_NEXTLIC]"
+                      dataType="dbTimeStamp"
+                      name="PH_NEXTLIC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_LASTINI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="PH_LASTINI" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_NEXTINI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="PH_NEXTINI" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_DPS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="PH_DPS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_MCDKS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_MCDKS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_MCR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_MCR" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[SITENO]"
+                      dataType="i4"
+                      name="SITENO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_PRIV1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_PRIV1" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_CONT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="PH_CONT" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[NOTES]"
+                      codePage="1252"
+                      dataType="text"
+                      name="NOTES" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[REFCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="REFCLASS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[GEOLOC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="GEOLOC" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[SREP_NO]"
+                      dataType="i4"
+                      name="SREP_NO" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[SREP_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="SREP_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_BCBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="PH_BCBS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
+                      dataType="i4"
+                      name="DELFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      name="TOUCHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CHGBYHOST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      name="CREATEDON" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CREATEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_RRMCRID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="PH_RRMCRID" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[CONVKEY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="CONVKEY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PROFDESIG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="PROFDESIG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[PH_NPI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="PH_NPI" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[TAXONOMY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="TAXONOMY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[WEBACCESS]"
+                      dataType="bool"
+                      name="WEBACCESS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[INACTIVE]"
+                      dataType="bool"
+                      name="INACTIVE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[INSCRYBE]"
+                      dataType="bool"
+                      name="INSCRYBE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[CMNDELIVERY]"
+                      dataType="i4"
+                      name="CMNDELIVERY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[ph_caracc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ph_caracc" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[pecos]"
+                      dataType="bool"
+                      name="pecos" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[pecosexclude]"
+                      dataType="bool"
+                      name="pecosexclude" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[hcid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="hcid" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[cfk_central_contact]"
+                      dataType="i4"
+                      name="cfk_central_contact" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[oralcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="oralcode" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[caprelsaauth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="caprelsaauth" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output].ExternalColumns[ph_nadean]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="ph_nadean" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[NO]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[NO]"
+                      name="NO" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_LAST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_LAST]"
+                      name="PH_LAST" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_FIRST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_FIRST]"
+                      name="PH_FIRST" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_SPEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_SPEC]"
+                      name="PH_SPEC" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_ORG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_ORG]"
+                      name="PH_ORG" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_ADDRESS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_ADDRESS]"
+                      name="PH_ADDRESS" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_ADDR2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_ADDR2]"
+                      name="PH_ADDR2" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_CITY]"
+                      name="PH_CITY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_STATE]"
+                      name="PH_STATE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_ZIP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_ZIP]"
+                      name="PH_ZIP" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_PHONE]"
+                      name="PH_PHONE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_PHONEXT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_PHONEXT]"
+                      name="PH_PHONEXT" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_FAX]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_FAX]"
+                      name="PH_FAX" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_PAGER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_PAGER]"
+                      name="PH_PAGER" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_EMAIL]"
+                      name="PH_EMAIL" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_UPIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_UPIN]"
+                      name="PH_UPIN" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_MCD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_MCD]"
+                      name="PH_MCD" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_DEA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_DEA]"
+                      name="PH_DEA" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_LIC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_LIC]"
+                      name="PH_LIC" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_LASTLIC]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_LASTLIC]"
+                      name="PH_LASTLIC" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_NEXTLIC]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_NEXTLIC]"
+                      name="PH_NEXTLIC" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_LASTINI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_LASTINI]"
+                      name="PH_LASTINI" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_NEXTINI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_NEXTINI]"
+                      name="PH_NEXTINI" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_DPS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_DPS]"
+                      name="PH_DPS" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_MCDKS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_MCDKS]"
+                      name="PH_MCDKS" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_MCR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_MCR]"
+                      name="PH_MCR" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[SITENO]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[SITENO]"
+                      name="SITENO" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_PRIV1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_PRIV1]"
+                      name="PH_PRIV1" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_CONT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_CONT]"
+                      name="PH_CONT" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[NOTES]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[NOTES]"
+                      name="NOTES" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[REFCLASS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[REFCLASS]"
+                      name="REFCLASS" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[GEOLOC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[GEOLOC]"
+                      name="GEOLOC" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[SREP_NO]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[SREP_NO]"
+                      name="SREP_NO" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[SREP_CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[SREP_CODE]"
+                      name="SREP_CODE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_BCBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_BCBS]"
+                      name="PH_BCBS" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[DELFLAG]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[DELFLAG]"
+                      name="DELFLAG" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[TOUCHDATE]"
+                      name="TOUCHDATE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[CHGBYHOST]"
+                      name="CHGBYHOST" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[CREATEDON]"
+                      name="CREATEDON" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[CREATEDBY]"
+                      name="CREATEDBY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_RRMCRID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_RRMCRID]"
+                      name="PH_RRMCRID" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[CONVKEY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[CONVKEY]"
+                      name="CONVKEY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PROFDESIG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PROFDESIG]"
+                      name="PROFDESIG" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_NPI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[PH_NPI]"
+                      name="PH_NPI" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[TAXONOMY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[TAXONOMY]"
+                      name="TAXONOMY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[WEBACCESS]"
+                      dataType="bool"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[WEBACCESS]"
+                      name="WEBACCESS" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[INACTIVE]"
+                      dataType="bool"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[INACTIVE]"
+                      name="INACTIVE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[INSCRYBE]"
+                      dataType="bool"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[INSCRYBE]"
+                      name="INSCRYBE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[CMNDELIVERY]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[CMNDELIVERY]"
+                      name="CMNDELIVERY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[ph_caracc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[ph_caracc]"
+                      name="ph_caracc" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[pecos]"
+                      dataType="bool"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[pecos]"
+                      name="pecos" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[pecosexclude]"
+                      dataType="bool"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[pecosexclude]"
+                      name="pecosexclude" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[hcid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[hcid]"
+                      name="hcid" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[cfk_central_contact]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[cfk_central_contact]"
+                      name="cfk_central_contact" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[oralcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[oralcode]"
+                      name="oralcode" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[caprelsaauth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[caprelsaauth]"
+                      name="caprelsaauth" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[ph_nadean]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[ph_nadean]"
+                      name="ph_nadean" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF Get CPR_DOCTORS.Paths[OLE DB Source Output]"
+              endId="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Check Staging table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6D05A3CC-0864-4E1F-8376-3A1FAA4C11F7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Check Staging table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [stage].[uspStagingTableCheck] 'CPR_DOCTORS', ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Continue"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Get ODS TimeStamp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C583713F-B036-4A9A-9E28-451F96D0EE87}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Get ODS TimeStamp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSCPR_DOCTORSMaxDateSelect] ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::MaxDate"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="133"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2E901A6C-4D9E-4D5E-B6AD-287C8D3227DC}"
+      DTS:From="Package\EXECSQL Get ODS TimeStamp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF Get CPR_DOCTORS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D7AC3FC3-F241-4E7B-BEA3-6FC92B2A0CD8}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::Continue] == &quot;Y&quot;"
+      DTS:From="Package\EXECSQL Check Staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\EXECSQL Get ODS TimeStamp" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="202,42"
+          Id="Package\DF Get CPR_DOCTORS"
+          TopLeft="21,209.5" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\EXECSQL Check Staging table"
+          TopLeft="8.50000000000001,8.5" />
+        <NodeLayout
+          Size="238,42"
+          Id="Package\EXECSQL Get ODS TimeStamp"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="123.25,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="124.5,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,16.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF Get CPR_DOCTORS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS"
+          TopLeft="5.50000000000001,107.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS"
+          TopLeft="6.00000000000001,5.5" />
+        <EdgeLayout
+          Id="Package\DF Get CPR_DOCTORS.Paths[OLE DB Source Output]"
+          TopLeft="101,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get CPR_DOCTORS\ODD CPR_DOCTORS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get CPR_DOCTORS\ODS CPR_DOCTORS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

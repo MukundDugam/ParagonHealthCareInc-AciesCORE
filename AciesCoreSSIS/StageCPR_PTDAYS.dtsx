@@ -1,0 +1,793 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2022 10:12:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SVRDEVOPS01"
+  DTS:CreatorName="PHI\smannam"
+  DTS:DTSID="{CAE45A2F-C93C-4D54-A88F-3838483D0E92}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageCPR_PTDAYS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{4F5ABB4E-1853-4DF9-B40E-4860C047D860}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A55285A9-C3B8-4B3D-ABF8-4939981B7CE4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Continue">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7BA52591-653E-4B67-8E8C-8A2EEBE41C10}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxDate">
+      <DTS:VariableValue
+        DTS:DataType="7">3/25/2022 4:40:21 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF Get CPR_PTDAYS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6DEEE380-0572-4A60-8FA4-94514891B479}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Get CPR_PTDAYS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="CPR_PTDAYS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM PTDAYS
+WHERE TOUCHDATE &gt; ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{7BA52591-653E-4B67-8E8C-8A2EEBE41C10};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Connections[OleDbConnection]"
+                  connectionManagerID="{4199B01E-8FA0-4308-8134-03A01072A972}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CPR7]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[DELFLAG]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[DELFLAG]"
+                      name="DELFLAG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
+                      name="TOUCHDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
+                      name="CHGBYHOST"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[CREATEDON]"
+                      name="CREATEDON"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
+                      name="CREATEDBY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[CPK_PTDAYS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[CPK_PTDAYS]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[CPK_PTDAYS]"
+                      name="CPK_PTDAYS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[MRN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[MRN]"
+                      length="6"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[MRN]"
+                      name="MRN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[NEW_STAT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[NEW_STAT]"
+                      length="9"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[NEW_STAT]"
+                      name="NEW_STAT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[STAT_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[STAT_DATE]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[STAT_DATE]"
+                      name="STAT_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[NOTES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[NOTES]"
+                      length="50"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[NOTES]"
+                      name="NOTES"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
+                      dataType="i4"
+                      name="DELFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      name="TOUCHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CHGBYHOST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      name="CREATEDON" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CREATEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[CPK_PTDAYS]"
+                      dataType="i4"
+                      name="CPK_PTDAYS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[MRN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="MRN" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[NEW_STAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="NEW_STAT" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[STAT_DATE]"
+                      dataType="dbTimeStamp"
+                      name="STAT_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].ExternalColumns[NOTES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NOTES" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[CPK_PTDAYS]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[CPK_PTDAYS]"
+                      name="CPK_PTDAYS" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[MRN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[MRN]"
+                      name="MRN" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[NEW_STAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[NEW_STAT]"
+                      name="NEW_STAT" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[STAT_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[STAT_DATE]"
+                      name="STAT_DATE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[NOTES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[NOTES]"
+                      name="NOTES" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[DELFLAG]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[DELFLAG]"
+                      name="DELFLAG" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[TOUCHDATE]"
+                      name="TOUCHDATE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[CHGBYHOST]"
+                      name="CHGBYHOST" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[CREATEDON]"
+                      name="CREATEDON" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[CREATEDBY]"
+                      name="CREATEDBY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ODD CPR_PTDAYS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[CPR_PTDAYS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Connections[OleDbConnection]"
+                  connectionManagerID="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ACIESCoreStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].Columns[DELFLAG]"
+                      cachedDataType="i4"
+                      cachedName="DELFLAG"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[DELFLAG]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].Columns[TOUCHDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TOUCHDATE"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[TOUCHDATE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].Columns[CHGBYHOST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CHGBYHOST"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[CHGBYHOST]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].Columns[CREATEDON]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CREATEDON"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[CREATEDON]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].Columns[CREATEDBY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CREATEDBY"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[CREATEDBY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].Columns[CPK_PTDAYS]"
+                      cachedDataType="i4"
+                      cachedName="CPK_PTDAYS"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[CPK_PTDAYS]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[CPK_PTDAYS]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].Columns[MRN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="MRN"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[MRN]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[MRN]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].Columns[NEW_STAT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="NEW_STAT"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[NEW_STAT]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[NEW_STAT]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].Columns[STAT_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="STAT_DATE"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[STAT_DATE]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[STAT_DATE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].Columns[NOTES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NOTES"
+                      externalMetadataColumnId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[NOTES]"
+                      lineageId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output].Columns[NOTES]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
+                      dataType="i4"
+                      name="DELFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      name="TOUCHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CHGBYHOST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      name="CREATEDON" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CREATEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      dataType="dbTimeStamp"
+                      name="InsertDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[CPK_PTDAYS]"
+                      dataType="i4"
+                      name="CPK_PTDAYS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[MRN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="MRN" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[NEW_STAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="NEW_STAT" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[STAT_DATE]"
+                      dataType="dbTimeStamp"
+                      name="STAT_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input].ExternalColumns[NOTES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NOTES" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF Get CPR_PTDAYS.Paths[OLE DB Source Output]"
+              endId="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF Get CPR_PTDAYS\CPR_PTDAYS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Check Staging table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8CE694CF-13ED-4890-A344-F3084B53113B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Check Staging table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [stage].[uspStagingTableCheck] 'CPR_PTDAYS', ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Continue"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Get ODS TimeStamp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{95B4274D-EDF7-4F40-AC91-E758A7191B0C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Get ODS TimeStamp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSCPR_PTDAYSMaxDateSelect] ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::MaxDate"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="133"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7FDA3AFF-938A-4681-9096-3BE8252D75A9}"
+      DTS:From="Package\EXECSQL Get ODS TimeStamp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF Get CPR_PTDAYS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B2A657E6-027C-4AE1-A9AB-FAFA4457E581}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::Continue] == &quot;Y&quot;"
+      DTS:From="Package\EXECSQL Check Staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\EXECSQL Get ODS TimeStamp" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\DF Get CPR_PTDAYS"
+          TopLeft="33.4999995032946,210.366666673554" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\EXECSQL Check Staging table"
+          TopLeft="8.50000000000001,8.5" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\EXECSQL Get ODS TimeStamp"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="125.099999751647,149.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.266666673554"
+              Start="0,0"
+              End="0,53.766666673554">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.766666673554" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="124.5,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,16.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF Get CPR_PTDAYS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS"
+          TopLeft="23.8333326048322,106.633333326446" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\DF Get CPR_PTDAYS\CPR_PTDAYS"
+          TopLeft="31.833332306809,8.10000002066294" />
+        <EdgeLayout
+          Id="Package\DF Get CPR_PTDAYS.Paths[OLE DB Source Output]"
+          TopLeft="108.233332455821,49.7000000206629">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.9333333057831"
+              Start="0,0"
+              End="0,49.4333333057831">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.4333333057831" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get CPR_PTDAYS\CPR_PTDAYS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get CPR_PTDAYS\ODD CPR_PTDAYS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
