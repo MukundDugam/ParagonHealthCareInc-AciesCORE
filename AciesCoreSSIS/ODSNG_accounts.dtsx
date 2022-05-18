@@ -5,57 +5,58 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SVRDEVOPS01"
   DTS:CreatorName="PHI\smannam"
-  DTS:DTSID="{05710094-F4DA-42D9-A832-8EF9A6B6BEC5}"
+  DTS:DTSID="{472FCCA9-5EA9-4832-B7ED-313360AA35A5}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
-  DTS:ObjectName="ODSNG_person"
+  DTS:ObjectName="ODSNG_accounts"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{A9C619D8-5996-4F37-9BD6-75FB0BE9350B}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{44FFDF0E-88EE-4D83-A66A-E628B0AB1462}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\EXECSQL NG_personDelete"
+      DTS:refId="Package\EXECSQL NG_accountsUpsert"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{DB4C3843-5554-4B04-9537-65765A053522}"
+      DTS:DTSID="{A8EAB0B8-A6EA-470F-A918-91EA2FD179D6}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="EXECSQL NG_personDelete"
+      DTS:ObjectName="EXECSQL NG_accountsUpsert"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
-          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_personDelete]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_accountsUpsert]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\EXECSQL NG_personUpsert"
+      DTS:refId="Package\EXECSQL NG_chargesDelete"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{57F63310-59AA-4F7F-8EEB-93D1CB10D1D7}"
+      DTS:Disabled="True"
+      DTS:DTSID="{7A4D5401-387B-429E-8054-F114904DDC30}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="EXECSQL NG_personUpsert"
+      DTS:ObjectName="EXECSQL NG_chargesDelete"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
-          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_personUpsert]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_accountsDelete]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\EXECSQL Truncate staging table"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{CBDBF8F6-C36D-4FBC-AAE6-1FD53B40BCBD}"
+      DTS:DTSID="{D027A34C-26B9-4E09-AAAA-1CF913A1A656}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXECSQL Truncate staging table"
@@ -65,7 +66,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
-          SQLTask:SqlStatementSource="EXEC [stage].[usp_StagingTableTruncate] 'NG_person'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC [stage].[usp_StagingTableTruncate] 'NG_accounts'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -73,16 +74,16 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{1AD73C99-E292-4B07-B1EE-45A1A3BF8057}"
-      DTS:From="Package\EXECSQL NG_personUpsert"
+      DTS:DTSID="{D1FC0FE1-4441-460D-9E68-125359E322E6}"
+      DTS:From="Package\EXECSQL NG_accountsUpsert"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\EXECSQL NG_personDelete" />
+      DTS:To="Package\EXECSQL NG_chargesDelete" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{BA87A9E7-8495-4008-AF41-362BDCC2E539}"
-      DTS:From="Package\EXECSQL NG_personDelete"
+      DTS:DTSID="{4EA4AE1D-E454-4901-97BC-3EEED908669A}"
+      DTS:From="Package\EXECSQL NG_chargesDelete"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\EXECSQL Truncate staging table" />
@@ -100,31 +101,31 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="213.6,41.6"
-          Id="Package\EXECSQL NG_personDelete"
-          TopLeft="37.5,107.5" />
+          Size="218.4,41.6"
+          Id="Package\EXECSQL NG_chargesDelete"
+          TopLeft="62.4999990065893,106.633333326446" />
         <NodeLayout
-          Size="214.4,41.6"
-          Id="Package\EXECSQL NG_personUpsert"
-          TopLeft="37.5,5.5" />
+          Size="224,41.6"
+          Id="Package\EXECSQL NG_accountsUpsert"
+          TopLeft="66.6666655076875,5.5" />
         <NodeLayout
           Size="320,41.6"
           Id="Package\EXECSQL Truncate staging table"
           TopLeft="5.50000000000003,209.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="144.5,47.1">
+          TopLeft="175.183332257138,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.4"
+              EndConnector="0,59.533333326446"
               Start="0,0"
-              End="0,52.9">
+              End="0,52.033333326446">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.9" />
+                    End="0,52.033333326446" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -135,30 +136,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="144.3,149.1">
+          TopLeft="168.599999503295,148.233333326446">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="21.2,60.4"
+              EndConnector="0,61.2666666735543"
               Start="0,0"
-              End="21.2,52.9">
+              End="0,53.7666666735543">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.2"
-                    Point2="0,30.2"
-                    Point3="4,30.2" />
-                  <mssgle:LineSegment
-                    End="17.2,30.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.2,30.2"
-                    Point2="21.2,30.2"
-                    Point3="21.2,34.2" />
-                  <mssgle:LineSegment
-                    End="21.2,52.9" />
+                    End="0,53.7666666735543" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

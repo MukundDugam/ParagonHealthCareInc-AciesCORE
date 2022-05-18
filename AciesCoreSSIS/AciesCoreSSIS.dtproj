@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">SVRDEVOPS01</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjZfa0ePsZEy2UUY1H2rrGQAAAAACAAAAAAADZgAAwAAAABAAAABOKCxgkNhP4MTtS6BSYdIOAAAAAASAAACgAAAAEAAAADSoOPdEItdx+RvvmABNwiGIAAAAY3cWApk7ipl9iiG6fxW1J6r9eIuKIQmiQrB3IHJwpNQIncuVXv7U1FaYJQvchttVJD4W5re32Erz0+ZYt8jLbUuvYYPKgsmwLNPBADHhUxwMQnX1AtBQC6fgKC1Km8DjFHLIB9khWE5mgUifrzZaytZ+wTh+3dD1252GsxtAtV7xlZaxGJaCLRQAAADUXhOIlnCWZ1g9TUFWOifZ0EcipA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjZfa0ePsZEy2UUY1H2rrGQAAAAACAAAAAAADZgAAwAAAABAAAAAQK37zEcACfwvw1UNB+E5DAAAAAASAAACgAAAAEAAAAOMCDoHdEkXho0Fat+DTPraIAAAALSY0DqdkdgqPJv6gdntQ/rXgLgbXRjx8Q/xy3fooZTsT/6K2zTIkJMcFn7f8+YpGpMfThB26A9kC2M7Q6G0OsVNT+kAXOMBZIWxs4fZ9PFkXVXpdCqn+aZ30TFld+RyjHjxMc0wr+WndLadXGHPxYgU2OEbksvgksv5ItTjtnU91ZoMxXkxcMxQAAABh6Er+3cjt7WoMWW6d3WV3uWVXHQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -83,6 +83,8 @@
           <SSIS:Package SSIS:Name="ODSNG_MLTS_CategoryXP_.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="StageNG_MLTS_CategoryXP_.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="StageNG_patient.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ODSNG_patient.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ODSNG_accounts.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="ACIESCoreStaging.conmgr" />
@@ -648,10 +650,10 @@
                 <SSIS:Property SSIS:Name="Name">StageNG_person</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">45</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">48</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{0D362845-7550-4EBD-A0D2-CE2E50F94630}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A6332822-1B64-4216-BF5B-A4F34A8D262C}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -665,10 +667,10 @@
                 <SSIS:Property SSIS:Name="Name">ODSNG_person</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3B2C6CB2-BF88-4E53-89C8-B9A58E076FD9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A9C619D8-5996-4F37-9BD6-75FB0BE9350B}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1430,10 +1432,44 @@
                 <SSIS:Property SSIS:Name="Name">StageNG_patient</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">49</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">50</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{03C6D912-BF84-4AA5-BF11-0F58663C54E9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A8E122BD-E601-446D-A224-7287239D0F4B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ODSNG_patient.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{DD198068-2F5C-4F24-B7BE-9D3DD1DAA2B7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ODSNG_patient</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">11</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D590DAB2-6C3A-44CD-90F1-2E24BE2825ED}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ODSNG_accounts.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{472FCCA9-5EA9-4832-B7ED-313360AA35A5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ODSNG_accounts</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">12</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{44FFDF0E-88EE-4D83-A66A-E628B0AB1462}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

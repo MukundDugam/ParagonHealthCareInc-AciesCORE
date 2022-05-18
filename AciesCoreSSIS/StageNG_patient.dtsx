@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageNG_patient"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{03C6D912-BF84-4AA5-BF11-0F58663C54E9}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{A8E122BD-E601-446D-A224-7287239D0F4B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -1479,7 +1479,7 @@ WHERE modify_timestamp &gt; ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">[stage].[NG_patient]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1501,7 +1501,7 @@ WHERE modify_timestamp &gt; ?</property>
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -1513,7 +1513,7 @@ WHERE modify_timestamp &gt; ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -1522,6 +1522,8 @@ WHERE modify_timestamp &gt; ?</property>
               <connections>
                 <connection
                   refId="Package\DF Get NG_patient\Stage NG_patient.Connections[OleDbConnection]"
+                  connectionManagerID="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ACIESCoreStaging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1532,8 +1534,776 @@ WHERE modify_timestamp &gt; ?</property>
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[created_by]"
+                      cachedDataType="i4"
+                      cachedName="created_by"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[created_by]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[created_by]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[modified_by]"
+                      cachedDataType="i4"
+                      cachedName="modified_by"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[modified_by]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[modified_by]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[create_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="create_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[create_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[modify_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="modify_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[modify_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[row_timestamp]"
+                      cachedDataType="bytes"
+                      cachedLength="8"
+                      cachedName="row_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[row_timestamp]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[row_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[enterprise_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="enterprise_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[enterprise_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[enterprise_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[practice_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="practice_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[practice_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[practice_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[site_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="site_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[site_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[site_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[guar_id]"
+                      cachedDataType="guid"
+                      cachedName="guar_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[guar_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[guar_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[guar_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="guar_type"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[guar_type]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[guar_type]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[print_stmt_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="print_stmt_ind"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[print_stmt_ind]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[print_stmt_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[last_letter_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="last_letter_date"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[last_letter_date]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[last_letter_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[outsource_exempt_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="outsource_exempt_ind"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[outsource_exempt_ind]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[outsource_exempt_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[person_id]"
+                      cachedDataType="guid"
+                      cachedName="person_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[person_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[person_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[first_office_enc_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="first_office_enc_date"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[first_office_enc_date]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[first_office_enc_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[last_office_enc_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="last_office_enc_date"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[last_office_enc_date]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[last_office_enc_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[next_office_enc_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="next_office_enc_date"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[next_office_enc_date]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[next_office_enc_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[pharmacy_code_1_id]"
+                      cachedDataType="guid"
+                      cachedName="pharmacy_code_1_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[pharmacy_code_1_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[pharmacy_code_1_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[pharmacy_code_2_id]"
+                      cachedDataType="guid"
+                      cachedName="pharmacy_code_2_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[pharmacy_code_2_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[pharmacy_code_2_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[default_location_id]"
+                      cachedDataType="guid"
+                      cachedName="default_location_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[default_location_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[default_location_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[privacy_level]"
+                      cachedDataType="i4"
+                      cachedName="privacy_level"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[privacy_level]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[privacy_level]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[suppress_billing_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="suppress_billing_ind"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[suppress_billing_ind]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[suppress_billing_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[preferred_provider_id]"
+                      cachedDataType="guid"
+                      cachedName="preferred_provider_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[preferred_provider_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[preferred_provider_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[financial_class]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="financial_class"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[financial_class]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[financial_class]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[med_rec_nbr]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="med_rec_nbr"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[med_rec_nbr]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[med_rec_nbr]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[contact_person_id]"
+                      cachedDataType="guid"
+                      cachedName="contact_person_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[contact_person_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[contact_person_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[user_defined1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="user_defined1"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined1]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[user_defined1]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[user_defined2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="user_defined2"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined2]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[user_defined2]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[user_defined3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="user_defined3"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined3]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[user_defined3]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[user_defined4]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="user_defined4"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined4]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[user_defined4]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[rendering_prov_id]"
+                      cachedDataType="guid"
+                      cachedName="rendering_prov_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[rendering_prov_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[rendering_prov_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[co_managed_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="co_managed_ind"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[co_managed_ind]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[co_managed_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[co_managed_prov_id]"
+                      cachedDataType="guid"
+                      cachedName="co_managed_prov_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[co_managed_prov_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[co_managed_prov_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[mrkt_plan_id]"
+                      cachedDataType="guid"
+                      cachedName="mrkt_plan_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[mrkt_plan_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[mrkt_plan_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[mrkt_source_id]"
+                      cachedDataType="guid"
+                      cachedName="mrkt_source_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[mrkt_source_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[mrkt_source_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[mrkt_source_type]"
+                      cachedDataType="i4"
+                      cachedName="mrkt_source_type"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[mrkt_source_type]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[mrkt_source_type]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[mrkt_comments]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="mrkt_comments"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[mrkt_comments]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[mrkt_comments]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[referring_prov_id]"
+                      cachedDataType="guid"
+                      cachedName="referring_prov_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[referring_prov_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[referring_prov_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[last_print_statement_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="last_print_statement_date"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[last_print_statement_date]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[last_print_statement_date]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[privacy_notice_code_id]"
+                      cachedDataType="guid"
+                      cachedName="privacy_notice_code_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[privacy_notice_code_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[privacy_notice_code_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[privacy_notice_issued]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="privacy_notice_issued"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[privacy_notice_issued]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[privacy_notice_issued]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[privacy_notice_received]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="privacy_notice_received"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[privacy_notice_received]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[privacy_notice_received]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[nxmd_enrollment]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="nxmd_enrollment"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[nxmd_enrollment]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[nxmd_enrollment]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[privacy_notice_notes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="privacy_notice_notes"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[privacy_notice_notes]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[privacy_notice_notes]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[mrkt_details]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="mrkt_details"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[mrkt_details]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[mrkt_details]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[user_defined5]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="user_defined5"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined5]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[user_defined5]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[user_defined6]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="user_defined6"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined6]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[user_defined6]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[user_defined7]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="user_defined7"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined7]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[user_defined7]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[user_defined8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="user_defined8"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined8]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[user_defined8]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[head_of_household_id]"
+                      cachedDataType="guid"
+                      cachedName="head_of_household_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[head_of_household_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[head_of_household_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[create_timestamp_tz]"
+                      cachedDataType="i2"
+                      cachedName="create_timestamp_tz"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp_tz]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[create_timestamp_tz]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[modify_timestamp_tz]"
+                      cachedDataType="i2"
+                      cachedName="modify_timestamp_tz"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp_tz]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[modify_timestamp_tz]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[no_unresolved_allergies_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="no_unresolved_allergies_ind"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_unresolved_allergies_ind]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[no_unresolved_allergies_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[no_active_medications_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="no_active_medications_ind"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_active_medications_ind]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[no_active_medications_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[no_active_problems]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="no_active_problems"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_active_problems]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[no_active_problems]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[pm_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="pm_ind"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[pm_ind]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[pm_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[pharmacy_code_mo_id]"
+                      cachedDataType="guid"
+                      cachedName="pharmacy_code_mo_id"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[pharmacy_code_mo_id]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[pharmacy_code_mo_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[no_active_problems_snomed]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="no_active_problems_snomed"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_active_problems_snomed]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[no_active_problems_snomed]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[no_known_imm_history_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="no_known_imm_history_ind"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_known_imm_history_ind]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[no_known_imm_history_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[no_known_procedures_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="no_known_procedures_ind"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_known_procedures_ind]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[no_known_procedures_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].Columns[no_active_devices_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="no_active_devices_ind"
+                      externalMetadataColumnId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_active_devices_ind]"
+                      lineageId="Package\DF Get NG_patient\NG_patient.Outputs[OLE DB Source Output].Columns[no_active_devices_ind]" />
+                  </inputColumns>
                   <externalMetadataColumns
-                    isUsed="True" />
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[enterprise_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="enterprise_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="practice_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[person_id]"
+                      dataType="guid"
+                      name="person_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[first_office_enc_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="first_office_enc_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[last_office_enc_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_office_enc_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[next_office_enc_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="next_office_enc_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[pharmacy_code_1_id]"
+                      dataType="guid"
+                      name="pharmacy_code_1_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[pharmacy_code_2_id]"
+                      dataType="guid"
+                      name="pharmacy_code_2_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[default_location_id]"
+                      dataType="guid"
+                      name="default_location_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[privacy_level]"
+                      dataType="i4"
+                      name="privacy_level" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[suppress_billing_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="suppress_billing_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[preferred_provider_id]"
+                      dataType="guid"
+                      name="preferred_provider_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[financial_class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="financial_class" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[site_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="site_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[med_rec_nbr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="med_rec_nbr" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[guar_id]"
+                      dataType="guid"
+                      name="guar_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[guar_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="guar_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[contact_person_id]"
+                      dataType="guid"
+                      name="contact_person_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="user_defined1" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="user_defined2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="user_defined3" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="user_defined4" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[print_stmt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="print_stmt_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[last_letter_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_letter_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[rendering_prov_id]"
+                      dataType="guid"
+                      name="rendering_prov_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[co_managed_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="co_managed_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[co_managed_prov_id]"
+                      dataType="guid"
+                      name="co_managed_prov_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[mrkt_plan_id]"
+                      dataType="guid"
+                      name="mrkt_plan_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[mrkt_source_id]"
+                      dataType="guid"
+                      name="mrkt_source_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[mrkt_source_type]"
+                      dataType="i4"
+                      name="mrkt_source_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[mrkt_comments]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="mrkt_comments" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[referring_prov_id]"
+                      dataType="guid"
+                      name="referring_prov_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[last_print_statement_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="last_print_statement_date" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[privacy_notice_code_id]"
+                      dataType="guid"
+                      name="privacy_notice_code_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[privacy_notice_issued]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="privacy_notice_issued" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[privacy_notice_received]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="privacy_notice_received" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[nxmd_enrollment]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="nxmd_enrollment" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[privacy_notice_notes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="privacy_notice_notes" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[created_by]"
+                      dataType="i4"
+                      name="created_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="create_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[modified_by]"
+                      dataType="i4"
+                      name="modified_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="modify_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[row_timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="row_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[outsource_exempt_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="outsource_exempt_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[mrkt_details]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="mrkt_details" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="user_defined5" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="user_defined6" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="user_defined7" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[user_defined8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="user_defined8" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[head_of_household_id]"
+                      dataType="guid"
+                      name="head_of_household_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp_tz]"
+                      dataType="i2"
+                      name="create_timestamp_tz" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp_tz]"
+                      dataType="i2"
+                      name="modify_timestamp_tz" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_unresolved_allergies_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="no_unresolved_allergies_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_active_medications_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="no_active_medications_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_active_problems]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="no_active_problems" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[pm_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="pm_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[pharmacy_code_mo_id]"
+                      dataType="guid"
+                      name="pharmacy_code_mo_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_active_problems_snomed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="no_active_problems_snomed" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_known_imm_history_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="no_known_imm_history_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_known_procedures_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="no_known_procedures_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[no_active_devices_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="no_active_devices_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_patient\Stage NG_patient.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      dataType="dbTimeStamp"
+                      name="InsertDate" />
+                  </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
@@ -1754,6 +2524,19 @@ WHERE modify_timestamp &gt; ?</property>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\DF Get NG_patient\NG_patient">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get NG_patient\Stage NG_patient">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

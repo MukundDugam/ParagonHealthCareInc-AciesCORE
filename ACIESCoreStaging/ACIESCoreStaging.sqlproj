@@ -205,6 +205,9 @@
     <Build Include="ods\Stored Procedures\uspODSNG_patientDelete.sql" />
     <Build Include="ods\Stored Procedures\uspODSNG_patientMaxDateSelect.sql" />
     <Build Include="ods\Stored Procedures\uspODSNG_patientUpsert.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_personDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_personMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_personUpsert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="01.DEV.ACIESCoreStaging.publish.publish.xml" />
