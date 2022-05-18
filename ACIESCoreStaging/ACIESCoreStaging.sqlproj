@@ -200,6 +200,11 @@
     <Build Include="ods\Stored Procedures\uspODSNG_MLTS_CategoryXP_Upsert.sql" />
     <Build Include="ods\Stored Procedures\uspODSNG_MLTS_CategoryXP_Delete.sql" />
     <Build Include="ods\Stored Procedures\uspODSNG_MLTS_CategoryXP_MaxDateSelect.sql" />
+    <Build Include="stage\Tables\NG_patient.sql" />
+    <Build Include="ods\Tables\NG_patient.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_patientDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_patientMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_patientUpsert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="01.DEV.ACIESCoreStaging.publish.publish.xml" />

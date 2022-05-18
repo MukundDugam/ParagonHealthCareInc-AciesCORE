@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">SVRDEVOPS01</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjZfa0ePsZEy2UUY1H2rrGQAAAAACAAAAAAADZgAAwAAAABAAAAAxVtNXvObru3W4v4/oHciaAAAAAASAAACgAAAAEAAAADZbRrfuPmh7HDpaurmrZYGIAAAA6+uw3R/feIfM2duJCM7x9Hu+Rd40wdKkdUgADZoxDeQgaSCsG/g3jbBy1lv+szlmP3Yg/slgNVkcaWehmeuZuK2TfuuuzyE9Qf3k25DjSPsLQ0PkarMND+Jcta1ogwULWEuRPM6ZzrCFxHGay+o6Ni8UvCm8QXPP9nwIY0Zo1L/WublJW0vHiBQAAAAh/KbLOBDIBnYjRTOzXA52T8PNdg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjZfa0ePsZEy2UUY1H2rrGQAAAAACAAAAAAADZgAAwAAAABAAAABOKCxgkNhP4MTtS6BSYdIOAAAAAASAAACgAAAAEAAAADSoOPdEItdx+RvvmABNwiGIAAAAY3cWApk7ipl9iiG6fxW1J6r9eIuKIQmiQrB3IHJwpNQIncuVXv7U1FaYJQvchttVJD4W5re32Erz0+ZYt8jLbUuvYYPKgsmwLNPBADHhUxwMQnX1AtBQC6fgKC1Km8DjFHLIB9khWE5mgUifrzZaytZ+wTh+3dD1252GsxtAtV7xlZaxGJaCLRQAAADUXhOIlnCWZ1g9TUFWOifZ0EcipA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -82,6 +82,7 @@
           <SSIS:Package SSIS:Name="ODSNG_MLTS_MedInfoXP_.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ODSNG_MLTS_CategoryXP_.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="StageNG_MLTS_CategoryXP_.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="StageNG_patient.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="ACIESCoreStaging.conmgr" />
@@ -1416,6 +1417,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{40BB40EA-E8E9-432F-B24D-83CD17EA41D9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="StageNG_patient.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{CA12B256-F23D-4554-8D10-3BF620D8CE44}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">StageNG_patient</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">49</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{03C6D912-BF84-4AA5-BF11-0F58663C54E9}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
