@@ -218,6 +218,11 @@
     <Build Include="ods\Stored Procedures\uspODSNG_person_relationshipDelete.sql" />
     <Build Include="ods\Stored Procedures\uspODSNG_person_relationshipMaxDateSelect.sql" />
     <Build Include="ods\Stored Procedures\uspODSNG_person_relationshipUpsert.sql" />
+    <Build Include="stage\Tables\NG_code_tables.sql" />
+    <Build Include="ods\Tables\NG_code_tables.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_code_tablesDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_code_tablesMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_code_tablesUpsert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="01.DEV.ACIESCoreStaging.publish.publish.xml" />

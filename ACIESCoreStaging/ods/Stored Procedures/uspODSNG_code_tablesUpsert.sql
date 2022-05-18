@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [ods].[uspODSNG_person_relationship]
+﻿CREATE PROCEDURE [ods].[uspODSNG_code_tables]
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -7,60 +7,58 @@ BEGIN
     DECLARE @DateTime DATETIME = GETDATE();
 
     -- Update existing records to previous version
-    UPDATE [ods].[NG_person_relationship]
+    UPDATE [ods].[NG_code_tables]
     SET [CurrentRowFlag] = 0,
         [ExpirationDate] = @DateTime,
         [UpdateDate] = @DateTime
-    FROM [ods].[NG_person_relationship] [t]
-        INNER JOIN [stage].[NG_person_relationship] [s]
-            ON [t].[person_id]=[s].[person_id] 
-	        AND [t].[related_person_id]=[s].[related_person_id]
-            AND [t].[CurrentRowFlag] = 1;
+    FROM [ods].[NG_code_tables] [t]
+        INNER JOIN [stage].[NG_code_tables] [s]
+            ON [t].[code_type]=[s].[code_type]
+	        AND [t].[code]=[s].[code]
+               AND [t].[CurrentRowFlag] = 1;
 
     SET @DateTime = DATEADD(SS, 1, @DateTime);
 
     -- Insert New and modified records as current version
-    INSERT INTO [ods].[NG_person_relationship]
-    ( [person_id]
-      ,[related_person_id]
-      ,[relation_code]
+    INSERT INTO [ods].[NG_code_tables]
+    ( [code_type]
+      ,[code]
+      ,[description]
       ,[delete_ind]
       ,[create_timestamp]
       ,[created_by]
-      ,[modified_by]
       ,[modify_timestamp]
+      ,[modified_by]
       ,[row_timestamp]
-      ,[create_timestamp_tz]
-      ,[modify_timestamp_tz]
+      ,[attribute1]
       ,[EffectiveDate]
       ,[ExpirationDate]        
       ,[CurrentRowFlag]
       ,[DeleteRowFlag]
       ,[InsertDate]
     )
-    SELECT  [person_id]
-      ,[related_person_id]
-      ,[relation_code]
+    SELECT [code_type]
+      ,[code]
+      ,[description]
       ,[delete_ind]
       ,[create_timestamp]
       ,[created_by]
-      ,[modified_by]
       ,[modify_timestamp]
+      ,[modified_by]
       ,[row_timestamp]
-      ,[create_timestamp_tz]
-      ,[modify_timestamp_tz]
+      ,[attribute1]
       ,@DateTime AS [EffectiveDate]
       ,NULL AS [ExpirationDate]
       ,1 AS [CurrentRowFlag]
       ,0 AS [DeleteRowFlag]
       ,@DateTime AS [InsertDate]
-    FROM [stage].[NG_person_relationship] AS [s]
+    FROM [stage].[NG_code_tables] AS [s]
     WHERE NOT EXISTS
     (
         SELECT *
-        FROM [ods].[NG_person_relationship] AS [t]
-        WHERE [t].[person_id]=[s].[person_id] 
-	        AND [t].[related_person_id]=[s].[related_person_id]
+        FROM [ods].[NG_code_tables] AS [t]
+        WHERE [t].[code_type]=[s].[code_type]
+	        AND [t].[code]=[s].[code]
             AND [t].[CurrentRowFlag] = 1
     );  
 
