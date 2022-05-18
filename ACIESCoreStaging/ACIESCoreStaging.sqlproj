@@ -208,6 +208,16 @@
     <Build Include="ods\Stored Procedures\uspODSNG_personDelete.sql" />
     <Build Include="ods\Stored Procedures\uspODSNG_personMaxDateSelect.sql" />
     <Build Include="ods\Stored Procedures\uspODSNG_personUpsert.sql" />
+    <Build Include="stage\Tables\NG_person_payer.sql" />
+    <Build Include="ods\Tables\NG_person_payer.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_person_payerDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_person_payerMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_person_payerUpsert.sql" />
+    <Build Include="stage\Tables\NG_person_relationship.sql" />
+    <Build Include="ods\Tables\NG_person_relationship.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_person_relationshipDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_person_relationshipMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_person_relationshipUpsert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="01.DEV.ACIESCoreStaging.publish.publish.xml" />

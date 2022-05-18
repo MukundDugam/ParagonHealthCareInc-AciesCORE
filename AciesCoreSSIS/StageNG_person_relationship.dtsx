@@ -1,0 +1,802 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2022 10:12:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SVRDEVOPS01"
+  DTS:CreatorName="PHI\smannam"
+  DTS:DTSID="{C4922D56-B051-4372-85FC-EFB377B8318D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageNG_person_relationship"
+  DTS:PackageType="5"
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{CDB5FEC9-2944-4FF0-B7EB-123634F73BB4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A1C57AD6-EDC2-4224-BF88-B06A4C77C6DA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Continue">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7876C807-CD2E-416E-AD27-347405E31D84}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxDate">
+      <DTS:VariableValue
+        DTS:DataType="7">3/25/2022 4:40:21 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF Get NG_person_relationship"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6B75EFB8-E3C1-4B6D-A53F-AD07DCD60523}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Get NG_person_relationship"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="ODS NG_person_relationship"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[person]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM [person_relationship]
+WHERE modify_timestamp &gt; ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{7876C807-CD2E-416E-AD27-347405E31D84};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Connections[OleDbConnection]"
+                  connectionManagerID="{2734AE80-A2D0-48F8-A9D1-F4FC70704200}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[NextGen]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[created_by]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[created_by]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[created_by]"
+                      name="created_by"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[modified_by]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[modified_by]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[modified_by]"
+                      name="modified_by"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[create_timestamp]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[create_timestamp]"
+                      name="create_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[modify_timestamp]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[modify_timestamp]"
+                      name="modify_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[row_timestamp]"
+                      dataType="bytes"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[row_timestamp]"
+                      length="8"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[row_timestamp]"
+                      name="row_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[person_id]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[person_id]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[person_id]"
+                      name="person_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[delete_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[delete_ind]"
+                      length="1"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[delete_ind]"
+                      name="delete_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[related_person_id]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[related_person_id]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[related_person_id]"
+                      name="related_person_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[relation_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[relation_code]"
+                      length="3"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[relation_code]"
+                      name="relation_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[create_timestamp_tz]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[create_timestamp_tz]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[create_timestamp_tz]"
+                      name="create_timestamp_tz"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[modify_timestamp_tz]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[modify_timestamp_tz]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[modify_timestamp_tz]"
+                      name="modify_timestamp_tz"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[created_by]"
+                      dataType="i4"
+                      name="created_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[modified_by]"
+                      dataType="i4"
+                      name="modified_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="create_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="modify_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[row_timestamp]"
+                      dataType="bytes"
+                      length="8"
+                      name="row_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[person_id]"
+                      dataType="guid"
+                      name="person_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[delete_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="delete_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[related_person_id]"
+                      dataType="guid"
+                      name="related_person_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[relation_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="relation_code" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[create_timestamp_tz]"
+                      dataType="i2"
+                      name="create_timestamp_tz" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].ExternalColumns[modify_timestamp_tz]"
+                      dataType="i2"
+                      name="modify_timestamp_tz" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[person_id]"
+                      dataType="guid"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[person_id]"
+                      name="person_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[related_person_id]"
+                      dataType="guid"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[related_person_id]"
+                      name="related_person_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[relation_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[relation_code]"
+                      name="relation_code" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[delete_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[delete_ind]"
+                      name="delete_ind" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[created_by]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[created_by]"
+                      name="created_by" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[modified_by]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[modified_by]"
+                      name="modified_by" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[create_timestamp]"
+                      name="create_timestamp" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[modify_timestamp]"
+                      name="modify_timestamp" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[row_timestamp]"
+                      dataType="bytes"
+                      length="8"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[row_timestamp]"
+                      name="row_timestamp" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[create_timestamp_tz]"
+                      dataType="i2"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[create_timestamp_tz]"
+                      name="create_timestamp_tz" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[modify_timestamp_tz]"
+                      dataType="i2"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[modify_timestamp_tz]"
+                      name="modify_timestamp_tz" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Stage NG_person_relationship"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[NG_person_relationship]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Connections[OleDbConnection]"
+                  connectionManagerID="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ACIESCoreStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].Columns[created_by]"
+                      cachedDataType="i4"
+                      cachedName="created_by"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[created_by]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[created_by]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].Columns[modified_by]"
+                      cachedDataType="i4"
+                      cachedName="modified_by"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[modified_by]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[modified_by]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].Columns[create_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="create_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[create_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].Columns[modify_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="modify_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[modify_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].Columns[row_timestamp]"
+                      cachedDataType="bytes"
+                      cachedLength="8"
+                      cachedName="row_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[row_timestamp]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[row_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].Columns[person_id]"
+                      cachedDataType="guid"
+                      cachedName="person_id"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[person_id]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[person_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].Columns[delete_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="delete_ind"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[delete_ind]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[delete_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].Columns[related_person_id]"
+                      cachedDataType="guid"
+                      cachedName="related_person_id"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[related_person_id]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[related_person_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].Columns[relation_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="relation_code"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[relation_code]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[relation_code]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].Columns[create_timestamp_tz]"
+                      cachedDataType="i2"
+                      cachedName="create_timestamp_tz"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp_tz]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[create_timestamp_tz]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].Columns[modify_timestamp_tz]"
+                      cachedDataType="i2"
+                      cachedName="modify_timestamp_tz"
+                      externalMetadataColumnId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp_tz]"
+                      lineageId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output].Columns[modify_timestamp_tz]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[person_id]"
+                      dataType="guid"
+                      name="person_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[related_person_id]"
+                      dataType="guid"
+                      name="related_person_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[relation_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="relation_code" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[delete_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="delete_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="create_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[created_by]"
+                      dataType="i4"
+                      name="created_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[modified_by]"
+                      dataType="i4"
+                      name="modified_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="modify_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[row_timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="row_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp_tz]"
+                      dataType="i2"
+                      name="create_timestamp_tz" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp_tz]"
+                      dataType="i2"
+                      name="modify_timestamp_tz" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      dataType="dbTimeStamp"
+                      name="InsertDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF Get NG_person_relationship.Paths[OLE DB Source Output]"
+              endId="Package\DF Get NG_person_relationship\Stage NG_person_relationship.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF Get NG_person_relationship\ODS NG_person_relationship.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Check Staging table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{25AFC4FA-4157-4091-9E1F-97121E2693FE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Check Staging table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [stage].[uspStagingTableCheck] 'NG_person_relationship', ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Continue"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Get ODS TimeStamp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9F2B4B84-4A2E-4868-95DC-CBE36BA7FA45}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Get ODS TimeStamp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_person_relationshipMaxDateSelect] ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::MaxDate"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="133"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FFA2971E-80E0-4E45-889B-9AD07B2EE749}"
+      DTS:From="Package\EXECSQL Get ODS TimeStamp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF Get NG_person_relationship" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A9EB6AC3-63AD-48CF-9225-246145AC81DD}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::Continue] == &quot;Y&quot;"
+      DTS:From="Package\EXECSQL Check Staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\EXECSQL Get ODS TimeStamp" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="226.4,41.6"
+          Id="Package\DF Get NG_person_relationship"
+          TopLeft="19.3333333995607,208.766666652892" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\EXECSQL Check Staging table"
+          TopLeft="8.50000000000001,8.5" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\EXECSQL Get ODS TimeStamp"
+          TopLeft="5.50000000000003,108.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="128.61666669978,150.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.6666666528916"
+              Start="0,0"
+              End="0,51.1666666528916">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.1666666528916" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="124.5,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,17.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF Get NG_person_relationship">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\DF Get NG_person_relationship\ODS NG_person_relationship"
+          TopLeft="36.3333321081268,9.5" />
+        <NodeLayout
+          Size="220.8,41.6"
+          Id="Package\DF Get NG_person_relationship\Stage NG_person_relationship"
+          TopLeft="34.1666653090053,190.666668181949" />
+        <EdgeLayout
+          Id="Package\DF Get NG_person_relationship.Paths[OLE DB Source Output]"
+          TopLeft="144.449998708566,51.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,139.566668181949"
+              Start="0,0"
+              End="0,132.066668181949">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,132.066668181949" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get NG_person_relationship\ODS NG_person_relationship">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get NG_person_relationship\Stage NG_person_relationship">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
