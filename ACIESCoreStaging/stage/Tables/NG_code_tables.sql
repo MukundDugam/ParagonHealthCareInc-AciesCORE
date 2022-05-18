@@ -13,8 +13,7 @@
     [InsertDate]                   DATETIME,
     CONSTRAINT [pk_code_tables]
         PRIMARY KEY NONCLUSTERED (	[code_type] ASC,
-	[code] ASC
-)
+	[code] ASC)
 );
 GO
 ALTER TABLE [stage].[NG_code_tables]
