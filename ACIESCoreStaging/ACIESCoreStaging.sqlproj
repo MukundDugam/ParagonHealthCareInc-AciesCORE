@@ -218,6 +218,11 @@
     <Build Include="ods\Stored Procedures\uspODSNG_person_relationshipDelete.sql" />
     <Build Include="ods\Stored Procedures\uspODSNG_person_relationshipMaxDateSelect.sql" />
     <Build Include="ods\Stored Procedures\uspODSNG_person_relationshipUpsert.sql" />
+    <Build Include="stage\Tables\NG_practice_payers_person.sql" />
+    <Build Include="ods\Tables\NG_practice_payers_person.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_practice_payers_personDelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_practice_payers_personMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSNG_practice_payers_personUpsert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="01.DEV.ACIESCoreStaging.publish.publish.xml" />
