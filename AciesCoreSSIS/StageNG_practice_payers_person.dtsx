@@ -1,0 +1,1049 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2022 10:12:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SVRDEVOPS01"
+  DTS:CreatorName="PHI\smannam"
+  DTS:DTSID="{CFB956C6-46D5-404F-B48C-5B24D9130150}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageNG_practice_payers_person"
+  DTS:PackageType="5"
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{EBA19ECF-6099-466C-81A5-F4441697F9B3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{826068FE-AFD5-4585-8C91-1F3EDCBE41C4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Continue">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F5C9F79B-1B5B-4D2D-A3EA-13A0D0A19440}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxDate">
+      <DTS:VariableValue
+        DTS:DataType="7">3/25/2022 4:40:21 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF Get NG_practice_payers_person"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8D6CC210-F3C4-4EC3-8A6E-009A4B1F4267}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Get NG_practice_payers_person"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="NG_practice_payers_person"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM [practice_payers_person]
+WHERE modify_timestamp &gt; ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{F5C9F79B-1B5B-4D2D-A3EA-13A0D0A19440};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Connections[OleDbConnection]"
+                  connectionManagerID="{2734AE80-A2D0-48F8-A9D1-F4FC70704200}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[NextGen]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[practice_id]"
+                      length="4"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[practice_id]"
+                      name="practice_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[person_payer_id]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[person_payer_id]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[person_payer_id]"
+                      name="person_payer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[payer_id]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[payer_id]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[payer_id]"
+                      name="payer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[person_id]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[person_id]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[person_id]"
+                      name="person_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[copay_amt]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[copay_amt]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[copay_amt]"
+                      name="copay_amt"
+                      precision="19"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[deductible]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[deductible]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[deductible]"
+                      name="deductible"
+                      precision="19"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[notify_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[notify_ind]"
+                      length="1"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[notify_ind]"
+                      name="notify_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[verify_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[verify_ind]"
+                      length="1"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[verify_ind]"
+                      name="verify_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[precert_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[precert_ind]"
+                      length="1"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[precert_ind]"
+                      name="precert_ind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[copay_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[copay_type]"
+                      length="1"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[copay_type]"
+                      name="copay_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[copay_percent]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[copay_percent]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[copay_percent]"
+                      name="copay_percent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[create_timestamp]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[create_timestamp]"
+                      name="create_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[created_by]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[created_by]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[created_by]"
+                      name="created_by"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[modify_timestamp]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[modify_timestamp]"
+                      name="modify_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[modified_by]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[modified_by]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[modified_by]"
+                      name="modified_by"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[row_timestamp]"
+                      dataType="bytes"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[row_timestamp]"
+                      length="8"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[row_timestamp]"
+                      name="row_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[referral_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[referral_ind]"
+                      length="1"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[referral_ind]"
+                      name="referral_ind"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="practice_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[person_payer_id]"
+                      dataType="guid"
+                      name="person_payer_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[payer_id]"
+                      dataType="guid"
+                      name="payer_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[person_id]"
+                      dataType="guid"
+                      name="person_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[copay_amt]"
+                      dataType="numeric"
+                      name="copay_amt"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[deductible]"
+                      dataType="numeric"
+                      name="deductible"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[notify_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="notify_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[verify_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="verify_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[precert_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="precert_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[copay_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="copay_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[copay_percent]"
+                      dataType="i4"
+                      name="copay_percent" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="create_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[created_by]"
+                      dataType="i4"
+                      name="created_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="modify_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[modified_by]"
+                      dataType="i4"
+                      name="modified_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[row_timestamp]"
+                      dataType="bytes"
+                      length="8"
+                      name="row_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].ExternalColumns[referral_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="referral_ind" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[practice_id]"
+                      name="practice_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[person_payer_id]"
+                      dataType="guid"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[person_payer_id]"
+                      name="person_payer_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[payer_id]"
+                      dataType="guid"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[payer_id]"
+                      name="payer_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[person_id]"
+                      dataType="guid"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[person_id]"
+                      name="person_id" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[copay_amt]"
+                      dataType="numeric"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[copay_amt]"
+                      name="copay_amt"
+                      precision="19"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[deductible]"
+                      dataType="numeric"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[deductible]"
+                      name="deductible"
+                      precision="19"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[notify_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[notify_ind]"
+                      name="notify_ind" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[verify_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[verify_ind]"
+                      name="verify_ind" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[precert_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[precert_ind]"
+                      name="precert_ind" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[copay_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[copay_type]"
+                      name="copay_type" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[copay_percent]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[copay_percent]"
+                      name="copay_percent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[create_timestamp]"
+                      name="create_timestamp" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[created_by]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[created_by]"
+                      name="created_by" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[modify_timestamp]"
+                      name="modify_timestamp" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[modified_by]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[modified_by]"
+                      name="modified_by" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[row_timestamp]"
+                      dataType="bytes"
+                      length="8"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[row_timestamp]"
+                      name="row_timestamp" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[referral_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[referral_ind]"
+                      name="referral_ind" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Stage NG_practice_payers_person"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[ods].[NG_practice_payers_person]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Connections[OleDbConnection]"
+                  connectionManagerID="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ACIESCoreStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[practice_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="practice_id"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[practice_id]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[practice_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[person_payer_id]"
+                      cachedDataType="guid"
+                      cachedName="person_payer_id"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[person_payer_id]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[person_payer_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[payer_id]"
+                      cachedDataType="guid"
+                      cachedName="payer_id"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[payer_id]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[payer_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[person_id]"
+                      cachedDataType="guid"
+                      cachedName="person_id"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[person_id]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[person_id]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[copay_amt]"
+                      cachedDataType="numeric"
+                      cachedName="copay_amt"
+                      cachedPrecision="19"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[copay_amt]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[copay_amt]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[deductible]"
+                      cachedDataType="numeric"
+                      cachedName="deductible"
+                      cachedPrecision="19"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[deductible]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[deductible]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[notify_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="notify_ind"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[notify_ind]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[notify_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[verify_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="verify_ind"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[verify_ind]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[verify_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[precert_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="precert_ind"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[precert_ind]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[precert_ind]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[copay_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="copay_type"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[copay_type]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[copay_type]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[copay_percent]"
+                      cachedDataType="i4"
+                      cachedName="copay_percent"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[copay_percent]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[copay_percent]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[create_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="create_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[create_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[created_by]"
+                      cachedDataType="i4"
+                      cachedName="created_by"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[created_by]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[created_by]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[modify_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="modify_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[modify_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[modified_by]"
+                      cachedDataType="i4"
+                      cachedName="modified_by"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[modified_by]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[modified_by]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[row_timestamp]"
+                      cachedDataType="bytes"
+                      cachedLength="8"
+                      cachedName="row_timestamp"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[row_timestamp]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[row_timestamp]" />
+                    <inputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].Columns[referral_ind]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="referral_ind"
+                      externalMetadataColumnId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[referral_ind]"
+                      lineageId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output].Columns[referral_ind]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[RecordID]"
+                      dataType="i4"
+                      name="RecordID" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[practice_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="practice_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[person_payer_id]"
+                      dataType="guid"
+                      name="person_payer_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[payer_id]"
+                      dataType="guid"
+                      name="payer_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[person_id]"
+                      dataType="guid"
+                      name="person_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[copay_amt]"
+                      dataType="numeric"
+                      name="copay_amt"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[deductible]"
+                      dataType="numeric"
+                      name="deductible"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[notify_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="notify_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[verify_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="verify_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[precert_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="precert_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[copay_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="copay_type" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[copay_percent]"
+                      dataType="i4"
+                      name="copay_percent" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="create_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[created_by]"
+                      dataType="i4"
+                      name="created_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="modify_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[modified_by]"
+                      dataType="i4"
+                      name="modified_by" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[row_timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="row_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[referral_ind]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="referral_ind" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[ExpirationDate]"
+                      dataType="dbTimeStamp"
+                      name="ExpirationDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[CurrentRowFlag]"
+                      dataType="bool"
+                      name="CurrentRowFlag" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[DeleteRowFlag]"
+                      dataType="bool"
+                      name="DeleteRowFlag" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      dataType="dbTimeStamp"
+                      name="InsertDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[UpdateDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdateDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF Get NG_practice_payers_person.Paths[OLE DB Source Output]"
+              endId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF Get NG_practice_payers_person\NG_practice_payers_person.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Check Staging table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AE8F8CD5-07A0-420C-87D9-B0852FD76BC0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Check Staging table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [stage].[uspStagingTableCheck] 'NG_practice_payers_person', ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Continue"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Get ODS TimeStamp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E29E02A8-3230-4464-A96E-E202BC5747E6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Get ODS TimeStamp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_practice_payers_personMaxDateSelect] ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::MaxDate"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="133"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{510928BE-B58D-4DA1-A1DD-A3BC778B87CE}"
+      DTS:From="Package\EXECSQL Get ODS TimeStamp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF Get NG_practice_payers_person" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F8D6875C-BEC3-4ECD-B46C-E4B407F2AABA}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::Continue] == &quot;Y&quot;"
+      DTS:From="Package\EXECSQL Check Staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\EXECSQL Get ODS TimeStamp" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="247.2,41.6"
+          Id="Package\DF Get NG_practice_payers_person"
+          TopLeft="6.0000005960465,216.566666714881" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\EXECSQL Check Staging table"
+          TopLeft="8.50000000000001,8.5" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\EXECSQL Get ODS TimeStamp"
+          TopLeft="5.50000000000003,108.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="127.150000298023,150.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.4666667148806"
+              Start="0,0"
+              End="0,58.9666667148806">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.9666667148806" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="124.5,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,17.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF Get NG_practice_payers_person">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="210.4,41.6"
+          Id="Package\DF Get NG_practice_payers_person\NG_practice_payers_person"
+          TopLeft="275.833322372702,31.2000002479553" />
+        <NodeLayout
+          Size="240.8,41.6"
+          Id="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person"
+          TopLeft="262.499989569188,184.600001467069" />
+        <EdgeLayout
+          Id="Package\DF Get NG_practice_payers_person.Paths[OLE DB Source Output]"
+          TopLeft="381.966655970945,72.8000002479553">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,111.800001219114"
+              Start="0,0"
+              End="0,104.300001219114">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,104.300001219114" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get NG_practice_payers_person\NG_practice_payers_person">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
