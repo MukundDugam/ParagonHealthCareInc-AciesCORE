@@ -5,57 +5,57 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SVRDEVOPS01"
   DTS:CreatorName="PHI\smannam"
-  DTS:DTSID="{F608C3D3-C90B-442C-B345-65D38CF4BA2F}"
+  DTS:DTSID="{00D0D465-FB90-4185-8C07-D6316D5AC557}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1033"
-  DTS:ObjectName="ODSNG_person_relationship"
+  DTS:ObjectName="ODSNG_code_tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{5C14F95E-F012-44B7-B1B1-15D44E2939D8}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{7A87D36B-2FEE-4660-AC37-B71EC8E00B75}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\EXECSQL NG_person_relationshipDelete"
+      DTS:refId="Package\EXECSQL NG_code_tablesDelete"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D2E899F2-0E23-42E3-9652-961AD17B10A9}"
+      DTS:DTSID="{929B2970-A00E-4275-982D-0AF7B5C8E5D4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="EXECSQL NG_person_relationshipDelete"
+      DTS:ObjectName="EXECSQL NG_code_tablesDelete"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
-          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_person_relationshipDelete]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_code_tablesDelete]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\EXECSQL NG_person_relationshipUpsert"
+      DTS:refId="Package\EXECSQL NG_code_tablesUpsert"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{0DBC9F4B-79DC-4C5D-818A-CE165F7B8808}"
+      DTS:DTSID="{48B296B3-E4EB-40E9-ABEE-E728DD890C7E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="EXECSQL NG_person_relationshipUpsert"
+      DTS:ObjectName="EXECSQL NG_code_tablesUpsert"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
-          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_person_relationshipUpsert]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_accountsUpsert]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\EXECSQL Truncate staging table"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{30D777AE-0079-45E8-9F2C-3E19C4E5A30F}"
+      DTS:DTSID="{23E62D61-902C-4F05-B529-E814D42D281C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXECSQL Truncate staging table"
@@ -65,7 +65,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
-          SQLTask:SqlStatementSource="EXEC [stage].[usp_StagingTableTruncate] 'NG_person_relationship'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC [stage].[usp_StagingTableTruncate] 'NG_code_tables'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -73,16 +73,16 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{DBED3B6A-16BA-414C-80DA-E6BDD4D7A69D}"
-      DTS:From="Package\EXECSQL NG_person_relationshipUpsert"
+      DTS:DTSID="{293D226B-3DA1-4F0A-9FFD-22EE288BDA30}"
+      DTS:From="Package\EXECSQL NG_code_tablesUpsert"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\EXECSQL NG_person_relationshipDelete" />
+      DTS:To="Package\EXECSQL NG_code_tablesDelete" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{F92CB0F2-18C2-4905-8E9D-C8BA1985C508}"
-      DTS:From="Package\EXECSQL NG_person_relationshipDelete"
+      DTS:DTSID="{8380ACC6-A681-4E1A-9E04-8C833D00693D}"
+      DTS:From="Package\EXECSQL NG_code_tablesDelete"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\EXECSQL Truncate staging table" />
@@ -100,20 +100,20 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="272.8,41.6"
-          Id="Package\EXECSQL NG_person_relationshipDelete"
-          TopLeft="62.4999990065893,106.633333326446" />
-        <NodeLayout
-          Size="272.8,41.6"
-          Id="Package\EXECSQL NG_person_relationshipUpsert"
+          Size="238.4,41.6"
+          Id="Package\EXECSQL NG_code_tablesUpsert"
           TopLeft="66.6666655076875,5.5" />
         <NodeLayout
-          Size="320,44"
+          Size="237.6,41.6"
+          Id="Package\EXECSQL NG_code_tablesDelete"
+          TopLeft="62.4999990065893,106.633333326446" />
+        <NodeLayout
+          Size="232.8,41.6"
           Id="Package\EXECSQL Truncate staging table"
-          TopLeft="40.4999986092251,209.5" />
+          TopLeft="62.9999977151554,211.233333347109" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="200.983332257138,47.1">
+          TopLeft="183.583332257138,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -135,18 +135,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="199.699998807907,148.233333326446">
+          TopLeft="180.349998360872,148.233333326446">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61.266666673554"
+              EndConnector="0,63.0000000206626"
               Start="0,0"
-              End="0,53.766666673554">
+              End="0,55.5000000206626">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.766666673554" />
+                    End="0,55.5000000206626" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
