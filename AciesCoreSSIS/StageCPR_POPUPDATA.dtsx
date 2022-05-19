@@ -1,0 +1,925 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2022 10:12:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SVRDEVOPS01"
+  DTS:CreatorName="PHI\smannam"
+  DTS:DTSID="{BCDB0013-49CF-4A75-951E-A640568B24F2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="StageCPR_POPUPDATA"
+  DTS:PackageType="5"
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{71EECA3E-ED2E-4BD7-AA32-D82AFF2484E0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F367F33C-A038-4AD6-BDD4-102876059190}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Continue">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6CC6E341-8889-4424-BF1E-380DA97B534E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxDate">
+      <DTS:VariableValue
+        DTS:DataType="7">3/25/2022 4:40:21 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF Get CPR_POPUPDATA"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2CDDBE74-E0AB-47E6-97F5-75DF95B543A3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Get CPR_POPUPDATA"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="CPR_POPUPDATA"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM POPUPDATA
+WHERE TOUCHDATE &gt; ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{6CC6E341-8889-4424-BF1E-380DA97B534E};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Connections[OleDbConnection]"
+                  connectionManagerID="{4199B01E-8FA0-4308-8134-03A01072A972}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CPR7]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CPK_POPUPDATA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CPK_POPUPDATA]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CPK_POPUPDATA]"
+                      name="CPK_POPUPDATA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[TEXT_]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[TEXT_]"
+                      length="125"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[TEXT_]"
+                      name="TEXT_"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CODE]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CODE]"
+                      name="CODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CFK_POPUPS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CFK_POPUPS]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CFK_POPUPS]"
+                      name="CFK_POPUPS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[POPUPNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[POPUPNAME]"
+                      length="20"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[POPUPNAME]"
+                      name="POPUPNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[DELFLAG]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[DELFLAG]"
+                      name="DELFLAG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CREATEDON]"
+                      name="CREATEDON"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[TOUCHEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[TOUCHEDBY]"
+                      length="200"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[TOUCHEDBY]"
+                      name="TOUCHEDBY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
+                      name="TOUCHDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
+                      name="CREATEDBY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
+                      name="CHGBYHOST"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[AMOUNT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[AMOUNT]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[AMOUNT]"
+                      name="AMOUNT"
+                      precision="15"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CFK_TABLE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CFK_TABLE]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CFK_TABLE]"
+                      name="CFK_TABLE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[ITEMDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[ITEMDATE]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[ITEMDATE]"
+                      name="ITEMDATE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CPK_POPUPDATA]"
+                      dataType="i4"
+                      name="CPK_POPUPDATA" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[TEXT_]"
+                      codePage="1252"
+                      dataType="str"
+                      length="125"
+                      name="TEXT_" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CODE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CFK_POPUPS]"
+                      dataType="i4"
+                      name="CFK_POPUPS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[POPUPNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="POPUPNAME" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
+                      dataType="i4"
+                      name="DELFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      name="CREATEDON" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[TOUCHEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="TOUCHEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      name="TOUCHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CREATEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CHGBYHOST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[AMOUNT]"
+                      dataType="numeric"
+                      name="AMOUNT"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[CFK_TABLE]"
+                      dataType="i4"
+                      name="CFK_TABLE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].ExternalColumns[ITEMDATE]"
+                      dataType="dbTimeStamp"
+                      name="ITEMDATE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CPK_POPUPDATA]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CPK_POPUPDATA]"
+                      name="CPK_POPUPDATA" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[TEXT_]"
+                      codePage="1252"
+                      dataType="str"
+                      length="125"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[TEXT_]"
+                      name="TEXT_" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CODE]"
+                      name="CODE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CFK_POPUPS]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CFK_POPUPS]"
+                      name="CFK_POPUPS" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[POPUPNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[POPUPNAME]"
+                      name="POPUPNAME" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[DELFLAG]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[DELFLAG]"
+                      name="DELFLAG" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CREATEDON]"
+                      name="CREATEDON" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[TOUCHEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[TOUCHEDBY]"
+                      name="TOUCHEDBY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[TOUCHDATE]"
+                      name="TOUCHDATE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CREATEDBY]"
+                      name="CREATEDBY" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CHGBYHOST]"
+                      name="CHGBYHOST" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[AMOUNT]"
+                      dataType="numeric"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[AMOUNT]"
+                      name="AMOUNT"
+                      precision="15"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CFK_TABLE]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[CFK_TABLE]"
+                      name="CFK_TABLE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[ITEMDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[ITEMDATE]"
+                      name="ITEMDATE" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Stage CPR_POPUPDATA"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[CPR_POPUPDATA]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Connections[OleDbConnection]"
+                  connectionManagerID="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ACIESCoreStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[DELFLAG]"
+                      cachedDataType="i4"
+                      cachedName="DELFLAG"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[DELFLAG]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[TOUCHDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TOUCHDATE"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[TOUCHDATE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[CHGBYHOST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CHGBYHOST"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CHGBYHOST]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[CREATEDON]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CREATEDON"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CREATEDON]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[CREATEDBY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CREATEDBY"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CREATEDBY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[TEXT_]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="125"
+                      cachedName="TEXT_"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[TEXT_]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[TEXT_]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[CODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CODE"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CODE]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CODE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[CPK_POPUPDATA]"
+                      cachedDataType="i4"
+                      cachedName="CPK_POPUPDATA"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CPK_POPUPDATA]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CPK_POPUPDATA]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[CFK_POPUPS]"
+                      cachedDataType="i4"
+                      cachedName="CFK_POPUPS"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CFK_POPUPS]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CFK_POPUPS]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[POPUPNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="POPUPNAME"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[POPUPNAME]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[POPUPNAME]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[TOUCHEDBY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="TOUCHEDBY"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHEDBY]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[TOUCHEDBY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[AMOUNT]"
+                      cachedDataType="numeric"
+                      cachedName="AMOUNT"
+                      cachedPrecision="15"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[AMOUNT]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[AMOUNT]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[CFK_TABLE]"
+                      cachedDataType="i4"
+                      cachedName="CFK_TABLE"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CFK_TABLE]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[CFK_TABLE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].Columns[ITEMDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ITEMDATE"
+                      externalMetadataColumnId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[ITEMDATE]"
+                      lineageId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output].Columns[ITEMDATE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CPK_POPUPDATA]"
+                      dataType="i4"
+                      name="CPK_POPUPDATA" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[TEXT_]"
+                      codePage="1252"
+                      dataType="str"
+                      length="125"
+                      name="TEXT_" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CODE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CFK_POPUPS]"
+                      dataType="i4"
+                      name="CFK_POPUPS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[POPUPNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="POPUPNAME" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
+                      dataType="i4"
+                      name="DELFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      name="CREATEDON" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="TOUCHEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      name="TOUCHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CREATEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CHGBYHOST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[AMOUNT]"
+                      dataType="numeric"
+                      name="AMOUNT"
+                      precision="15"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[CFK_TABLE]"
+                      dataType="i4"
+                      name="CFK_TABLE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[ITEMDATE]"
+                      dataType="dbTimeStamp"
+                      name="ITEMDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      dataType="dbTimeStamp"
+                      name="InsertDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF Get CPR_POPUPDATA.Paths[OLE DB Source Output]"
+              endId="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Check Staging table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D74F8D16-EE40-4F2F-BF65-2391CC0F5C70}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Check Staging table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [stage].[uspStagingTableCheck] 'CPR_POPUPDATA', ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Continue"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXECSQL Get ODS TimeStamp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4DDB8C84-4D86-4F31-8EF8-7735B02B2711}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXECSQL Get ODS TimeStamp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSCPR_POPUPDATAMaxDateSelect] ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::MaxDate"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="133"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E14B5A48-694A-4336-9988-5BD0F2782B6A}"
+      DTS:From="Package\EXECSQL Get ODS TimeStamp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF Get CPR_POPUPDATA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0D4C8192-B343-49C0-B63D-88A3CC3997EA}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::Continue] == &quot;Y&quot;"
+      DTS:From="Package\EXECSQL Check Staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\EXECSQL Get ODS TimeStamp" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="206.4,41.6"
+          Id="Package\DF Get CPR_POPUPDATA"
+          TopLeft="21.8333333002196,212.100000020663" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\EXECSQL Check Staging table"
+          TopLeft="8.50000000000001,8.5" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\EXECSQL Get ODS TimeStamp"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="124.86666665011,149.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.000000020663"
+              Start="0,0"
+              End="0,55.500000020663">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.500000020663" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="124.5,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,16.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF Get CPR_POPUPDATA">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA"
+          TopLeft="19.1666659050518,208.000001653036" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA"
+          TopLeft="26.6666656070287,24.2666668595208" />
+        <EdgeLayout
+          Id="Package\DF Get CPR_POPUPDATA.Paths[OLE DB Source Output]"
+          TopLeft="115.51666575604,65.8666668595208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,142.133334793515"
+              Start="0,0"
+              End="0,134.633334793515">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,134.633334793515" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get CPR_POPUPDATA\Stage CPR_POPUPDATA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Get CPR_POPUPDATA\CPR_POPUPDATA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

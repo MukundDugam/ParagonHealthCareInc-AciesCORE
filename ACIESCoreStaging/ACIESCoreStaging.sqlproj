@@ -228,6 +228,11 @@
     <Build Include="ods\Stored Procedures\uspODSNG_code_tablesDelete.sql" />
     <Build Include="ods\Stored Procedures\uspODSNG_code_tablesMaxDateSelect.sql" />
     <Build Include="ods\Stored Procedures\uspODSNG_code_tablesUpsert.sql" />
+    <Build Include="stage\Tables\CPR_POPUPDATA.sql" />
+    <Build Include="ods\Tables\CPR_POPUPDATA.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_POPUPDATADelete.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_POPUPDATAMaxDateSelect.sql" />
+    <Build Include="ods\Stored Procedures\uspODSCPR_POPUPDATAUpsert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="01.DEV.ACIESCoreStaging.publish.publish.xml" />

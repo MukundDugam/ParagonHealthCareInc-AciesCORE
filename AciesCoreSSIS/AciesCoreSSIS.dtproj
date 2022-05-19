@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">SVRDEVOPS01</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjZfa0ePsZEy2UUY1H2rrGQAAAAACAAAAAAADZgAAwAAAABAAAABu56r8Duo434qMfamPAk0VAAAAAASAAACgAAAAEAAAAJm+eyo7M6k2UibyxtyRGgWIAAAAZZhltcd5NJFJ3D64lqYkxmLUGakjj2aXjdYy8FVvVjKrr2qCW3gq2vs8cjcPIKu0JrIKQAhK8ZYbo506O51XjjBMC0SFOjeB6rSwb4jnIONNxYLrVmvZp31U5377jDIBiQ6yGvNCkx1twhoFov2MMJpzmxIJDBehjZO1rlUV/1oDxDE0xlM0mhQAAAAQFjSv84d0nDCkwMei20a7MmxGIw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjZfa0ePsZEy2UUY1H2rrGQAAAAACAAAAAAADZgAAwAAAABAAAACXHHXrQbboY1WyRIEgPdyMAAAAAASAAACgAAAAEAAAAK1B21WXNrFVkZSty3FHYeKIAAAA+5BaFxUUPIQiqmmnDL/THXeyfKYaVR67K59AGxEVIr2Dn1MubVmPduA+KiSLMs/Zns9gKo3d1v/3QIsxGMGlkfQw6Q1zDsrgK0H/ntrRjaTIuIwvhjfzUP63iprse0Bzu0ofMzR0yraJQ0XSBNnTsIuGBn4nQQIay5/XhNqhGLHyOY2QYERuORQAAAANG5TNuO0Eeq/ViNo1Ohv/lV3amQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -91,6 +91,9 @@
           <SSIS:Package SSIS:Name="ODSNG_person_relationship.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="StageNG_code_tables.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ODSNG_code_tables.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ODSCPR_INSCOMP.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="StageCPR_POPUPDATA.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ODSCPR_POPUPDATA.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="ACIESCoreStaging.conmgr" />
@@ -1578,6 +1581,57 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{7A87D36B-2FEE-4660-AC37-B71EC8E00B75}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ODSCPR_INSCOMP.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{279777F2-70F7-43BA-9614-9F4BC85F33A4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ODSCPR_INSCOMP</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{632847DD-E301-4674-B1CA-FC0083DCA46F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="StageCPR_POPUPDATA.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{BCDB0013-49CF-4A75-951E-A640568B24F2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">StageCPR_POPUPDATA</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">56</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{71EECA3E-ED2E-4BD7-AA32-D82AFF2484E0}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ODSCPR_POPUPDATA.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{56A0E6AC-4C9B-4728-8689-596187E95D43}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ODSCPR_POPUPDATA</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6C02306B-06CE-4C45-93E1-3450D021F7E6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

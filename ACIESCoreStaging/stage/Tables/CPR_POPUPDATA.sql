@@ -1,0 +1,25 @@
+﻿CREATE TABLE [stage].[CPR_POPUPDATA](
+	[CPK_POPUPDATA] [int] NOT NULL,
+	[TEXT_] [varchar](125) NULL,
+	[CODE] [varchar](100) NULL,
+	[CFK_POPUPS] [int] NULL,
+	[POPUPNAME] [varchar](20) NULL,
+	[DELFLAG] [int] NOT NULL,
+	[CREATEDON] [datetime] NULL,
+	[TOUCHEDBY] [varchar](200) NULL,
+	[TOUCHDATE] [datetime] NULL,
+	[CREATEDBY] [varchar](100) NULL,
+	[CHGBYHOST] [varchar](100) NULL,
+	[AMOUNT] [numeric](15, 4) NULL,
+	[CFK_TABLE] [int] NULL,
+	[ITEMDATE] [datetime] NULL,
+	[InsertDate] DATETIME,
+ CONSTRAINT [CN__POPUPDATA_CPK_POPUPDATA] PRIMARY KEY CLUSTERED 
+(
+	[CPK_POPUPDATA]  ASC
+)
+)
+GO
+ALTER TABLE [stage].[CPR_POPUPDATA]
+ADD CONSTRAINT [stage.CPR_POPUPDATAInsertDate]
+    DEFAULT (GETDATE()) FOR [InsertDate]
