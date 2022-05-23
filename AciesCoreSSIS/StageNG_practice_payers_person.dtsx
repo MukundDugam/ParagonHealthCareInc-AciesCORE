@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageNG_practice_payers_person"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{EBA19ECF-6099-466C-81A5-F4441697F9B3}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{9BEFE0AD-FAB2-4423-A2A3-C86A149131D3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -513,7 +513,7 @@ WHERE modify_timestamp &gt; ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[ods].[NG_practice_payers_person]</property>
+                  name="OpenRowset">[stage].[NG_practice_payers_person]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -692,10 +692,6 @@ WHERE modify_timestamp &gt; ?</property>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[RecordID]"
-                      dataType="i4"
-                      name="RecordID" />
-                    <externalMetadataColumn
                       refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[practice_id]"
                       codePage="1252"
                       dataType="str"
@@ -782,29 +778,9 @@ WHERE modify_timestamp &gt; ?</property>
                       length="1"
                       name="referral_ind" />
                     <externalMetadataColumn
-                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveDate]"
-                      dataType="dbTimeStamp"
-                      name="EffectiveDate" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[ExpirationDate]"
-                      dataType="dbTimeStamp"
-                      name="ExpirationDate" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[CurrentRowFlag]"
-                      dataType="bool"
-                      name="CurrentRowFlag" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[DeleteRowFlag]"
-                      dataType="bool"
-                      name="DeleteRowFlag" />
-                    <externalMetadataColumn
                       refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
                       dataType="dbTimeStamp"
                       name="InsertDate" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person.Inputs[OLE DB Destination Input].ExternalColumns[UpdateDate]"
-                      dataType="dbTimeStamp"
-                      name="UpdateDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -992,13 +968,13 @@ WHERE modify_timestamp &gt; ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="210.4,41.6"
-          Id="Package\DF Get NG_practice_payers_person\NG_practice_payers_person"
-          TopLeft="275.833322372702,31.2000002479553" />
-        <NodeLayout
           Size="240.8,41.6"
           Id="Package\DF Get NG_practice_payers_person\Stage NG_practice_payers_person"
           TopLeft="262.499989569188,184.600001467069" />
+        <NodeLayout
+          Size="210.4,41.6"
+          Id="Package\DF Get NG_practice_payers_person\NG_practice_payers_person"
+          TopLeft="275.833322372702,31.2000002479553" />
         <EdgeLayout
           Id="Package\DF Get NG_practice_payers_person.Paths[OLE DB Source Output]"
           TopLeft="381.966655970945,72.8000002479553">

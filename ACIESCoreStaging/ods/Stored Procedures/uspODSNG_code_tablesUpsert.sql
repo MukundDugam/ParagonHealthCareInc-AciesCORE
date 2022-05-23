@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [ods].[uspODSNG_code_tables]
+﻿CREATE PROCEDURE [ods].[uspODSNG_code_tablesUpsert]
 AS
 BEGIN
     SET NOCOUNT ON;

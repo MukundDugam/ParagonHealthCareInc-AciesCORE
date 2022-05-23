@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageNG_MLTS_CategoryXP_"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{40BB40EA-E8E9-432F-B24D-83CD17EA41D9}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{DC643681-D7D7-4A72-BA85-11EE938B8167}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -76,7 +76,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM [MLTS_MedInfoXP_]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM [MLTS_categoryXP_]
 WHERE modify_timestamp &gt; ?</property>
                 <property
                   dataType="System.String"
@@ -209,72 +209,6 @@ WHERE modify_timestamp &gt; ?</property>
                       name="ActiveInd"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[DrugName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[DrugName]"
-                      length="100"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[DrugName]"
-                      name="DrugName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Jcode]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Jcode]"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Jcode]"
-                      name="Jcode"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Manufacturer]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Manufacturer]"
-                      length="50"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Manufacturer]"
-                      name="Manufacturer"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[NDC]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[NDC]"
-                      length="15"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[NDC]"
-                      name="NDC"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[SimDescription]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[SimDescription]"
-                      length="80"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[SimDescription]"
-                      name="SimDescription"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[UnitType]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[UnitType]"
-                      length="10"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[UnitType]"
-                      name="UnitType"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Category]"
                       codePage="1252"
                       dataType="str"
@@ -284,94 +218,6 @@ WHERE modify_timestamp &gt; ?</property>
                       length="100"
                       lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Category]"
                       name="Category"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[sim_descripton]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[sim_descripton]"
-                      length="100"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[sim_descripton]"
-                      name="sim_descripton"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_InitialHr]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_InitialHr]"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_InitialHr]"
-                      name="Admin_InitialHr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_AddlHr]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_AddlHr]"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_AddlHr]"
-                      name="Admin_AddlHr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_Seq]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_Seq]"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_Seq]"
-                      name="Admin_Seq"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_Concurrent]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_Concurrent]"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_Concurrent]"
-                      name="Admin_Concurrent"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_IVPInitial]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_IVPInitial]"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_IVPInitial]"
-                      name="Admin_IVPInitial"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_IVPSeq]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_IVPSeq]"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_IVPSeq]"
-                      name="Admin_IVPSeq"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_Inj]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_Inj]"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Admin_Inj]"
-                      name="Admin_Inj"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[SalesLevel]"
@@ -394,6 +240,15 @@ WHERE modify_timestamp &gt; ?</property>
                       length="10"
                       lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[ChronicAcute]"
                       name="ChronicAcute"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Acuity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Acuity]"
+                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].Columns[Acuity]"
+                      name="Acuity"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -444,100 +299,16 @@ WHERE modify_timestamp &gt; ?</property>
                       length="1"
                       name="ActiveInd" />
                     <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[DrugName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="DrugName" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Jcode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Jcode" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Manufacturer]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Manufacturer" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[NDC]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="NDC" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[SimDescription]"
-                      codePage="1252"
-                      dataType="str"
-                      length="80"
-                      name="SimDescription" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[UnitType]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="UnitType" />
-                    <externalMetadataColumn
                       refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Category]"
                       codePage="1252"
                       dataType="str"
                       length="100"
                       name="Category" />
                     <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[sim_descripton]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="sim_descripton" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_InitialHr]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Admin_InitialHr" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_AddlHr]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Admin_AddlHr" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_Seq]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Admin_Seq" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_Concurrent]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Admin_Concurrent" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_IVPInitial]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Admin_IVPInitial" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_IVPSeq]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Admin_IVPSeq" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Admin_Inj]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="Admin_Inj" />
-                    <externalMetadataColumn
                       refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[SalesLevel]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="10"
                       name="SalesLevel" />
                     <externalMetadataColumn
                       refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[ChronicAcute]"
@@ -545,6 +316,10 @@ WHERE modify_timestamp &gt; ?</property>
                       dataType="str"
                       length="10"
                       name="ChronicAcute" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Output].ExternalColumns[Acuity]"
+                      dataType="i4"
+                      name="Acuity" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -608,48 +383,6 @@ WHERE modify_timestamp &gt; ?</property>
                       lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[ActiveInd]"
                       name="ActiveInd" />
                     <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[DrugName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[DrugName]"
-                      name="DrugName" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Jcode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Jcode]"
-                      name="Jcode" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Manufacturer]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Manufacturer]"
-                      name="Manufacturer" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[NDC]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[NDC]"
-                      name="NDC" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[SimDescription]"
-                      codePage="1252"
-                      dataType="str"
-                      length="80"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[SimDescription]"
-                      name="SimDescription" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[UnitType]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[UnitType]"
-                      name="UnitType" />
-                    <outputColumn
                       refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Category]"
                       codePage="1252"
                       dataType="str"
@@ -657,66 +390,15 @@ WHERE modify_timestamp &gt; ?</property>
                       lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Category]"
                       name="Category" />
                     <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[sim_descripton]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[sim_descripton]"
-                      name="sim_descripton" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_InitialHr]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_InitialHr]"
-                      name="Admin_InitialHr" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_AddlHr]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_AddlHr]"
-                      name="Admin_AddlHr" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_Seq]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_Seq]"
-                      name="Admin_Seq" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_Concurrent]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_Concurrent]"
-                      name="Admin_Concurrent" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_IVPInitial]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_IVPInitial]"
-                      name="Admin_IVPInitial" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_IVPSeq]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_IVPSeq]"
-                      name="Admin_IVPSeq" />
-                    <outputColumn
-                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_Inj]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Admin_Inj]"
-                      name="Admin_Inj" />
+                      refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Acuity]"
+                      dataType="i4"
+                      lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[Acuity]"
+                      name="Acuity" />
                     <outputColumn
                       refId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[SalesLevel]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="10"
                       lineageId="Package\DF Get NG_MLTS_CategoryXP_\NG_MLTS_CategoryXP_.Outputs[OLE DB Source Error Output].Columns[SalesLevel]"
                       name="SalesLevel" />
                     <outputColumn

@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [ods].[uspODSNG_patient]
+﻿CREATE PROCEDURE [ods].[uspODSNG_patientUpsert]
 AS
 BEGIN
     SET NOCOUNT ON;

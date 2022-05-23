@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageCPR_TICKC"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{7FE1CA43-43DC-4D6E-9BC3-5613240FF150}">
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{73A94AA9-6810-4387-892D-0458F261E0E4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -67,7 +67,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[TICKC]</property>
+                  name="OpenRowset"></property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -113,66 +113,6 @@ WHERE TOUCHDATE &gt; ?</property>
                   refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DELFLAG]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
-                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DELFLAG]"
-                      name="DELFLAG"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
-                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
-                      name="TOUCHDATE"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
-                      length="100"
-                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
-                      name="CHGBYHOST"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CREATEDON]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
-                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CREATEDON]"
-                      name="CREATEDON"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
-                      length="100"
-                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
-                      name="CREATEDBY"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CODE]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CODE]"
-                      length="5"
-                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CODE]"
-                      name="CODE"
-                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CPK_TICKC]"
                       dataType="i4"
@@ -221,6 +161,15 @@ WHERE TOUCHDATE &gt; ?</property>
                       length="100"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[NAME_]"
                       name="NAME_"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CODE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CODE]"
+                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CODE]"
+                      name="CODE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DORMCODE]"
@@ -597,6 +546,55 @@ WHERE TOUCHDATE &gt; ?</property>
                       externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[VIALS]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[VIALS]"
                       name="VIALS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DELFLAG]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
+                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DELFLAG]"
+                      name="DELFLAG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
+                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[TOUCHDATE]"
+                      name="TOUCHDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CHGBYHOST]"
+                      name="CHGBYHOST"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
+                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CREATEDON]"
+                      name="CREATEDON"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
+                      length="100"
+                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CREATEDBY]"
+                      name="CREATEDBY"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[RAWSPK]"
@@ -1096,34 +1094,6 @@ WHERE TOUCHDATE &gt; ?</property>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
-                      dataType="i4"
-                      name="DELFLAG" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
-                      dataType="dbTimeStamp"
-                      name="TOUCHDATE" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="CHGBYHOST" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
-                      dataType="dbTimeStamp"
-                      name="CREATEDON" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="CREATEDBY" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CODE]"
-                      dataType="i4"
-                      name="CODE" />
-                    <externalMetadataColumn
                       refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CPK_TICKC]"
                       dataType="i4"
                       name="CPK_TICKC" />
@@ -1147,6 +1117,10 @@ WHERE TOUCHDATE &gt; ?</property>
                       dataType="str"
                       length="100"
                       name="NAME_" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CODE]"
+                      dataType="i4"
+                      name="CODE" />
                     <externalMetadataColumn
                       refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[DORMCODE]"
                       codePage="1252"
@@ -1343,6 +1317,30 @@ WHERE TOUCHDATE &gt; ?</property>
                       refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[VIALS]"
                       dataType="i4"
                       name="VIALS" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[DELFLAG]"
+                      dataType="i4"
+                      name="DELFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      name="TOUCHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CHGBYHOST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      name="CREATEDON" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CREATEDBY" />
                     <externalMetadataColumn
                       refId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].ExternalColumns[RAWSPK]"
                       dataType="i4"
@@ -2192,11 +2190,11 @@ WHERE TOUCHDATE &gt; ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC"
+              refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="ODD CPR_TICKC"
+              name="Stage CPR_TICKC"
               usesDispositions="true"
               version="4">
               <properties>
@@ -2249,7 +2247,7 @@ WHERE TOUCHDATE &gt; ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Connections[OleDbConnection]"
+                  refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Connections[OleDbConnection]"
                   connectionManagerID="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}:external"
                   connectionManagerRefId="Project.ConnectionManagers[ACIESCoreStaging]"
                   description="The OLE DB runtime connection used to access the database."
@@ -2257,1212 +2255,1210 @@ WHERE TOUCHDATE &gt; ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input]"
+                  refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DELFLAG]"
-                      cachedDataType="i4"
-                      cachedName="DELFLAG"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
-                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DELFLAG]" />
-                    <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[TOUCHDATE]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="TOUCHDATE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
-                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[TOUCHDATE]" />
-                    <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CHGBYHOST]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="CHGBYHOST"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
-                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CHGBYHOST]" />
-                    <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CREATEDON]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="CREATEDON"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
-                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CREATEDON]" />
-                    <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CREATEDBY]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="CREATEDBY"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
-                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CREATEDBY]" />
-                    <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CODE]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="5"
-                      cachedName="CODE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CODE]"
-                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CODE]" />
-                    <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CPK_TICKC]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CPK_TICKC]"
                       cachedDataType="i4"
                       cachedName="CPK_TICKC"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CPK_TICKC]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CPK_TICKC]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CPK_TICKC]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[TICKNO]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[TICKNO]"
                       cachedDataType="i4"
                       cachedName="TICKNO"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TICKNO]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TICKNO]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[TICKNO]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[NO]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[NO]"
                       cachedDataType="i4"
                       cachedName="NO"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NO]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NO]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[NO]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[MRN]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[MRN]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="6"
                       cachedName="MRN"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MRN]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MRN]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[MRN]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[NAME_]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[NAME_]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="NAME_"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NAME_]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NAME_]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[NAME_]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DORMCODE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CODE]"
+                      cachedDataType="i4"
+                      cachedName="CODE"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CODE]"
+                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CODE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DORMCODE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="DORMCODE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DORMCODE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DORMCODE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DORMCODE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[NEXTCODE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[NEXTCODE]"
                       cachedDataType="i4"
                       cachedName="NEXTCODE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NEXTCODE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NEXTCODE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[NEXTCODE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PRN]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PRN]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="6"
                       cachedName="PRN"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PRN]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PRN]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[PRN]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DEFQUANT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DEFQUANT]"
                       cachedDataType="numeric"
                       cachedName="DEFQUANT"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DEFQUANT]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DEFQUANT]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DEFQUANT]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SAVQUANT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SAVQUANT]"
                       cachedDataType="numeric"
                       cachedName="SAVQUANT"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SAVQUANT]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SAVQUANT]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[SAVQUANT]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[RAWQUANT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[RAWQUANT]"
                       cachedDataType="numeric"
                       cachedName="RAWQUANT"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RAWQUANT]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RAWQUANT]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[RAWQUANT]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CATTEXT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CATTEXT]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="CATTEXT"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CATTEXT]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CATTEXT]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CATTEXT]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PARTTYPE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PARTTYPE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="PARTTYPE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PARTTYPE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PARTTYPE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[PARTTYPE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[EXP]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[EXP]"
                       cachedDataType="dbTimeStamp"
                       cachedName="EXP"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXP]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXP]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[EXP]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[RXDAYS]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[RXDAYS]"
                       cachedDataType="i4"
                       cachedName="RXDAYS"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RXDAYS]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RXDAYS]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[RXDAYS]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[RXCODE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[RXCODE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="15"
                       cachedName="RXCODE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RXCODE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RXCODE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[RXCODE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[KNUM]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[KNUM]"
                       cachedDataType="i4"
                       cachedName="KNUM"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[KNUM]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[KNUM]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[KNUM]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[LOTNUM]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[LOTNUM]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="23"
                       cachedName="LOTNUM"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LOTNUM]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LOTNUM]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[LOTNUM]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PARTNUM]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PARTNUM]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="PARTNUM"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PARTNUM]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PARTNUM]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[PARTNUM]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[COST]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[COST]"
                       cachedDataType="numeric"
                       cachedName="COST"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[COST]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[COST]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[COST]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PRICE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PRICE]"
                       cachedDataType="numeric"
                       cachedName="PRICE"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[PRICE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SPRICE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SPRICE]"
                       cachedDataType="numeric"
                       cachedName="SPRICE"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SPRICE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SPRICE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[SPRICE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[BPRICE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[BPRICE]"
                       cachedDataType="numeric"
                       cachedName="BPRICE"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[BPRICE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[BPRICE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[BPRICE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[TOBILL]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[TOBILL]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="TOBILL"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TOBILL]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TOBILL]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[TOBILL]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[ONDT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[ONDT]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="ONDT"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[ONDT]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[ONDT]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[ONDT]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SUPPLY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SUPPLY]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="SUPPLY"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SUPPLY]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SUPPLY]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[SUPPLY]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CHGCODE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CHGCODE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="5"
                       cachedName="CHGCODE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CHGCODE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CHGCODE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CHGCODE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CDAFLAG]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CDAFLAG]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="CDAFLAG"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CDAFLAG]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CDAFLAG]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CDAFLAG]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CADJUSTRES]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CADJUSTRES]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="24"
                       cachedName="CADJUSTRES"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CADJUSTRES]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CADJUSTRES]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CADJUSTRES]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CDISPOSITN]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CDISPOSITN]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="10"
                       cachedName="CDISPOSITN"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CDISPOSITN]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CDISPOSITN]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CDISPOSITN]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFREQ]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFREQ]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="3"
                       cachedName="CFREQ"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFREQ]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFREQ]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CFREQ]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[LREFILL]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[LREFILL]"
                       cachedDataType="i4"
                       cachedName="LREFILL"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LREFILL]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LREFILL]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[LREFILL]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[OTNO]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[OTNO]"
                       cachedDataType="i4"
                       cachedName="OTNO"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[OTNO]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[OTNO]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[OTNO]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[INITS]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[INITS]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="3"
                       cachedName="INITS"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[INITS]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[INITS]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[INITS]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DUMMY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DUMMY]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="DUMMY"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DUMMY]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DUMMY]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DUMMY]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[FREQUENCY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[FREQUENCY]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="FREQUENCY"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[FREQUENCY]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[FREQUENCY]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[FREQUENCY]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[LABLOGNO]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[LABLOGNO]"
                       cachedDataType="i4"
                       cachedName="LABLOGNO"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LABLOGNO]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LABLOGNO]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[LABLOGNO]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SUPLOCNO]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SUPLOCNO]"
                       cachedDataType="i4"
                       cachedName="SUPLOCNO"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SUPLOCNO]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SUPLOCNO]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[SUPLOCNO]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[MAKERR]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[MAKERR]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="MAKERR"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MAKERR]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MAKERR]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[MAKERR]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[UNITSVIAL]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[UNITSVIAL]"
                       cachedDataType="i4"
                       cachedName="UNITSVIAL"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[UNITSVIAL]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[UNITSVIAL]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[UNITSVIAL]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[VIALS]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[VIALS]"
                       cachedDataType="i4"
                       cachedName="VIALS"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[VIALS]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[VIALS]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[VIALS]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[RAWSPK]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DELFLAG]"
+                      cachedDataType="i4"
+                      cachedName="DELFLAG"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
+                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DELFLAG]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[TOUCHDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TOUCHDATE"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
+                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[TOUCHDATE]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CHGBYHOST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CHGBYHOST"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
+                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CHGBYHOST]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CREATEDON]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CREATEDON"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
+                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CREATEDON]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CREATEDBY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CREATEDBY"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CREATEDBY]" />
+                    <inputColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[RAWSPK]"
                       cachedDataType="i4"
                       cachedName="RAWSPK"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RAWSPK]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RAWSPK]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[RAWSPK]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DEDUCTED]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DEDUCTED]"
                       cachedDataType="i4"
                       cachedName="DEDUCTED"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DEDUCTED]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DEDUCTED]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DEDUCTED]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[TAXABLE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[TAXABLE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="TAXABLE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TAXABLE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TAXABLE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[TAXABLE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DOCKEY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DOCKEY]"
                       cachedDataType="i4"
                       cachedName="DOCKEY"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DOCKEY]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DOCKEY]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DOCKEY]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DOCTABLE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DOCTABLE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="DOCTABLE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DOCTABLE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DOCTABLE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DOCTABLE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[REQAUTH]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[REQAUTH]"
                       cachedDataType="i4"
                       cachedName="REQAUTH"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[REQAUTH]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[REQAUTH]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[REQAUTH]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFK_INSVERI]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFK_INSVERI]"
                       cachedDataType="i4"
                       cachedName="CFK_INSVERI"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_INSVERI]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_INSVERI]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CFK_INSVERI]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[STOPRR]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[STOPRR]"
                       cachedDataType="i4"
                       cachedName="STOPRR"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[STOPRR]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[STOPRR]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[STOPRR]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[FK_POPUPDATA_RENTAL_PRICETYPE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[FK_POPUPDATA_RENTAL_PRICETYPE]"
                       cachedDataType="i4"
                       cachedName="FK_POPUPDATA_RENTAL_PRICETYPE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[FK_POPUPDATA_RENTAL_PRICETYPE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[FK_POPUPDATA_RENTAL_PRICETYPE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[FK_POPUPDATA_RENTAL_PRICETYPE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[UOMTEXT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[UOMTEXT]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="UOMTEXT"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[UOMTEXT]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[UOMTEXT]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[UOMTEXT]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[UOMEACHES]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[UOMEACHES]"
                       cachedDataType="numeric"
                       cachedName="UOMEACHES"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[UOMEACHES]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[UOMEACHES]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[UOMEACHES]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PICKUP]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PICKUP]"
                       cachedDataType="bool"
                       cachedName="PICKUP"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PICKUP]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PICKUP]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[PICKUP]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[EXCHANGEKEY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[EXCHANGEKEY]"
                       cachedDataType="i4"
                       cachedName="EXCHANGEKEY"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXCHANGEKEY]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXCHANGEKEY]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[EXCHANGEKEY]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SELECTSN]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SELECTSN]"
                       cachedDataType="bool"
                       cachedName="SELECTSN"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SELECTSN]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SELECTSN]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[SELECTSN]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SCANPROC]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SCANPROC]"
                       cachedDataType="i4"
                       cachedName="SCANPROC"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SCANPROC]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SCANPROC]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[SCANPROC]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[QUOTEITEM]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[QUOTEITEM]"
                       cachedDataType="bool"
                       cachedName="QUOTEITEM"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[QUOTEITEM]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[QUOTEITEM]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[QUOTEITEM]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[ACCEPTASSIGNMENT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[ACCEPTASSIGNMENT]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="ACCEPTASSIGNMENT"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[ACCEPTASSIGNMENT]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[ACCEPTASSIGNMENT]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[ACCEPTASSIGNMENT]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[EXPECTED]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[EXPECTED]"
                       cachedDataType="numeric"
                       cachedName="EXPECTED"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXPECTED]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXPECTED]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[EXPECTED]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PATIENTEA]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PATIENTEA]"
                       cachedDataType="numeric"
                       cachedName="PATIENTEA"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PATIENTEA]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PATIENTEA]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[PATIENTEA]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFK_INSCOMP]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFK_INSCOMP]"
                       cachedDataType="i4"
                       cachedName="CFK_INSCOMP"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_INSCOMP]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_INSCOMP]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CFK_INSCOMP]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PATIENTPERCENT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[PATIENTPERCENT]"
                       cachedDataType="i4"
                       cachedName="PATIENTPERCENT"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PATIENTPERCENT]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PATIENTPERCENT]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[PATIENTPERCENT]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFK_PATINS]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFK_PATINS]"
                       cachedDataType="i4"
                       cachedName="CFK_PATINS"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_PATINS]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_PATINS]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CFK_PATINS]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[MCRNOTCOVERED]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[MCRNOTCOVERED]"
                       cachedDataType="bool"
                       cachedName="MCRNOTCOVERED"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MCRNOTCOVERED]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MCRNOTCOVERED]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[MCRNOTCOVERED]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[NOTCOVERED]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[NOTCOVERED]"
                       cachedDataType="bool"
                       cachedName="NOTCOVERED"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NOTCOVERED]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NOTCOVERED]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[NOTCOVERED]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFK_LABELS]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFK_LABELS]"
                       cachedDataType="i4"
                       cachedName="CFK_LABELS"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_LABELS]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_LABELS]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CFK_LABELS]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DXCODE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DXCODE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="6"
                       cachedName="DXCODE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DXCODE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DXCODE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DXCODE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[NARRATIVE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[NARRATIVE]"
                       cachedCodepage="1252"
                       cachedDataType="text"
                       cachedName="NARRATIVE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NARRATIVE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NARRATIVE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[NARRATIVE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[MODIFIER]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[MODIFIER]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="11"
                       cachedName="MODIFIER"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIER]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIER]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[MODIFIER]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[BILLNO]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[BILLNO]"
                       cachedDataType="i4"
                       cachedName="BILLNO"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[BILLNO]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[BILLNO]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[BILLNO]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DIRECTSHIP_PRICE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DIRECTSHIP_PRICE]"
                       cachedDataType="numeric"
                       cachedName="DIRECTSHIP_PRICE"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_PRICE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_PRICE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DIRECTSHIP_PRICE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DIRECTSHIP_PRICESOURCE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DIRECTSHIP_PRICESOURCE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="DIRECTSHIP_PRICESOURCE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_PRICESOURCE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_PRICESOURCE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DIRECTSHIP_PRICESOURCE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DIRECTSHIP_BACKORDERQTY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DIRECTSHIP_BACKORDERQTY]"
                       cachedDataType="numeric"
                       cachedName="DIRECTSHIP_BACKORDERQTY"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_BACKORDERQTY]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_BACKORDERQTY]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DIRECTSHIP_BACKORDERQTY]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DIRECTSHIP_AVAILABLE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[DIRECTSHIP_AVAILABLE]"
                       cachedDataType="bool"
                       cachedName="DIRECTSHIP_AVAILABLE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_AVAILABLE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_AVAILABLE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[DIRECTSHIP_AVAILABLE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[LINENUMBER]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[LINENUMBER]"
                       cachedDataType="i4"
                       cachedName="LINENUMBER"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LINENUMBER]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LINENUMBER]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[LINENUMBER]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SHIPPEDQTY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[SHIPPEDQTY]"
                       cachedDataType="numeric"
                       cachedName="SHIPPEDQTY"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SHIPPEDQTY]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SHIPPEDQTY]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[SHIPPEDQTY]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[REORDER]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[REORDER]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="REORDER"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[REORDER]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[REORDER]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[REORDER]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[ASSISTMEDSENT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[ASSISTMEDSENT]"
                       cachedDataType="bool"
                       cachedName="ASSISTMEDSENT"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[ASSISTMEDSENT]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[ASSISTMEDSENT]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[ASSISTMEDSENT]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFK_CBA_PC]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFK_CBA_PC]"
                       cachedDataType="i4"
                       cachedName="CFK_CBA_PC"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_CBA_PC]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_CBA_PC]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CFK_CBA_PC]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CBA_KE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CBA_KE]"
                       cachedDataType="bool"
                       cachedName="CBA_KE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CBA_KE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CBA_KE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CBA_KE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[NEEDUPDATE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[NEEDUPDATE]"
                       cachedDataType="bool"
                       cachedName="NEEDUPDATE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NEEDUPDATE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NEEDUPDATE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[NEEDUPDATE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[AUTHOVERRIDE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[AUTHOVERRIDE]"
                       cachedDataType="bool"
                       cachedName="AUTHOVERRIDE"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[AUTHOVERRIDE]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[AUTHOVERRIDE]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[AUTHOVERRIDE]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[LOANER]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[LOANER]"
                       cachedDataType="i4"
                       cachedName="LOANER"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LOANER]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LOANER]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[LOANER]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[BILLED_TAX]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[BILLED_TAX]"
                       cachedDataType="numeric"
                       cachedName="BILLED_TAX"
                       cachedPrecision="19"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[BILLED_TAX]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[BILLED_TAX]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[BILLED_TAX]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[EXPECTED_TAX]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[EXPECTED_TAX]"
                       cachedDataType="numeric"
                       cachedName="EXPECTED_TAX"
                       cachedPrecision="19"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXPECTED_TAX]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXPECTED_TAX]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[EXPECTED_TAX]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[TAXABLE_INT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[TAXABLE_INT]"
                       cachedDataType="i4"
                       cachedName="TAXABLE_INT"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TAXABLE_INT]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TAXABLE_INT]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[TAXABLE_INT]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFK_TAXCODES]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[CFK_TAXCODES]"
                       cachedDataType="i4"
                       cachedName="CFK_TAXCODES"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_TAXCODES]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_TAXCODES]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[CFK_TAXCODES]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[disc]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[disc]"
                       cachedDataType="r8"
                       cachedName="disc"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[disc]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[disc]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[disc]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[discprice]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[discprice]"
                       cachedDataType="r8"
                       cachedName="discprice"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[discprice]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[discprice]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[discprice]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[retquant]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[retquant]"
                       cachedDataType="numeric"
                       cachedName="retquant"
                       cachedPrecision="15"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[retquant]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[retquant]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[retquant]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[fsaeligible]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[fsaeligible]"
                       cachedDataType="bool"
                       cachedName="fsaeligible"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[fsaeligible]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[fsaeligible]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[fsaeligible]" />
                     <inputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].Columns[isdiscardquantity]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].Columns[isdiscardquantity]"
                       cachedDataType="bool"
                       cachedName="isdiscardquantity"
-                      externalMetadataColumnId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[isdiscardquantity]"
+                      externalMetadataColumnId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[isdiscardquantity]"
                       lineageId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output].Columns[isdiscardquantity]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
-                      dataType="i4"
-                      name="DELFLAG" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
-                      dataType="dbTimeStamp"
-                      name="TOUCHDATE" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="CHGBYHOST" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
-                      dataType="dbTimeStamp"
-                      name="CREATEDON" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="CREATEDBY" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
-                      dataType="dbTimeStamp"
-                      name="InsertDate" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CODE]"
-                      dataType="i4"
-                      name="CODE" />
-                    <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CPK_TICKC]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CPK_TICKC]"
                       dataType="i4"
                       name="CPK_TICKC" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TICKNO]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TICKNO]"
                       dataType="i4"
                       name="TICKNO" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NO]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NO]"
                       dataType="i4"
                       name="NO" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MRN]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MRN]"
                       codePage="1252"
                       dataType="str"
                       length="6"
                       name="MRN" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NAME_]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NAME_]"
                       codePage="1252"
                       dataType="str"
                       length="100"
                       name="NAME_" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DORMCODE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CODE]"
+                      dataType="i4"
+                      name="CODE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DORMCODE]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="DORMCODE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NEXTCODE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NEXTCODE]"
                       dataType="i4"
                       name="NEXTCODE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PRN]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PRN]"
                       codePage="1252"
                       dataType="str"
                       length="6"
                       name="PRN" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DEFQUANT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DEFQUANT]"
                       dataType="numeric"
                       name="DEFQUANT"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SAVQUANT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SAVQUANT]"
                       dataType="numeric"
                       name="SAVQUANT"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RAWQUANT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RAWQUANT]"
                       dataType="numeric"
                       name="RAWQUANT"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CATTEXT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CATTEXT]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="CATTEXT" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PARTTYPE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PARTTYPE]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="PARTTYPE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXP]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXP]"
                       dataType="dbTimeStamp"
                       name="EXP" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RXDAYS]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RXDAYS]"
                       dataType="i4"
                       name="RXDAYS" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RXCODE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RXCODE]"
                       codePage="1252"
                       dataType="str"
                       length="15"
                       name="RXCODE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[KNUM]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[KNUM]"
                       dataType="i4"
                       name="KNUM" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LOTNUM]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LOTNUM]"
                       codePage="1252"
                       dataType="str"
                       length="23"
                       name="LOTNUM" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PARTNUM]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PARTNUM]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="PARTNUM" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[COST]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[COST]"
                       dataType="numeric"
                       name="COST"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
                       dataType="numeric"
                       name="PRICE"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SPRICE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SPRICE]"
                       dataType="numeric"
                       name="SPRICE"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[BPRICE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[BPRICE]"
                       dataType="numeric"
                       name="BPRICE"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TOBILL]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TOBILL]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="TOBILL" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[ONDT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[ONDT]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="ONDT" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SUPPLY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SUPPLY]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="SUPPLY" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CHGCODE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CHGCODE]"
                       codePage="1252"
                       dataType="str"
                       length="5"
                       name="CHGCODE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CDAFLAG]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CDAFLAG]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="CDAFLAG" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CADJUSTRES]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CADJUSTRES]"
                       codePage="1252"
                       dataType="str"
                       length="24"
                       name="CADJUSTRES" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CDISPOSITN]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CDISPOSITN]"
                       codePage="1252"
                       dataType="str"
                       length="10"
                       name="CDISPOSITN" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFREQ]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFREQ]"
                       codePage="1252"
                       dataType="str"
                       length="3"
                       name="CFREQ" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LREFILL]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LREFILL]"
                       dataType="i4"
                       name="LREFILL" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[OTNO]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[OTNO]"
                       dataType="i4"
                       name="OTNO" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[INITS]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[INITS]"
                       codePage="1252"
                       dataType="str"
                       length="3"
                       name="INITS" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DUMMY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DUMMY]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="DUMMY" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[FREQUENCY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[FREQUENCY]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="FREQUENCY" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LABLOGNO]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LABLOGNO]"
                       dataType="i4"
                       name="LABLOGNO" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SUPLOCNO]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SUPLOCNO]"
                       dataType="i4"
                       name="SUPLOCNO" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MAKERR]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MAKERR]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="MAKERR" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[UNITSVIAL]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[UNITSVIAL]"
                       dataType="i4"
                       name="UNITSVIAL" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[VIALS]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[VIALS]"
                       dataType="i4"
                       name="VIALS" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RAWSPK]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DELFLAG]"
+                      dataType="i4"
+                      name="DELFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TOUCHDATE]"
+                      dataType="dbTimeStamp"
+                      name="TOUCHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CHGBYHOST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CHGBYHOST" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDON]"
+                      dataType="dbTimeStamp"
+                      name="CREATEDON" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CREATEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[RAWSPK]"
                       dataType="i4"
                       name="RAWSPK" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DEDUCTED]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DEDUCTED]"
                       dataType="i4"
                       name="DEDUCTED" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TAXABLE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TAXABLE]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="TAXABLE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DOCKEY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DOCKEY]"
                       dataType="i4"
                       name="DOCKEY" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DOCTABLE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DOCTABLE]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="DOCTABLE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[REQAUTH]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[REQAUTH]"
                       dataType="i4"
                       name="REQAUTH" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_INSVERI]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_INSVERI]"
                       dataType="i4"
                       name="CFK_INSVERI" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[STOPRR]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[STOPRR]"
                       dataType="i4"
                       name="STOPRR" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[FK_POPUPDATA_RENTAL_PRICETYPE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[FK_POPUPDATA_RENTAL_PRICETYPE]"
                       dataType="i4"
                       name="FK_POPUPDATA_RENTAL_PRICETYPE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[UOMTEXT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[UOMTEXT]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="UOMTEXT" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[UOMEACHES]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[UOMEACHES]"
                       dataType="numeric"
                       name="UOMEACHES"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PICKUP]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PICKUP]"
                       dataType="bool"
                       name="PICKUP" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXCHANGEKEY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXCHANGEKEY]"
                       dataType="i4"
                       name="EXCHANGEKEY" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SELECTSN]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SELECTSN]"
                       dataType="bool"
                       name="SELECTSN" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SCANPROC]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SCANPROC]"
                       dataType="i4"
                       name="SCANPROC" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[QUOTEITEM]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[QUOTEITEM]"
                       dataType="bool"
                       name="QUOTEITEM" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[ACCEPTASSIGNMENT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[ACCEPTASSIGNMENT]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="ACCEPTASSIGNMENT" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXPECTED]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXPECTED]"
                       dataType="numeric"
                       name="EXPECTED"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PATIENTEA]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PATIENTEA]"
                       dataType="numeric"
                       name="PATIENTEA"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_INSCOMP]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_INSCOMP]"
                       dataType="i4"
                       name="CFK_INSCOMP" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PATIENTPERCENT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[PATIENTPERCENT]"
                       dataType="i4"
                       name="PATIENTPERCENT" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_PATINS]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_PATINS]"
                       dataType="i4"
                       name="CFK_PATINS" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MCRNOTCOVERED]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MCRNOTCOVERED]"
                       dataType="bool"
                       name="MCRNOTCOVERED" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NOTCOVERED]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NOTCOVERED]"
                       dataType="bool"
                       name="NOTCOVERED" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_LABELS]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_LABELS]"
                       dataType="i4"
                       name="CFK_LABELS" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DXCODE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DXCODE]"
                       codePage="1252"
                       dataType="str"
                       length="6"
                       name="DXCODE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NARRATIVE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NARRATIVE]"
                       codePage="1252"
                       dataType="text"
                       name="NARRATIVE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIER]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIER]"
                       codePage="1252"
                       dataType="str"
                       length="11"
                       name="MODIFIER" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[BILLNO]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[BILLNO]"
                       dataType="i4"
                       name="BILLNO" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_PRICE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_PRICE]"
                       dataType="numeric"
                       name="DIRECTSHIP_PRICE"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_PRICESOURCE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_PRICESOURCE]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="DIRECTSHIP_PRICESOURCE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_BACKORDERQTY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_BACKORDERQTY]"
                       dataType="numeric"
                       name="DIRECTSHIP_BACKORDERQTY"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_AVAILABLE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[DIRECTSHIP_AVAILABLE]"
                       dataType="bool"
                       name="DIRECTSHIP_AVAILABLE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LINENUMBER]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LINENUMBER]"
                       dataType="i4"
                       name="LINENUMBER" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SHIPPEDQTY]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[SHIPPEDQTY]"
                       dataType="numeric"
                       name="SHIPPEDQTY"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[REORDER]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[REORDER]"
                       codePage="1252"
                       dataType="str"
                       length="100"
                       name="REORDER" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[ASSISTMEDSENT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[ASSISTMEDSENT]"
                       dataType="bool"
                       name="ASSISTMEDSENT" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_CBA_PC]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_CBA_PC]"
                       dataType="i4"
                       name="CFK_CBA_PC" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CBA_KE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CBA_KE]"
                       dataType="bool"
                       name="CBA_KE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NEEDUPDATE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[NEEDUPDATE]"
                       dataType="bool"
                       name="NEEDUPDATE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[AUTHOVERRIDE]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[AUTHOVERRIDE]"
                       dataType="bool"
                       name="AUTHOVERRIDE" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LOANER]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[LOANER]"
                       dataType="i4"
                       name="LOANER" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[BILLED_TAX]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[BILLED_TAX]"
                       dataType="numeric"
                       name="BILLED_TAX"
                       precision="19"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXPECTED_TAX]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[EXPECTED_TAX]"
                       dataType="numeric"
                       name="EXPECTED_TAX"
                       precision="19"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TAXABLE_INT]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[TAXABLE_INT]"
                       dataType="i4"
                       name="TAXABLE_INT" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_TAXCODES]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[CFK_TAXCODES]"
                       dataType="i4"
                       name="CFK_TAXCODES" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[disc]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[disc]"
                       dataType="r8"
                       name="disc" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[discprice]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[discprice]"
                       dataType="r8"
                       name="discprice" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[retquant]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[retquant]"
                       dataType="numeric"
                       name="retquant"
                       precision="15"
                       scale="4" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[fsaeligible]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[fsaeligible]"
                       dataType="bool"
                       name="fsaeligible" />
                     <externalMetadataColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[isdiscardquantity]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[isdiscardquantity]"
                       dataType="bool"
                       name="isdiscardquantity" />
+                    <externalMetadataColumn
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input].ExternalColumns[InsertDate]"
+                      dataType="dbTimeStamp"
+                      name="InsertDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3474,7 +3470,7 @@ WHERE TOUCHDATE &gt; ?</property>
           <paths>
             <path
               refId="Package\DF Get CPR_TICKC.Paths[OLE DB Source Output]"
-              endId="Package\DF Get CPR_TICKC\ODD CPR_TICKC.Inputs[OLE DB Destination Input]"
+              endId="Package\DF Get CPR_TICKC\Stage CPR_TICKC.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\DF Get CPR_TICKC\CPR_TICKC.Outputs[OLE DB Source Output]" />
           </paths>
@@ -3641,27 +3637,27 @@ WHERE TOUCHDATE &gt; ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163.2,41.6"
-          Id="Package\DF Get CPR_TICKC\ODD CPR_TICKC"
-          TopLeft="23.8333326048322,106.633333326446" />
-        <NodeLayout
           Size="137.6,41.6"
           Id="Package\DF Get CPR_TICKC\CPR_TICKC"
-          TopLeft="31.833332306809,8.10000002066294" />
+          TopLeft="282.499988774459,31.2000002479553" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\DF Get CPR_TICKC\Stage CPR_TICKC"
+          TopLeft="271.666655871604,169.866668016646" />
         <EdgeLayout
           Id="Package\DF Get CPR_TICKC.Paths[OLE DB Source Output]"
-          TopLeft="103.033332455821,49.7000000206629">
+          TopLeft="353.283322323031,72.8000002479553">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.9333333057831"
+              EndConnector="0,97.0666677686903"
               Start="0,0"
-              End="0,49.4333333057831">
+              End="0,89.5666677686903">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.4333333057831" />
+                    End="0,89.5666677686903" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3679,15 +3675,10 @@ WHERE TOUCHDATE &gt; ?</property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DF Get CPR_TICKC\ODD CPR_TICKC">
+    design-time-name="Package\DF Get CPR_TICKC\Stage CPR_TICKC">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

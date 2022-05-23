@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [ods].[uspODSNG_person_relationship]
+﻿CREATE PROCEDURE [ods].[uspODSNG_person_relationshipUpsert]
 AS
 BEGIN
     SET NOCOUNT ON;

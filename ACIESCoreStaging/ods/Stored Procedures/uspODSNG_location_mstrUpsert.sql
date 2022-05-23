@@ -161,7 +161,7 @@ BEGIN
           ,[created_by]
           ,[modify_timestamp]
           ,[modified_by]
-          ,[row_timestamp]
+          ,try_cast([row_timestamp] as varchar(50))
           ,[search_ahead_ind]
           ,[ud_directions]
           ,[optical_location_ind]

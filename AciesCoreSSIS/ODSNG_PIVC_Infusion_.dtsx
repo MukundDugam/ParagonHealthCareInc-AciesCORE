@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODSNG_PIVC_Infusion_"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{F7FAA0F9-E16B-414B-8F6D-0BD3152A5568}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{653CE4D6-F430-483E-90AB-6BDFD2D8FF26}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -49,7 +49,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
-          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_patient_encounterUpsert]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_PIVC_Infusion_Upsert]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODSNG_practice_payers_person"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{D4265FB5-AFE0-40E6-9DD8-9BB87D56FD6F}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{B20DA563-8334-4D20-B132-64CF7C136D91}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -101,13 +101,13 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="293.6,41.6"
-          Id="Package\EXECSQL NG_practice_payers_personUpsert"
-          TopLeft="66.6666655076875,5.5" />
-        <NodeLayout
           Size="292.8,41.6"
           Id="Package\EXECSQL NG_practice_payers_personDelete"
           TopLeft="62.4999990065893,106.633333326446" />
+        <NodeLayout
+          Size="293.6,41.6"
+          Id="Package\EXECSQL NG_practice_payers_personUpsert"
+          TopLeft="66.6666655076875,5.5" />
         <NodeLayout
           Size="320,41.6"
           Id="Package\EXECSQL Truncate staging table"
