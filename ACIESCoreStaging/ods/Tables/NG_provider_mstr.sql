@@ -87,7 +87,7 @@
     [modified_by] [int] NOT NULL,
     [create_timestamp] [datetime] NOT NULL,
     [modify_timestamp] [datetime] NOT NULL,
-    [row_timestamp] [timestamp] NOT NULL,
+    [row_timestamp] [varchar](50) NOT NULL,
     [default_tax_id] [varchar](15) NULL,
     [pqri_edits_ind] [char](1) NOT NULL,
     [provider_type_ordering_ind] [char](1) NOT NULL,
