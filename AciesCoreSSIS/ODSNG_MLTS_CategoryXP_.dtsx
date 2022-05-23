@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODSNG_MLTS_CategoryXP_"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{C60104CA-A739-43B5-B9BE-96A0F014E3F4}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{692141E8-C202-4EE1-B54A-B868D14E167B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />

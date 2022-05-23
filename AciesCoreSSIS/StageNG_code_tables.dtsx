@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageNG_code_tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{7FC92252-21B9-4CBF-836A-395B98040CAB}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{B60DB6CA-9474-4DD4-9888-6D550142E064}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -754,13 +754,13 @@ WHERE modify_timestamp &gt; ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156,41.6"
-          Id="Package\DF Get NG_code_tables\NG_code_tables"
-          TopLeft="33.8333322074679,9.5" />
-        <NodeLayout
           Size="185.6,41.6"
           Id="Package\DF Get NG_code_tables\Stage NG_code_tables"
           TopLeft="16.6666660043929,169.866668016646" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\DF Get NG_code_tables\NG_code_tables"
+          TopLeft="33.8333322074679,9.5" />
         <EdgeLayout
           Id="Package\DF Get NG_code_tables.Paths[OLE DB Source Output]"
           TopLeft="110.64999910593,51.1">

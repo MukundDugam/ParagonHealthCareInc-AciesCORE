@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [ods].[uspODSNG_person_payer]
+﻿CREATE PROCEDURE [ods].[uspODSNG_person_payerUpsert]
 AS
 BEGIN
     SET NOCOUNT ON;

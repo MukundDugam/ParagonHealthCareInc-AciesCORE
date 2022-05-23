@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODSNG_patient"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{D590DAB2-6C3A-44CD-90F1-2E24BE2825ED}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{E24AA99A-071F-4710-AE01-1C94A48E5A68}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />

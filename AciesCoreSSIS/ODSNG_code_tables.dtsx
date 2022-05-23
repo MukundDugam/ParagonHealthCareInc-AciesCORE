@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODSNG_code_tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{7A87D36B-2FEE-4660-AC37-B71EC8E00B75}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{DE06689C-1B99-4BE7-A3CC-B1A13F866636}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -48,7 +48,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
-          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_accountsUpsert]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_code_tablesUpsert]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -100,13 +100,13 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="238.4,41.6"
-          Id="Package\EXECSQL NG_code_tablesUpsert"
-          TopLeft="66.6666655076875,5.5" />
-        <NodeLayout
           Size="237.6,41.6"
           Id="Package\EXECSQL NG_code_tablesDelete"
           TopLeft="62.4999990065893,106.633333326446" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\EXECSQL NG_code_tablesUpsert"
+          TopLeft="66.6666655076875,5.5" />
         <NodeLayout
           Size="232.8,41.6"
           Id="Package\EXECSQL Truncate staging table"

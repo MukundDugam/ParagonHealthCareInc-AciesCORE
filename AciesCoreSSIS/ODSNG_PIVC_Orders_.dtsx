@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODSNG_PIVC_Orders_"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{44B47782-5A76-4920-A59C-C2228B896AEB}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{FA47BF88-11A4-42DB-B143-9A54D2DFAA0C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -49,7 +49,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{99F6CA27-51A8-45FF-A090-DBBF5FCF4D89}"
-          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_patient_encounterUpsert]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC [ods].[uspODSNG_PIVC_Orders_Upsert]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
