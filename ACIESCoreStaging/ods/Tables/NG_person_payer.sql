@@ -65,7 +65,7 @@
 	[created_by] [int] NOT NULL,
 	[modified_by] [int] NOT NULL,
 	[modify_timestamp] [datetime] NOT NULL,
-	[row_timestamp] [varchar] NOT NULL,
+	[row_timestamp] [varchar](50) NOT NULL,
 	[ins_card_first_name] [varchar](60) NULL,
 	[ins_card_middle_name] [varchar](25) NULL,
 	[ins_card_last_name] [varchar](60) NULL,

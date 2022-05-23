@@ -38,7 +38,7 @@
 	[created_by] [int] NOT NULL,
 	[modify_timestamp] [datetime] NOT NULL,
 	[modified_by] [int] NOT NULL,
-	[row_timestamp] [varchar](30) NOT NULL,
+	[row_timestamp] [varchar](50) NOT NULL,
 	[outsource_exempt_ind] [char](1) NOT NULL,
 	[statement_counter] [int] NOT NULL,
 	[send_coll_letter_ind] [char](1) NOT NULL,
